@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="MagonoteToolkit.Views.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:resources="clr-namespace:MagonoteToolkit.Resources"
+    mc:Ignorable="d">
+
+    <Grid Margin="10,10,10,10" HorizontalAlignment="Center">
+        <StackPanel>
+            <TextBlock
+                HorizontalAlignment="Center"
+                Style="{StaticResource TitleTextBlockStyle}"
+                Text="{x:Static resources:Strings.MessageHomeBody1}" />
+            <TextBlock
+                HorizontalAlignment="Center"
+                Style="{StaticResource SubtitleTextBlockStyle}"
+                Text="{x:Static resources:Strings.MessageHomeBody2}" />
+            <TextBlock
+                HorizontalAlignment="Center"
+                Style="{StaticResource SubtitleTextBlockStyle}"
+                Text="{x:Static resources:Strings.MessageHomeBody3}" />
+        </StackPanel>
+    </Grid>
+</Page>
