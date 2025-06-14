@@ -23,9 +23,9 @@ namespace MagonoteToolkit.ViewModels
         public MainWindowViewModel()
         {
             Assembly assm = Assembly.GetExecutingAssembly();
-            string version = assm.GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion;
 
             // バージョン情報を取得してタイトルに反映する
+            string version = assm.GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion;
             Title = $"MagonoteToolkit Ver.{version}";
         }
     }

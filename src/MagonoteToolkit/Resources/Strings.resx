@@ -105,4 +105,37 @@
 このアプリケーションを終了します｡
 エラーの詳細な情報を表示しますか?</value>
   </data>
+  <data name="Home" xml:space="preserve">
+    <value>ホーム</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>ヘルプ</value>
+  </data>
+  <data name="MessageHomeBody1" xml:space="preserve">
+    <value>MagonoteToolkitようこそへ!!</value>
+  </data>
+  <data name="MessageHomeBody2" xml:space="preserve">
+    <value>このアプリケーションはソフトウェア開発を支援するツールキットです｡</value>
+  </data>
+  <data name="MessageHomeBody3" xml:space="preserve">
+    <value>サイドメニューからご希望の機能を選択してください｡</value>
+  </data>
+  <data name="ProductName" xml:space="preserve">
+    <value>製品名</value>
+  </data>
+  <data name="License" xml:space="preserve">
+    <value>ライセンス</value>
+  </data>
+  <data name="LibrariesUsed" xml:space="preserve">
+    <value>使用しているライブラリ</value>
+  </data>
+  <data name="MessageHelpFollowingURL" xml:space="preserve">
+    <value>詳細は以下のURLを参照してください。</value>
+  </data>
+  <data name="VersionInfo" xml:space="preserve">
+    <value>バージョン情報</value>
+  </data>
+  <data name="HowToUse" xml:space="preserve">
+    <value>使い方</value>
+  </data>
 </root>

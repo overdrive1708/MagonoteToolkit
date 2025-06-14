@@ -61,11 +61,56 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   ヘルプ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Help {
+            get {
+                return ResourceManager.GetString("Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ホーム に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Home {
+            get {
+                return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   使い方 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string HowToUse {
+            get {
+                return ResourceManager.GetString("HowToUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   重要なお知らせ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string ImportantNotice {
             get {
                 return ResourceManager.GetString("ImportantNotice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   使用しているライブラリ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string LibrariesUsed {
+            get {
+                return ResourceManager.GetString("LibrariesUsed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ライセンス に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string License {
+            get {
+                return ResourceManager.GetString("License", resourceCulture);
             }
         }
         
@@ -77,6 +122,60 @@ namespace MagonoteToolkit.Resources {
         public static string MessageFatalError {
             get {
                 return ResourceManager.GetString("MessageFatalError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   詳細は以下のURLを参照してください。 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageHelpFollowingURL {
+            get {
+                return ResourceManager.GetString("MessageHelpFollowingURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   MagonoteToolkitようこそへ!! に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageHomeBody1 {
+            get {
+                return ResourceManager.GetString("MessageHomeBody1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   このアプリケーションはソフトウェア開発を支援するツールキットです｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageHomeBody2 {
+            get {
+                return ResourceManager.GetString("MessageHomeBody2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   サイドメニューからご希望の機能を選択してください｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageHomeBody3 {
+            get {
+                return ResourceManager.GetString("MessageHomeBody3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   製品名 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ProductName {
+            get {
+                return ResourceManager.GetString("ProductName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   バージョン情報 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string VersionInfo {
+            get {
+                return ResourceManager.GetString("VersionInfo", resourceCulture);
             }
         }
     }
