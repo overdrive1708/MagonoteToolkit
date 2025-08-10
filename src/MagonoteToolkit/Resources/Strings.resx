@@ -138,4 +138,84 @@
   <data name="HowToUse" xml:space="preserve">
     <value>使い方</value>
   </data>
+  <data name="InspectionSettings" xml:space="preserve">
+    <value>検査設定</value>
+  </data>
+  <data name="Preset" xml:space="preserve">
+    <value>プリセット</value>
+  </data>
+  <data name="TargetFileKeyword" xml:space="preserve">
+    <value>対象ファイルキーワード</value>
+  </data>
+  <data name="InspectionMethod" xml:space="preserve">
+    <value>検査方法</value>
+  </data>
+  <data name="Sheet" xml:space="preserve">
+    <value>シート</value>
+  </data>
+  <data name="Cell" xml:space="preserve">
+    <value>セル</value>
+  </data>
+  <data name="Condition" xml:space="preserve">
+    <value>条件</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>値</value>
+  </data>
+  <data name="InspectionFile" xml:space="preserve">
+    <value>検査ファイル</value>
+  </data>
+  <data name="MessageGuideDragAndDrop" xml:space="preserve">
+    <value>検査したいファイル　もしくは　検査したいファイルが含まれるフォルダを
+ドラッグ&amp;ドロップしてください｡
+対象ファイルキーワードを含むファイルのみ検査ファイルに登録されます｡</value>
+  </data>
+  <data name="Clear" xml:space="preserve">
+    <value>クリア</value>
+  </data>
+  <data name="ExecuteInspection" xml:space="preserve">
+    <value>検査実施</value>
+  </data>
+  <data name="InspectionResult" xml:space="preserve">
+    <value>検査結果</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>ファイル</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="ExcelFileInspection" xml:space="preserve">
+    <value>Excelファイル検査</value>
+  </data>
+  <data name="MessageStatusInspectionMethodEmpty" xml:space="preserve">
+    <value>検査方法が設定されていません｡</value>
+  </data>
+  <data name="MessageStatusInspectionFileEmpty" xml:space="preserve">
+    <value>検査ファイルが指定されていません｡</value>
+  </data>
+  <data name="MessageStatusAlreadyInspection" xml:space="preserve">
+    <value>準備が完了しました｡｢検査実施｣ボタン押下で検査を行います｡</value>
+  </data>
+  <data name="MessageStatusNowInspection" xml:space="preserve">
+    <value>検査を行っています｡({0}/{1})</value>
+  </data>
+  <data name="MessageStatusCompleteInspection" xml:space="preserve">
+    <value>検査が完了しました｡</value>
+  </data>
+  <data name="MessageResultInspectionNGEqual" xml:space="preserve">
+    <value>値が"{0}"になっています｡</value>
+  </data>
+  <data name="MessageResultInspectionNGNotEqual" xml:space="preserve">
+    <value>値が"{0}"以外になっています｡</value>
+  </data>
+  <data name="MessageResultInspectionNGEmpty" xml:space="preserve">
+    <value>空欄になっています｡</value>
+  </data>
+  <data name="MessageResultInspectionNGNotEmpty" xml:space="preserve">
+    <value>空欄以外になっています｡</value>
+  </data>
+  <data name="MessageResultInspectionOK" xml:space="preserve">
+    <value>問題は見つかりませんでした｡</value>
+  </data>
 </root>

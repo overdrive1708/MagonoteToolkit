@@ -7,8 +7,9 @@ namespace MagonoteToolkit
     /// </summary>
     public enum NavigationItem
     {
-        Home,       // ホーム
-        Help        // ヘルプ
+        Home,                   // ホーム
+        ExcelFileInspection,    // Excelファイル検査
+        Help                    // ヘルプ
     }
 
     /// <summary>
@@ -43,6 +44,10 @@ namespace MagonoteToolkit
                 case NavigationItem.Home:
                     header = selectedItem.Content;
                     sourcePageType = typeof(Views.HomePage);
+                    break;
+                case NavigationItem.ExcelFileInspection:
+                    header = selectedItem.Content;
+                    sourcePageType = typeof(Views.ExcelFileInspectionPage);
                     break;
                 case NavigationItem.Help:
                     header = selectedItem.Content;
