@@ -10,7 +10,7 @@
     xmlns:viewmodels="clr-namespace:MagonoteToolkit.ViewModels"
     Title="{Binding Title}"
     Width="1280"
-    Height="720"
+    Height="960"
     d:DataContext="{d:DesignInstance Type=viewmodels:MainWindowViewModel,
                                      IsDesignTimeCreatable=True}"
     ui:WindowHelper.UseModernWindowStyle="True"
@@ -32,6 +32,11 @@
                 Icon="Home"
                 IsSelected="True"
                 Tag="{x:Static local:NavigationItem.Home}" />
+            <ui:NavigationViewItem
+                Content="{x:Static resources:Strings.ExcelFileInspection}"
+                Icon="Find"
+                IsSelected="True"
+                Tag="{x:Static local:NavigationItem.ExcelFileInspection}" />
         </ui:NavigationView.MenuItems>
         <ui:NavigationView.FooterMenuItems>
             <ui:NavigationViewItem

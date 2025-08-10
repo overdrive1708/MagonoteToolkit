@@ -1,0 +1,38 @@
+[
+  {										// プリセット1
+    "PresetName": "Preset1",			// プリセット名
+    "TargetFileKeyword": "KeywordA",		// 対象ファイルキーワード
+    "InspectionMethods": [					// 検査方法
+      {											// 検査方法1
+        "Sheet": "SheetA",							// シート
+        "Cell": "A1",								// セル
+        "Condition": "Empty",						// 条件
+        "Value": "―"								// 値
+      },
+      {											// 検査方法2
+        "Sheet": "SheetA",							// シート
+        "Cell": "A1",								// セル
+        "Condition": "Equal",						// 条件
+        "Value": "NGWord"
+      }
+    ]
+  },
+  {										// プリセット2
+    "PresetName": "Preset2",			// プリセット名
+    "TargetFileKeyword": "KeywordB",		// 対象ファイルキーワード
+    "InspectionMethods": [					// 検査方法
+      {											// 検査方法1
+        "Sheet": "SheetB",							// シート
+        "Cell": "B1",								// セル
+        "Condition": "Empty",						// 条件
+        "Value": "―"								// 値
+      },
+      {											// 検査方法2
+        "Sheet": "SheetB",							// シート
+        "Cell": "B1",								// セル
+        "Condition": "Equal",						// 条件
+        "Value": "NGWord"							// 値
+      }
+    ]
+  }
+]

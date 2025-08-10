@@ -27,20 +27,34 @@
 ---
 
 ## 機能一覧
-- T.B.D.
+- Excelファイル検査
 
 ## ダウンロード方法
 - [GitHubのReleases](https://github.com/overdrive1708/MagonoteToolkit/releases)にあるLatestのAssetsより
 MagonoteToolkit_vx.x.x.zipをダウンロードしてください｡
 
-## インストール方法
-T.B.D.
-
 ## 初回セットアップ方法
-T.B.D.
 
-## アンインストール方法
-T.B.D.
+### Excelファイル検査
+[設定サンプル](asetts/SampleSettings/ExcelFileInspectionSettings.json)を｢MagonoteToolkit.exe｣と同じ場所に格納してください｡  
+その後､下記を参考に設定してください｡  
+
+｢ExcelFileInspectionSettings.json｣で設定する設定項目は以下のとおりです｡
+| 設定項目 | 設定内容 |
+| --- | --- |
+| PresetName | プリセットを識別するための名前を設定します｡ |
+| TargetFileKeyword | 検査ファイルの一覧に登録する際のキーワードを設定します｡<br>検査ファイルに検査対象フォルダもしくは検査対象ファイルをドラッグ&ドロップした際に､設定したキーワードを含むファイルのみを検査対象とします｡ |
+| InspectionMethods | Conditionによって設定値が異なるため､後述する説明を参照してください｡ |
+
+｢ExcelFileInspectionSettings.json｣で設定するConditionは以下をサポートしています｡
+| Condition | 設定時の挙動 |
+|---|---|
+| Equal | SheetNameで設定したシート名の､Cellで設定したセルが､Valueで設定した値である場合にNGとします｡ |
+| NotEqual | SheetNameで設定したシート名の､Cellで設定したセルが､Valueで設定した値以外である場合にNGとします｡ |
+| Empty | SheetNameで設定したシート名の､Cellで設定したセルが､空である場合にNGとします｡ |
+| NotEmpty | SheetNameで設定したシート名の､Cellで設定したセルが､空ではない場合にNGとします｡ |
+
+制約事項：Cellは｢A1:A5｣のような複数セルの指定は対応していません｡
 
 ## 開発環境
 - Microsoft Visual Studio Community 2022

@@ -1,0 +1,62 @@
+[
+  {										// プリセット1
+    "PresetName": "プリセット1",			// プリセット名
+    "TargetFileKeyword": "TestFile",		// 対象ファイルキーワード
+    "InspectionMethods": [					// 検査方法
+      {											// 検査方法1
+        "Sheet": "CheckList",						// シート名
+        "Cell": "D5",								// セル
+        "Condition": "Empty",						// 条件
+        "Value": "―"								// 値
+      },
+      {											// 検査方法2
+        "Sheet": "CheckList",						// シート名
+        "Cell": "D4",								// セル
+        "Condition": "Equal",						// 条件
+        "Value": "NG"								// 値
+      },
+      {											// 検査方法3
+        "Sheet": "CheckList",						// シート名
+        "Cell": "D4",								// セル
+        "Condition": "Empty",						// 条件
+        "Value": "―"								// 値
+      },
+      {											// 検査方法4
+        "Sheet": "CheckList",						// シート名
+        "Cell": "D6",								// セル
+        "Condition": "Equal",						// 条件
+        "Value": "NG"								// 値
+      }
+    ]
+  },
+  {										// プリセット2
+    "PresetName": "プリセット2",			// プリセット名
+    "TargetFileKeyword": "TestFile",		// 対象ファイルキーワード
+    "InspectionMethods": [					// 検査方法
+      {											// 検査方法1
+        "Sheet": "CheckList",						// シート名
+        "Cell": "D6",								// セル
+        "Condition": "Equal",						// 条件
+        "Value": "NG"								// 値
+      },
+      {											// 検査方法2
+        "Sheet": "CheckList",						// シート名
+        "Cell": "D6",								// セル
+        "Condition": "NotEqual",					// 条件
+        "Value": "OK"								// 値
+      },
+      {											// 検査方法3
+        "Sheet": "CheckList",						// シート名
+        "Cell": "D4",								// セル
+        "Condition": "Empty",						// 条件
+        "Value": "―"								// 値
+      },
+      {											// 検査方法4
+        "Sheet": "CheckList",						// シート名
+        "Cell": "D3",								// セル
+        "Condition": "NotEmpty",					// 条件
+        "Value": "―"								// 値
+      }
+    ]
+  }
+]
