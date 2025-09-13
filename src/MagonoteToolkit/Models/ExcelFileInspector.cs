@@ -40,6 +40,7 @@ namespace MagonoteToolkit.Models
         {
             List<InspectionResult> results = [];
             InspectionResult result;
+            List<IXLAddress> addresses = [];
 
             // Bookを開く(読み取り専用で開く)
             using (FileStream fs = new(filename, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
@@ -51,62 +52,86 @@ namespace MagonoteToolkit.Models
                     // 検査方法で指定された条件を確認
                     foreach (ExcelFileInspectionSettings.InspectionMethod method in methods)
                     {
-                        switch (method.Condition)
+                        // 検査対象セルリスト作成
+                        addresses.Clear();
+                        if (!method.Cell.Contains(':'))
                         {
-                            case "Equal":
-                                // 指定されたセルが指定された値になっている場合はNG
-                                if (worksheet.Name.Equals(method.Sheet) && (worksheet.Cell(method.Cell).Value.ToString() == method.Value))
+                            // 単一セルの場合
+                            addresses.Add(worksheet.Cell(method.Cell).Address);
+                        }
+                        else
+                        {
+                            // 複数セルの場合
+                            IXLRange table = worksheet.Range(method.Cell).AsTable();
+                            foreach (IXLRangeRow rowData in table.Rows())
+                            {
+                                foreach (IXLCell cellData in rowData.Cells())
                                 {
-                                    result = new()
-                                    {
-                                        FileName = filename,
-                                        Cell = method.Cell,
-                                        ResultMessage = string.Format(Resources.Strings.MessageResultInspectionNGEqual, method.Value)
-                                    };
-                                    results.Add(result);
+                                    addresses.Add(cellData.Address);
                                 }
-                                break;
-                            case "NotEqual":
-                                // 指定されたセルが指定された値以外になっている場合はNG
-                                if (worksheet.Name.Equals(method.Sheet) && (worksheet.Cell(method.Cell).Value.ToString() != method.Value))
-                                {
-                                    result = new()
+                            }
+                        }
+
+                        // 検査対象セルを検査
+                        foreach (IXLAddress address in addresses)
+                        {
+                            switch (method.Condition)
+                            {
+                                case "Equal":
+                                    // 指定されたセルが指定された値になっている場合はNG
+                                    if (worksheet.Name.Equals(method.Sheet) && (worksheet.Cell(address).Value.ToString() == method.Value))
                                     {
-                                        FileName = filename,
-                                        Cell = method.Cell,
-                                        ResultMessage = string.Format(Resources.Strings.MessageResultInspectionNGNotEqual, method.Value)
-                                    };
-                                    results.Add(result);
-                                }
-                                break;
-                            case "Empty":
-                                // 指定されたセルが空である場合はNG
-                                if (worksheet.Name.Equals(method.Sheet) && (worksheet.Cell(method.Cell).Value.ToString() == string.Empty))
-                                {
-                                    result = new()
+                                        result = new()
+                                        {
+                                            FileName = filename,
+                                            Cell = address.ToString(),
+                                            ResultMessage = string.Format(Resources.Strings.MessageResultInspectionNGEqual, method.Value)
+                                        };
+                                        results.Add(result);
+                                    }
+                                    break;
+                                case "NotEqual":
+                                    // 指定されたセルが指定された値以外になっている場合はNG
+                                    if (worksheet.Name.Equals(method.Sheet) && (worksheet.Cell(address).Value.ToString() != method.Value))
                                     {
-                                        FileName = filename,
-                                        Cell = method.Cell,
-                                        ResultMessage = Resources.Strings.MessageResultInspectionNGEmpty
-                                    };
-                                    results.Add(result);
-                                }
-                                break;
-                            case "NotEmpty":
-                                // 指定されたセルが空ではない場合はNG
-                                if (worksheet.Name.Equals(method.Sheet) && (worksheet.Cell(method.Cell).Value.ToString() != string.Empty))
-                                {
-                                    result = new()
+                                        result = new()
+                                        {
+                                            FileName = filename,
+                                            Cell = address.ToString(),
+                                            ResultMessage = string.Format(Resources.Strings.MessageResultInspectionNGNotEqual, method.Value)
+                                        };
+                                        results.Add(result);
+                                    }
+                                    break;
+                                case "Empty":
+                                    // 指定されたセルが空である場合はNG
+                                    if (worksheet.Name.Equals(method.Sheet) && (worksheet.Cell(address).Value.ToString() == string.Empty))
                                     {
-                                        FileName = filename,
-                                        Cell = method.Cell,
-                                        ResultMessage = Resources.Strings.MessageResultInspectionNGNotEmpty
-                                    };
-                                    results.Add(result);
-                                }
-                                break;
-                            default:
-                                break;
+                                        result = new()
+                                        {
+                                            FileName = filename,
+                                            Cell = address.ToString(),
+                                            ResultMessage = Resources.Strings.MessageResultInspectionNGEmpty
+                                        };
+                                        results.Add(result);
+                                    }
+                                    break;
+                                case "NotEmpty":
+                                    // 指定されたセルが空ではない場合はNG
+                                    if (worksheet.Name.Equals(method.Sheet) && (worksheet.Cell(address).Value.ToString() != string.Empty))
+                                    {
+                                        result = new()
+                                        {
+                                            FileName = filename,
+                                            Cell = address.ToString(),
+                                            ResultMessage = Resources.Strings.MessageResultInspectionNGNotEmpty
+                                        };
+                                        results.Add(result);
+                                    }
+                                    break;
+                                default:
+                                    break;
+                            }
                         }
                     }
                 }
