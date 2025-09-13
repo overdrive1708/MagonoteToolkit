@@ -35,8 +35,19 @@ MagonoteToolkit_vx.x.x.zipをダウンロードしてください｡
 
 ## 初回セットアップ方法
 
+### 全体設定
+
+設定が必要な画面もしくは設定画面を初めて表示すると､｢ApplicationSettings.json｣が生成されます｡  
+デフォルト設定でも動作しますが､必要に応じて設定を変更してください｡  
+
+｢ApplicationSettings.json｣で設定する設定項目は以下の通りです｡
+| 設定項目 | 設定内容 |
+| --- | --- |
+| ExcelFileInspectionSettingsFilePath | Excelファイル検査で使用する設定ファイルのパスを設定します｡ |
+
 ### Excelファイル検査
 [設定サンプル](asetts/SampleSettings/ExcelFileInspectionSettings.json)を｢MagonoteToolkit.exe｣と同じ場所に格納してください｡  
+(全体設定を変更することで格納場所を変更することが可能です｡)  
 その後､下記を参考に設定してください｡  
 
 ｢ExcelFileInspectionSettings.json｣で設定する設定項目は以下のとおりです｡
