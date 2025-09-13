@@ -326,6 +326,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   設定を保存しました｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusCompleteSaveSettings {
+            get {
+                return ResourceManager.GetString("MessageStatusCompleteSaveSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   検査ファイルが指定されていません｡ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MessageStatusInspectionFileEmpty {
@@ -353,6 +362,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   お知らせ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Notice {
+            get {
+                return ResourceManager.GetString("Notice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   プリセット に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Preset {
@@ -376,6 +394,33 @@ namespace MagonoteToolkit.Resources {
         public static string Result {
             get {
                 return ResourceManager.GetString("Result", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   保存 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   設定 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Settings {
+            get {
+                return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   設定ファイルパス に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string SettingsFilePath {
+            get {
+                return ResourceManager.GetString("SettingsFilePath", resourceCulture);
             }
         }
         

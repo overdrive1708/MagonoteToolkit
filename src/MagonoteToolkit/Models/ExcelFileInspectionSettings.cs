@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Text.Encodings.Web;
 using System.Text.Json;
@@ -63,11 +62,6 @@ namespace MagonoteToolkit.Models
         // 定数(コンフィギュレーション)
         //--------------------------------------------------
         /// <summary>
-        /// 設定ファイル名
-        /// </summary>
-        private static readonly string _fileName = "ExcelFileInspectionSettings.json";
-
-        /// <summary>
         /// デシリアライズ設定(コメント無視)
         /// </summary>
         private static readonly JsonSerializerOptions _deserializeOptions = new() { ReadCommentHandling = JsonCommentHandling.Skip };
@@ -93,16 +87,16 @@ namespace MagonoteToolkit.Models
         /// </summary>
         public static void ReadSettings()
         {
-            string settingFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, _fileName);
+            string filename = ApplicationSettings.ReadSettingsExcelFileInspectionSettingsFilePath();
 
             // 設定ファイルがない場合は新規作成する
-            if (!File.Exists(settingFilePath))
+            if (!File.Exists(filename))
             {
                 WriteSettings();
             }
 
             // 設定ファイルの読み込み
-            string jsonString = File.ReadAllText(_fileName);
+            string jsonString = File.ReadAllText(filename);
 
             // デシリアライズ
             _settings = JsonSerializer.Deserialize<List<Setting>>(jsonString, _deserializeOptions);
@@ -113,13 +107,13 @@ namespace MagonoteToolkit.Models
         /// </summary>
         private static void WriteSettings()
         {
-            string settingFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, _fileName);
+            string filename = ApplicationSettings.ReadSettingsExcelFileInspectionSettingsFilePath();
 
             // シリアライズ
             byte[] jsonUtf8Bytes = JsonSerializer.SerializeToUtf8Bytes(_settings, _serializeOptions);
 
             // ファイル出力
-            using FileStream fs = new(settingFilePath, FileMode.Create);
+            using FileStream fs = new(filename, FileMode.Create);
             fs.Write(jsonUtf8Bytes);
             fs.Close();
         }
