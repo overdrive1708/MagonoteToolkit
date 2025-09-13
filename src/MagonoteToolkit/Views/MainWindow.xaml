@@ -23,7 +23,7 @@
     <ui:NavigationView
         IsBackButtonVisible="Collapsed"
         IsBackEnabled="False"
-        IsSettingsVisible="False"
+        IsSettingsVisible="True"
         PaneDisplayMode="Auto"
         SelectionChanged="NavigationView_SelectionChanged">
         <ui:NavigationView.MenuItems>

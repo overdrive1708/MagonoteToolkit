@@ -39,24 +39,32 @@ namespace MagonoteToolkit
             ModernWpf.Controls.NavigationViewItem selectedItem = (ModernWpf.Controls.NavigationViewItem)args.SelectedItem;
 
             // 切り替え先決定
-            switch (selectedItem.Tag)
+            if (args.IsSettingsSelected)
             {
-                case NavigationItem.Home:
-                    header = selectedItem.Content;
-                    sourcePageType = typeof(Views.HomePage);
-                    break;
-                case NavigationItem.ExcelFileInspection:
-                    header = selectedItem.Content;
-                    sourcePageType = typeof(Views.ExcelFileInspectionPage);
-                    break;
-                case NavigationItem.Help:
-                    header = selectedItem.Content;
-                    sourcePageType = typeof(Views.HelpPage);
-                    break;
-                default:
-                    header = string.Empty;
-                    sourcePageType = typeof(Views.HomePage);
-                    break;
+                header = MagonoteToolkit.Resources.Strings.Settings;
+                sourcePageType = typeof(Views.SettingsPage);
+            }
+            else
+            {
+                switch (selectedItem.Tag)
+                {
+                    case NavigationItem.Home:
+                        header = selectedItem.Content;
+                        sourcePageType = typeof(Views.HomePage);
+                        break;
+                    case NavigationItem.ExcelFileInspection:
+                        header = selectedItem.Content;
+                        sourcePageType = typeof(Views.ExcelFileInspectionPage);
+                        break;
+                    case NavigationItem.Help:
+                        header = selectedItem.Content;
+                        sourcePageType = typeof(Views.HelpPage);
+                        break;
+                    default:
+                        header = string.Empty;
+                        sourcePageType = typeof(Views.HomePage);
+                        break;
+                }
             }
 
             // ヘッダ切り替え

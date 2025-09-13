@@ -218,4 +218,19 @@
   <data name="MessageResultInspectionOK" xml:space="preserve">
     <value>問題は見つかりませんでした｡</value>
   </data>
+  <data name="Settings" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="SettingsFilePath" xml:space="preserve">
+    <value>設定ファイルパス</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="Notice" xml:space="preserve">
+    <value>お知らせ</value>
+  </data>
+  <data name="MessageStatusCompleteSaveSettings" xml:space="preserve">
+    <value>設定を保存しました｡</value>
+  </data>
 </root>
