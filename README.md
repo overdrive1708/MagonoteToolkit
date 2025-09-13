@@ -54,8 +54,6 @@ MagonoteToolkit_vx.x.x.zipをダウンロードしてください｡
 | Empty | SheetNameで設定したシート名の､Cellで設定したセルが､空である場合にNGとします｡ |
 | NotEmpty | SheetNameで設定したシート名の､Cellで設定したセルが､空ではない場合にNGとします｡ |
 
-制約事項：Cellは｢A1:A5｣のような複数セルの指定は対応していません｡
-
 ## 開発環境
 - Microsoft Visual Studio Community 2022
 
