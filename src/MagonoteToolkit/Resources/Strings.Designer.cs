@@ -88,11 +88,74 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   調査ファイル に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExaminationFile {
+            get {
+                return ResourceManager.GetString("ExaminationFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査ファイルキーワード に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExaminationFileKeyword {
+            get {
+                return ResourceManager.GetString("ExaminationFileKeyword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査結果 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExaminationResult {
+            get {
+                return ResourceManager.GetString("ExaminationResult", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査設定 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExaminationSettings {
+            get {
+                return ResourceManager.GetString("ExaminationSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査対象 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExaminationTarget {
+            get {
+                return ResourceManager.GetString("ExaminationTarget", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Excelファイル検査 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string ExcelFileInspection {
             get {
                 return ResourceManager.GetString("ExcelFileInspection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ExcelファイルID-&gt;名称変換 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExcelFileNumberToName {
+            get {
+                return ResourceManager.GetString("ExcelFileNumberToName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査実施 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExecuteExamination {
+            get {
+                return ResourceManager.GetString("ExecuteExamination", resourceCulture);
             }
         }
         
@@ -205,6 +268,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   メモ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Memo {
+            get {
+                return ResourceManager.GetString("Memo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   致命的なエラーが発生しました｡
         ///このアプリケーションを終了します｡
         ///エラーの詳細な情報を表示しますか? に類似しているローカライズされた文字列を検索します。
@@ -216,9 +288,8 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
-        ///   検査したいファイル　もしくは　検査したいファイルが含まれるフォルダを
-        ///ドラッグ&amp;ドロップしてください｡
-        ///対象ファイルキーワードを含むファイルのみ検査ファイルに登録されます｡ に類似しているローカライズされた文字列を検索します。
+        ///   ファイル　もしくは　ファイルが含まれるフォルダを
+        ///ドラッグ&amp;ドロップしてください｡ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MessageGuideDragAndDrop {
             get {
@@ -362,11 +433,29 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   名前 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   お知らせ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Notice {
             get {
                 return ResourceManager.GetString("Notice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   数値 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Number {
+            get {
+                return ResourceManager.GetString("Number", resourceCulture);
             }
         }
         
