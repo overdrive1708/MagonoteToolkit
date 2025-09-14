@@ -16,20 +16,48 @@ namespace MagonoteToolkit.ViewModels
         [ObservableProperty]
         private string _excelFileInspectionSettingsFilePath;
 
+        /// <summary>
+        /// ExcelファイルID->名称変換:設定ファイルパス
+        /// </summary>
+        [ObservableProperty]
+        private string _excelFileNumberToNameSettingsFilePath;
+
+        /// <summary>
+        /// ExcelファイルID->名称変換:変換ルールファイルパス
+        /// </summary>
+        [ObservableProperty]
+        private string _excelFileNumberToNameConvertRulesFilePath;
+
         //--------------------------------------------------
         // バインディングコマンド
         //--------------------------------------------------
         /// <summary>
         /// ファイルパスドラッグ
         /// </summary>
+        /// <param name="e">イベントデータ</param>
         [RelayCommand]
-        private void FilePathPreviewDragOver(DragEventArgs e) => ExecuteCommandFilePathPreviewDragOver(e);
+        private static void FilePathPreviewDragOver(DragEventArgs e) => ExecuteCommandFilePathPreviewDragOver(e);
 
         /// <summary>
         /// Excelファイル検査:設定ファイルパスドロップ
         /// </summary>
+        /// <param name="e">イベントデータ</param>
         [RelayCommand]
         private void ExcelFileInspectionSettingsFilePathDrop(DragEventArgs e) => ExecuteCommandExcelFileInspectionSettingsFilePathDrop(e);
+
+        /// <summary>
+        /// ExcelファイルID->名称変換:設定ファイルパスドロップ
+        /// </summary>
+        /// <param name="e">イベントデータ</param>
+        [RelayCommand]
+        private void ExcelFileNumberToNameSettingsFilePathDrop(DragEventArgs e) => ExecuteCommandExcelFileNumberToNameSettingsFilePathDrop(e);
+
+        /// <summary>
+        /// ExcelファイルID->名称変換:変換ルールファイルパスドロップ
+        /// </summary>
+        /// <param name="e">イベントデータ</param>
+        [RelayCommand]
+        private void ExcelFileNumberToNameConvertRulesFilePathDrop(DragEventArgs e) => ExecuteCommandExcelFileNumberToNameConvertRulesFilePathDrop(e);
 
         /// <summary>
         /// 設定ファイル保存
@@ -51,6 +79,8 @@ namespace MagonoteToolkit.ViewModels
                 // (XAMLデザイナーのエラー対策でデザインモードではない場合のみ)
                 ApplicationSettings readSettings = ApplicationSettings.ReadSettings();
                 ExcelFileInspectionSettingsFilePath = readSettings.ExcelFileInspectionSettingsFilePath;
+                ExcelFileNumberToNameSettingsFilePath = readSettings.ExcelFileNumberToNameSettingsFilePath;
+                ExcelFileNumberToNameConvertRulesFilePath = readSettings.ExcelFileNumberToNameConvertRulesFilePath;
             }
         }
 
@@ -58,7 +88,7 @@ namespace MagonoteToolkit.ViewModels
         /// ファイルパスドラッグコマンド実行処理
         /// </summary>
         /// <param name="e">イベントデータ</param>
-        private void ExecuteCommandFilePathPreviewDragOver(DragEventArgs e)
+        private static void ExecuteCommandFilePathPreviewDragOver(DragEventArgs e)
         {
             // ドラッグしてきたデータがファイルの場合､ドロップを許可する｡
             e.Effects = DragDropEffects.Copy;
@@ -79,6 +109,32 @@ namespace MagonoteToolkit.ViewModels
         }
 
         /// <summary>
+        /// ExcelファイルID->名称変換:設定ファイルパスドロップコマンド実行処理
+        /// </summary>
+        /// <param name="e">イベントデータ</param>
+        private void ExecuteCommandExcelFileNumberToNameSettingsFilePathDrop(DragEventArgs e)
+        {
+            // ドロップされたデータの1つ目をファイル名として採用する｡
+            if (e.Data.GetData(DataFormats.FileDrop) is string[] dropitems)
+            {
+                ExcelFileNumberToNameSettingsFilePath = dropitems[0];
+            }
+        }
+
+        /// <summary>
+        /// ExcelファイルID->名称変換:変換ルールファイルパスドロップコマンド実行処理
+        /// </summary>
+        /// <param name="e">イベントデータ</param>
+        private void ExecuteCommandExcelFileNumberToNameConvertRulesFilePathDrop(DragEventArgs e)
+        {
+            // ドロップされたデータの1つ目をファイル名として採用する｡
+            if (e.Data.GetData(DataFormats.FileDrop) is string[] dropitems)
+            {
+                ExcelFileNumberToNameConvertRulesFilePath = dropitems[0];
+            }
+        }
+
+        /// <summary>
         /// 設定ファイル保存コマンド実行処理
         /// </summary>
         private void ExecuteCommandSaveSettings()
@@ -86,7 +142,9 @@ namespace MagonoteToolkit.ViewModels
             // 書き込み値作成
             ApplicationSettings writeSettings = new()
             {
-                ExcelFileInspectionSettingsFilePath = ExcelFileInspectionSettingsFilePath
+                ExcelFileInspectionSettingsFilePath = ExcelFileInspectionSettingsFilePath,
+                ExcelFileNumberToNameSettingsFilePath = ExcelFileNumberToNameSettingsFilePath,
+                ExcelFileNumberToNameConvertRulesFilePath = ExcelFileNumberToNameConvertRulesFilePath,
             };
 
             // 設定書き込み

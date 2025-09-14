@@ -88,6 +88,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   変換ルールファイルパス に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ConvertRulesFilePath {
+            get {
+                return ResourceManager.GetString("ConvertRulesFilePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   調査ファイル に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string ExaminationFile {

@@ -262,4 +262,7 @@
   <data name="ExcelFileNumberToName" xml:space="preserve">
     <value>ExcelファイルID-&gt;名称変換</value>
   </data>
+  <data name="ConvertRulesFilePath" xml:space="preserve">
+    <value>変換ルールファイルパス</value>
+  </data>
 </root>
