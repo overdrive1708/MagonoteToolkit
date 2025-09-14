@@ -37,6 +37,11 @@
                 Icon="Find"
                 IsSelected="True"
                 Tag="{x:Static local:NavigationItem.ExcelFileInspection}" />
+            <ui:NavigationViewItem
+                Content="{x:Static resources:Strings.ExcelFileNumberToName}"
+                Icon="Find"
+                IsSelected="True"
+                Tag="{x:Static local:NavigationItem.ExcelFileNumberToName}" />
         </ui:NavigationView.MenuItems>
         <ui:NavigationView.FooterMenuItems>
             <ui:NavigationViewItem

@@ -166,9 +166,8 @@
     <value>検査ファイル</value>
   </data>
   <data name="MessageGuideDragAndDrop" xml:space="preserve">
-    <value>検査したいファイル　もしくは　検査したいファイルが含まれるフォルダを
-ドラッグ&amp;ドロップしてください｡
-対象ファイルキーワードを含むファイルのみ検査ファイルに登録されます｡</value>
+    <value>ファイル　もしくは　ファイルが含まれるフォルダを
+ドラッグ&amp;ドロップしてください｡</value>
   </data>
   <data name="Clear" xml:space="preserve">
     <value>クリア</value>
@@ -232,5 +231,53 @@
   </data>
   <data name="MessageStatusCompleteSaveSettings" xml:space="preserve">
     <value>設定を保存しました｡</value>
+  </data>
+  <data name="ExaminationSettings" xml:space="preserve">
+    <value>調査設定</value>
+  </data>
+  <data name="ExaminationFileKeyword" xml:space="preserve">
+    <value>調査ファイルキーワード</value>
+  </data>
+  <data name="ExaminationTarget" xml:space="preserve">
+    <value>調査対象</value>
+  </data>
+  <data name="Memo" xml:space="preserve">
+    <value>メモ</value>
+  </data>
+  <data name="ExaminationFile" xml:space="preserve">
+    <value>調査ファイル</value>
+  </data>
+  <data name="ExecuteExamination" xml:space="preserve">
+    <value>調査実施</value>
+  </data>
+  <data name="ExaminationResult" xml:space="preserve">
+    <value>調査結果</value>
+  </data>
+  <data name="Number" xml:space="preserve">
+    <value>数値</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名前</value>
+  </data>
+  <data name="ExcelFileNumberToName" xml:space="preserve">
+    <value>ExcelファイルID-&gt;名称変換</value>
+  </data>
+  <data name="ConvertRulesFilePath" xml:space="preserve">
+    <value>変換ルールファイルパス</value>
+  </data>
+  <data name="MessageStatusExaminationTargetEmpty" xml:space="preserve">
+    <value>調査対象が設定されていません｡</value>
+  </data>
+  <data name="MessageStatusExaminationFileEmpty" xml:space="preserve">
+    <value>調査ファイルが指定されていません｡</value>
+  </data>
+  <data name="MessageStatusAlreadyExamination" xml:space="preserve">
+    <value>準備が完了しました｡｢調査実施｣ボタン押下で検査を行います｡</value>
+  </data>
+  <data name="MessageStatusNowExamination" xml:space="preserve">
+    <value>調査を行っています｡({0}/{1})</value>
+  </data>
+  <data name="MessageStatusCompleteExamination" xml:space="preserve">
+    <value>調査が完了しました｡</value>
   </data>
 </root>

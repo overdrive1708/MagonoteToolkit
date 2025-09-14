@@ -88,11 +88,83 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   変換ルールファイルパス に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ConvertRulesFilePath {
+            get {
+                return ResourceManager.GetString("ConvertRulesFilePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査ファイル に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExaminationFile {
+            get {
+                return ResourceManager.GetString("ExaminationFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査ファイルキーワード に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExaminationFileKeyword {
+            get {
+                return ResourceManager.GetString("ExaminationFileKeyword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査結果 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExaminationResult {
+            get {
+                return ResourceManager.GetString("ExaminationResult", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査設定 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExaminationSettings {
+            get {
+                return ResourceManager.GetString("ExaminationSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査対象 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExaminationTarget {
+            get {
+                return ResourceManager.GetString("ExaminationTarget", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Excelファイル検査 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string ExcelFileInspection {
             get {
                 return ResourceManager.GetString("ExcelFileInspection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ExcelファイルID-&gt;名称変換 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExcelFileNumberToName {
+            get {
+                return ResourceManager.GetString("ExcelFileNumberToName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査実施 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExecuteExamination {
+            get {
+                return ResourceManager.GetString("ExecuteExamination", resourceCulture);
             }
         }
         
@@ -205,6 +277,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   メモ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Memo {
+            get {
+                return ResourceManager.GetString("Memo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   致命的なエラーが発生しました｡
         ///このアプリケーションを終了します｡
         ///エラーの詳細な情報を表示しますか? に類似しているローカライズされた文字列を検索します。
@@ -216,9 +297,8 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
-        ///   検査したいファイル　もしくは　検査したいファイルが含まれるフォルダを
-        ///ドラッグ&amp;ドロップしてください｡
-        ///対象ファイルキーワードを含むファイルのみ検査ファイルに登録されます｡ に類似しているローカライズされた文字列を検索します。
+        ///   ファイル　もしくは　ファイルが含まれるフォルダを
+        ///ドラッグ&amp;ドロップしてください｡ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MessageGuideDragAndDrop {
             get {
@@ -308,11 +388,29 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   準備が完了しました｡｢調査実施｣ボタン押下で検査を行います｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusAlreadyExamination {
+            get {
+                return ResourceManager.GetString("MessageStatusAlreadyExamination", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   準備が完了しました｡｢検査実施｣ボタン押下で検査を行います｡ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MessageStatusAlreadyInspection {
             get {
                 return ResourceManager.GetString("MessageStatusAlreadyInspection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査が完了しました｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusCompleteExamination {
+            get {
+                return ResourceManager.GetString("MessageStatusCompleteExamination", resourceCulture);
             }
         }
         
@@ -335,6 +433,24 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   調査ファイルが指定されていません｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusExaminationFileEmpty {
+            get {
+                return ResourceManager.GetString("MessageStatusExaminationFileEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査対象が設定されていません｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusExaminationTargetEmpty {
+            get {
+                return ResourceManager.GetString("MessageStatusExaminationTargetEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   検査ファイルが指定されていません｡ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MessageStatusInspectionFileEmpty {
@@ -353,6 +469,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   調査を行っています｡({0}/{1}) に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusNowExamination {
+            get {
+                return ResourceManager.GetString("MessageStatusNowExamination", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   検査を行っています｡({0}/{1}) に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MessageStatusNowInspection {
@@ -362,11 +487,29 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   名前 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   お知らせ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Notice {
             get {
                 return ResourceManager.GetString("Notice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   数値 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Number {
+            get {
+                return ResourceManager.GetString("Number", resourceCulture);
             }
         }
         

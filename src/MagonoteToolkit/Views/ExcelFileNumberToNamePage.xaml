@@ -1,0 +1,186 @@
+﻿<Page
+    x:Class="MagonoteToolkit.Views.ExcelFileNumberToNamePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:bh="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:resources="clr-namespace:MagonoteToolkit.Resources"
+    xmlns:viewmodels="clr-namespace:MagonoteToolkit.ViewModels"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <viewmodels:ExcelFileNumberToNamePageViewModel />
+    </Page.DataContext>
+
+    <Page.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolVisibilityConverter" />
+    </Page.Resources>
+
+    <Grid Margin="10,10,10,10" HorizontalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <GroupBox
+            Grid.Row="0"
+            Grid.Column="0"
+            Margin="10,10,10,10"
+            Header="{x:Static resources:Strings.ExaminationSettings}">
+            <StackPanel>
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                    <TextBlock
+                        Margin="10,5,5,5"
+                        VerticalAlignment="Center"
+                        Text="{x:Static resources:Strings.Preset}" />
+                    <ComboBox
+                        Width="300"
+                        Margin="5,5,10,5"
+                        ItemsSource="{Binding ExaminationSettingPresetList}"
+                        SelectedItem="{Binding ExaminationSettingPreset}">
+                        <bh:Interaction.Triggers>
+                            <bh:EventTrigger EventName="SelectionChanged">
+                                <bh:InvokeCommandAction Command="{Binding PresetChangeCommand}" />
+                            </bh:EventTrigger>
+                        </bh:Interaction.Triggers>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                    <TextBlock
+                        Margin="10,5,5,5"
+                        VerticalAlignment="Center"
+                        Text="{x:Static resources:Strings.ExaminationFileKeyword}" />
+                    <TextBox
+                        Width="300"
+                        Margin="5,5,10,5"
+                        Text="{Binding ExaminationFileKeyword}" />
+                </StackPanel>
+                <TextBlock Margin="10,5,10,5" Text="{x:Static resources:Strings.ExaminationTarget}" />
+                <DataGrid
+                    Height="200"
+                    Margin="10,5,10,5"
+                    AutoGenerateColumns="False"
+                    ItemsSource="{Binding ExaminationTargets}"
+                    ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                    ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Sheet}" Header="{x:Static resources:Strings.Sheet}" />
+                        <DataGridTextColumn Binding="{Binding Cell}" Header="{x:Static resources:Strings.Cell}" />
+                        <DataGridTextColumn Binding="{Binding Memo}" Header="{x:Static resources:Strings.Memo}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox
+            Grid.Row="0"
+            Grid.Column="1"
+            Margin="10,10,10,10"
+            Header="{x:Static resources:Strings.ExaminationFile}">
+            <StackPanel>
+                <Grid>
+                    <ListBox
+                        Height="250"
+                        Margin="10,5,10,5"
+                        AllowDrop="True"
+                        ItemsSource="{Binding ExaminationFiles}"
+                        ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                        ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <bh:Interaction.Triggers>
+                            <bh:EventTrigger EventName="PreviewDragOver">
+                                <bh:InvokeCommandAction Command="{Binding ExaminationFilePreviewDragOverCommand}" PassEventArgsToCommand="True" />
+                            </bh:EventTrigger>
+                            <bh:EventTrigger EventName="Drop">
+                                <bh:InvokeCommandAction Command="{Binding ExaminationFileDropCommand}" PassEventArgsToCommand="True" />
+                            </bh:EventTrigger>
+                        </bh:Interaction.Triggers>
+                    </ListBox>
+                    <TextBlock
+                        Margin="20,20,20,20"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        AllowDrop="True"
+                        Text="{x:Static resources:Strings.MessageGuideDragAndDrop}"
+                        TextAlignment="Center"
+                        Visibility="{Binding ExaminationFileGuideVisibility, Converter={StaticResource BoolVisibilityConverter}}">
+                        <bh:Interaction.Triggers>
+                            <bh:EventTrigger EventName="PreviewDragOver">
+                                <bh:InvokeCommandAction Command="{Binding ExaminationFilePreviewDragOverCommand}" PassEventArgsToCommand="True" />
+                            </bh:EventTrigger>
+                            <bh:EventTrigger EventName="Drop">
+                                <bh:InvokeCommandAction Command="{Binding ExaminationFileDropCommand}" PassEventArgsToCommand="True" />
+                            </bh:EventTrigger>
+                        </bh:Interaction.Triggers>
+                    </TextBlock>
+                </Grid>
+                <Button
+                    Margin="10,5,10,5"
+                    HorizontalAlignment="Stretch"
+                    Command="{Binding ClearExaminationFileCommand}"
+                    Content="{x:Static resources:Strings.Clear}" />
+            </StackPanel>
+        </GroupBox>
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Margin="10,10,10,10"
+            HorizontalAlignment="Stretch"
+            Command="{Binding ExaminationCommand}"
+            Content="{x:Static resources:Strings.ExecuteExamination}"
+            IsEnabled="{Binding IsOperationEnable}" />
+
+        <GroupBox
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Margin="10,10,10,10"
+            Header="{x:Static resources:Strings.ExaminationResult}">
+            <DataGrid
+                Height="200"
+                Margin="10,5,10,5"
+                AutoGenerateColumns="False"
+                CanUserAddRows="False"
+                HeadersVisibility="Column"
+                IsReadOnly="True"
+                ItemsSource="{Binding ExaminationResultList}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding File}" Header="{x:Static resources:Strings.File}" />
+                    <DataGridTextColumn Binding="{Binding Sheet}" Header="{x:Static resources:Strings.Sheet}" />
+                    <DataGridTextColumn Binding="{Binding Cell}" Header="{x:Static resources:Strings.Cell}" />
+                    <DataGridTextColumn Binding="{Binding Memo}" Header="{x:Static resources:Strings.Memo}" />
+                    <DataGridTextColumn Binding="{Binding Number}" Header="{x:Static resources:Strings.Number}" />
+                    <DataGridTextColumn Binding="{Binding Name}" Header="{x:Static resources:Strings.Name}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+
+        <StackPanel
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Margin="10,10,10,10"
+            VerticalAlignment="Bottom">
+            <Grid Margin="0,10,0,10">
+                <ProgressBar
+                    VerticalAlignment="Stretch"
+                    Maximum="{Binding ProgressMaximum}"
+                    Minimum="0"
+                    Value="{Binding ProgressValue}" />
+                <TextBlock
+                    Margin="0,5,0,5"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Text="{Binding ProgressMessage}" />
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>

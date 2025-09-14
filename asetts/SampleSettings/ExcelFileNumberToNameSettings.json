@@ -1,0 +1,39 @@
+[
+  {
+    "PresetName": "PresetName1",
+    "ExaminationFileKeyword": "TestFile",
+    "ExaminationTargets": [
+      {
+        "Sheet": "Sheet1",
+        "Cell": "C2",
+        "Memo": "IDTypeA"
+      },
+      {
+        "Sheet": "Sheet1",
+        "Cell": "C3",
+        "Memo": "IDTypeB"
+      },
+      {
+        "Sheet": "Sheet1",
+        "Cell": "E3:E5",
+        "Memo": "IDTypeC"
+      }
+    ]
+  },
+  {
+    "PresetName": "PresetName2",
+    "ExaminationFileKeyword": "ExaminationFileKeyword2",
+    "ExaminationTargets": [
+      {
+        "Sheet": "Sheet2A",
+        "Cell": "Cell2A",
+        "Memo": "Memo2A"
+      },
+      {
+        "Sheet": "Sheet2B",
+        "Cell": "Cell2B",
+        "Memo": "Memo2B"
+      }
+    ]
+  }
+]

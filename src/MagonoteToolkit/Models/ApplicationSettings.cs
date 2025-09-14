@@ -19,6 +19,16 @@ namespace MagonoteToolkit.Models
         /// </summary>
         public string ExcelFileInspectionSettingsFilePath { get; set; } = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ExcelFileInspectionSettings.json");
 
+        /// <summary>
+        /// ExcelファイルID->名称変換:設定ファイルパス
+        /// </summary>
+        public string ExcelFileNumberToNameSettingsFilePath { get; set; } = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ExcelFileNumberToNameSettings.json");
+
+        /// <summary>
+        /// ExcelファイルID->名称変換:変換ルールファイルパス
+        /// </summary>
+        public string ExcelFileNumberToNameConvertRulesFilePath { get; set; } = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ExcelFileNumberToNameConvertRules.csv");
+
         //--------------------------------------------------
         // 定数(コンフィギュレーション)
         //--------------------------------------------------
@@ -67,10 +77,28 @@ namespace MagonoteToolkit.Models
         /// <summary>
         /// 設定読み込み処理:Excelファイル検査:設定ファイルパス
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Excelファイル検査:設定ファイルパス</returns>
         public static string ReadSettingsExcelFileInspectionSettingsFilePath()
         {
             return ReadSettings().ExcelFileInspectionSettingsFilePath;
+        }
+
+        /// <summary>
+        /// 設定読み込み処理:ExcelファイルID->名称変換:設定ファイルパス
+        /// </summary>
+        /// <returns>ExcelファイルID->名称変換:設定ファイルパス</returns>
+        public static string ReadSettingsExcelFileNumberToNameSettingsFilePath()
+        {
+            return ReadSettings().ExcelFileNumberToNameSettingsFilePath;
+        }
+
+        /// <summary>
+        /// 設定読み込み処理:ExcelファイルID->名称変換:変換ルールファイルパス
+        /// </summary>
+        /// <returns>ExcelファイルID->名称変換:変換ルールファイルパス</returns>
+        public static string ReadSettingsExcelFileNumberToNameConvertRulesFilePath()
+        {
+            return ReadSettings().ExcelFileNumberToNameConvertRulesFilePath;
         }
 
         /// <summary>
