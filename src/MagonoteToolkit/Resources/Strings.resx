@@ -265,4 +265,19 @@
   <data name="ConvertRulesFilePath" xml:space="preserve">
     <value>変換ルールファイルパス</value>
   </data>
+  <data name="MessageStatusExaminationTargetEmpty" xml:space="preserve">
+    <value>調査対象が設定されていません｡</value>
+  </data>
+  <data name="MessageStatusExaminationFileEmpty" xml:space="preserve">
+    <value>調査ファイルが指定されていません｡</value>
+  </data>
+  <data name="MessageStatusAlreadyExamination" xml:space="preserve">
+    <value>準備が完了しました｡｢調査実施｣ボタン押下で検査を行います｡</value>
+  </data>
+  <data name="MessageStatusNowExamination" xml:space="preserve">
+    <value>調査を行っています｡({0}/{1})</value>
+  </data>
+  <data name="MessageStatusCompleteExamination" xml:space="preserve">
+    <value>調査が完了しました｡</value>
+  </data>
 </root>

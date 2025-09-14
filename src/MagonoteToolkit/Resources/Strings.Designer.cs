@@ -388,11 +388,29 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   準備が完了しました｡｢調査実施｣ボタン押下で検査を行います｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusAlreadyExamination {
+            get {
+                return ResourceManager.GetString("MessageStatusAlreadyExamination", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   準備が完了しました｡｢検査実施｣ボタン押下で検査を行います｡ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MessageStatusAlreadyInspection {
             get {
                 return ResourceManager.GetString("MessageStatusAlreadyInspection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査が完了しました｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusCompleteExamination {
+            get {
+                return ResourceManager.GetString("MessageStatusCompleteExamination", resourceCulture);
             }
         }
         
@@ -415,6 +433,24 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   調査ファイルが指定されていません｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusExaminationFileEmpty {
+            get {
+                return ResourceManager.GetString("MessageStatusExaminationFileEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査対象が設定されていません｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusExaminationTargetEmpty {
+            get {
+                return ResourceManager.GetString("MessageStatusExaminationTargetEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   検査ファイルが指定されていません｡ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MessageStatusInspectionFileEmpty {
@@ -429,6 +465,15 @@ namespace MagonoteToolkit.Resources {
         public static string MessageStatusInspectionMethodEmpty {
             get {
                 return ResourceManager.GetString("MessageStatusInspectionMethodEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   調査を行っています｡({0}/{1}) に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusNowExamination {
+            get {
+                return ResourceManager.GetString("MessageStatusNowExamination", resourceCulture);
             }
         }
         
