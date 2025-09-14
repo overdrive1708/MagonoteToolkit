@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added feature by issue.([Issue #5](https://github.com/overdrive1708/MagonoteToolkit/issues/5))
+
 ### Changed
 
 - Changed feature by issue.([Issue #10](https://github.com/overdrive1708/MagonoteToolkit/issues/11))
