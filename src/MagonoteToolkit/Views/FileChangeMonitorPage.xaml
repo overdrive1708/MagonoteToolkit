@@ -78,6 +78,7 @@
 
                 <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Text="{x:Static resources:Strings.FileChangeMonitorResult}" />
                 <DataGrid
+                    Height="500"
                     Margin="10,5,10,5"
                     AutoGenerateColumns="False"
                     CanUserAddRows="False"

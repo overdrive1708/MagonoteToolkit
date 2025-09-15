@@ -304,4 +304,7 @@
   <data name="FileChangeMonitorResult" xml:space="preserve">
     <value>ファイル変更監視結果</value>
   </data>
+  <data name="FileChangeMonitor" xml:space="preserve">
+    <value>ファイル変更監視</value>
+  </data>
 </root>

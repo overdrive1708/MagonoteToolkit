@@ -241,6 +241,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   ファイル変更監視 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string FileChangeMonitor {
+            get {
+                return ResourceManager.GetString("FileChangeMonitor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   ファイル変更監視結果 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string FileChangeMonitorResult {
