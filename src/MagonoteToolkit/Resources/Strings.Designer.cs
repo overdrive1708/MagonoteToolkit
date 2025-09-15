@@ -88,7 +88,7 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
-        ///   確認済みのタイムスタンプ に類似しているローカライズされた文字列を検索します。
+        ///   チェック済みのタイムスタンプ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string CheckedTimestamp {
             get {
@@ -147,6 +147,24 @@ namespace MagonoteToolkit.Resources {
         public static string Delete {
             get {
                 return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   すべて削除 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string DeleteAll {
+            get {
+                return ResourceManager.GetString("DeleteAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   選択したものを削除 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string DeleteSelectedItem {
+            get {
+                return ResourceManager.GetString("DeleteSelectedItem", resourceCulture);
             }
         }
         
@@ -604,6 +622,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   再チェック に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Recheck {
+            get {
+                return ResourceManager.GetString("Recheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   結果 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Result {
@@ -654,6 +681,24 @@ namespace MagonoteToolkit.Resources {
         public static string TargetFileKeyword {
             get {
                 return ResourceManager.GetString("TargetFileKeyword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   すべてタイムスタンプ更新 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string UpdateTimestampAll {
+            get {
+                return ResourceManager.GetString("UpdateTimestampAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   選択したものをタイムスタンプ更新 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string UpdateTimestampSelectedItem {
+            get {
+                return ResourceManager.GetString("UpdateTimestampSelectedItem", resourceCulture);
             }
         }
         

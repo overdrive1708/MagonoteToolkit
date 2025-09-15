@@ -293,7 +293,7 @@
     <value>チェック結果</value>
   </data>
   <data name="CheckedTimestamp" xml:space="preserve">
-    <value>確認済みのタイムスタンプ</value>
+    <value>チェック済みのタイムスタンプ</value>
   </data>
   <data name="CurrentTimestamp" xml:space="preserve">
     <value>現在のタイムスタンプ</value>
@@ -306,5 +306,20 @@
   </data>
   <data name="FileChangeMonitor" xml:space="preserve">
     <value>ファイル変更監視</value>
+  </data>
+  <data name="DeleteAll" xml:space="preserve">
+    <value>すべて削除</value>
+  </data>
+  <data name="DeleteSelectedItem" xml:space="preserve">
+    <value>選択したものを削除</value>
+  </data>
+  <data name="UpdateTimestampAll" xml:space="preserve">
+    <value>すべてタイムスタンプ更新</value>
+  </data>
+  <data name="UpdateTimestampSelectedItem" xml:space="preserve">
+    <value>選択したものをタイムスタンプ更新</value>
+  </data>
+  <data name="Recheck" xml:space="preserve">
+    <value>再チェック</value>
   </data>
 </root>

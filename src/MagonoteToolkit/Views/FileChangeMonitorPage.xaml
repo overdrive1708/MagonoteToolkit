@@ -75,10 +75,20 @@
                         </bh:Interaction.Triggers>
                     </TextBlock>
                 </Grid>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock
+                        Margin="10,5,5,5"
+                        VerticalAlignment="Center"
+                        Text="{x:Static resources:Strings.Memo}" />
+                    <TextBox
+                        Width="450"
+                        Margin="5,5,10,5"
+                        Text="{Binding AddMemo}" />
+                </StackPanel>
 
                 <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Text="{x:Static resources:Strings.FileChangeMonitorResult}" />
                 <DataGrid
-                    Height="500"
+                    Height="300"
                     Margin="10,5,10,5"
                     AutoGenerateColumns="False"
                     CanUserAddRows="False"
@@ -108,6 +118,33 @@
                             IsReadOnly="True" />
                     </DataGrid.Columns>
                 </DataGrid>
+
+                <Button
+                    Margin="10,5,10,5"
+                    HorizontalAlignment="Stretch"
+                    Command="{Binding DeleteAllCommand}"
+                    Content="{x:Static resources:Strings.DeleteAll}" />
+                <Button
+                    Margin="10,5,10,5"
+                    HorizontalAlignment="Stretch"
+                    Command="{Binding DeleteSelectedItemCommand}"
+                    Content="{x:Static resources:Strings.DeleteSelectedItem}" />
+                <Button
+                    Margin="10,5,10,5"
+                    HorizontalAlignment="Stretch"
+                    Command="{Binding UpdateTimestampAllCommand}"
+                    Content="{x:Static resources:Strings.UpdateTimestampAll}" />
+                <Button
+                    Margin="10,5,10,5"
+                    HorizontalAlignment="Stretch"
+                    Command="{Binding UpdateTimestampSelectedItemCommand}"
+                    Content="{x:Static resources:Strings.UpdateTimestampSelectedItem}" />
+                <Button
+                    Margin="10,5,10,5"
+                    HorizontalAlignment="Stretch"
+                    Command="{Binding RecheckCommand}"
+                    Content="{x:Static resources:Strings.Recheck}" />
+
                 <Grid Margin="10,5,10,5">
                     <ProgressBar
                         VerticalAlignment="Stretch"
