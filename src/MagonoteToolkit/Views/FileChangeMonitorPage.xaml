@@ -28,7 +28,7 @@
                         </bh:EventTrigger>
                     </bh:Interaction.Triggers>
                 </ComboBox>
-                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
                     <Button
                         Margin="10,5,10,5"
                         HorizontalAlignment="Stretch"
@@ -83,11 +83,12 @@
                     <TextBox
                         Width="450"
                         Margin="5,5,10,5"
-                        Text="{Binding AddMemo}" />
+                        Text="{Binding AddMemo, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
 
                 <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Text="{x:Static resources:Strings.FileChangeMonitorResult}" />
                 <DataGrid
+                    Width="700"
                     Height="300"
                     Margin="10,5,10,5"
                     AutoGenerateColumns="False"
@@ -95,7 +96,13 @@
                     HeadersVisibility="Column"
                     ItemsSource="{Binding Path=MonitorResult}">
                     <DataGrid.Columns>
-                        <DataGridCheckBoxColumn Binding="{Binding Path=IsSelected}" />
+                        <DataGridTemplateColumn Width="30">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding IsSelected}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                         <DataGridTextColumn
                             Binding="{Binding Path=CheckResult}"
                             Header="{x:Static resources:Strings.CheckResult}"

@@ -325,4 +325,28 @@
   <data name="WorkspaceDirectory" xml:space="preserve">
     <value>ワークスペースディレクトリ</value>
   </data>
+  <data name="InputWorkspaceName" xml:space="preserve">
+    <value>ワークスペース名入力</value>
+  </data>
+  <data name="MessageInputWorkspaceName" xml:space="preserve">
+    <value>追加するワークスペースの名前を入力してください｡(拡張子無し)</value>
+  </data>
+  <data name="MessageConfirmDelete" xml:space="preserve">
+    <value>本当に削除しますか?</value>
+  </data>
+  <data name="MessageResultFileChangeMonitorNGNotFound" xml:space="preserve">
+    <value>NG：ファイルが見つかりません｡</value>
+  </data>
+  <data name="MessageResultFileChangeMonitorNGTimestampUnmatch" xml:space="preserve">
+    <value>NG：ファイルのタイムスタンプが一致しません｡</value>
+  </data>
+  <data name="MessageResultFileChangeMonitorOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="MessageStatusCompleteAdd" xml:space="preserve">
+    <value>追加が完了しました｡</value>
+  </data>
+  <data name="MessageStatusCompleteDelete" xml:space="preserve">
+    <value>削除が完了しました｡</value>
+  </data>
 </root>

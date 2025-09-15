@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using MagonoteToolkit.Models;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
 
@@ -159,8 +161,12 @@ namespace MagonoteToolkit.ViewModels
         /// </summary>
         public FileChangeMonitorPageViewModel()
         {
-            // TODO:ワークスペースディレクトリを確認してデータベースファイルをリスト化
-            // TODO:リストはファイル名(非フルパス)
+            // ワークスペースディレクトリ内を確認してデータベースファイルをリスト化
+            if (!(bool)System.ComponentModel.DesignerProperties.IsInDesignModeProperty.GetMetadata(typeof(System.Windows.DependencyObject)).DefaultValue)
+            {
+                // (XAMLデザイナーのエラー対策でデザインモードではない場合のみ)
+                CreateWorkspaceList();
+            }
         }
 
         /// <summary>
@@ -168,7 +174,8 @@ namespace MagonoteToolkit.ViewModels
         /// </summary>
         private void ExecuteCommandWorkspaceChange()
         {
-            // TODO:選択したワークスペースでチェック実施
+            // ファイル変更監視結果生成
+            CreateMonitorResult();
         }
 
         /// <summary>
@@ -176,7 +183,23 @@ namespace MagonoteToolkit.ViewModels
         /// </summary>
         private void ExecuteCommandAddWorkspace()
         {
-            // TODO:InputBoxで名前を取得してファイルにできる名前に置き換えてDB作成
+            // ワークスペース名を入力させる
+            string workspaceName = Microsoft.VisualBasic.Interaction.InputBox(Resources.Strings.MessageInputWorkspaceName, Resources.Strings.InputWorkspaceName, "", -1, -1);
+
+            // ワークスペース追加
+            if (workspaceName != string.Empty)
+            {
+                FileChangeMonitor.AddWorkspace(workspaceName);
+            }
+
+            // ワークスペース(リスト)再生成
+            CreateWorkspaceList();
+
+            // 完了メッセージの表示
+            _ = MessageBox.Show(Resources.Strings.MessageStatusCompleteAdd,
+                                Resources.Strings.Notice,
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Information);
         }
 
         /// <summary>
@@ -184,25 +207,75 @@ namespace MagonoteToolkit.ViewModels
         /// </summary>
         private void ExecuteCommandDelWorkspace()
         {
-            // TODO:確認画面を出してDB削除
+            // 確認画面を出してYESならワークスペース削除
+            MessageBoxResult result = MessageBox.Show(Resources.Strings.MessageConfirmDelete, Resources.Strings.Notice, MessageBoxButton.YesNo);
+
+            // ワークスペース削除
+            if (result == MessageBoxResult.Yes)
+            {
+                FileChangeMonitor.DeleteWorkspace(Workspace);
+            }
+
+            // ワークスペース(リスト)再生成
+            CreateWorkspaceList();
+
+            // 完了メッセージの表示
+            _ = MessageBox.Show(Resources.Strings.MessageStatusCompleteDelete,
+                                Resources.Strings.Notice,
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Information);
         }
 
         /// <summary>
         /// ファイルドラッグコマンド実行処理
         /// </summary>
         /// <param name="e">イベントデータ</param>
-        private void ExecuteCommandDrop(DragEventArgs e)
+        private void ExecuteCommandPreviewDragOver(DragEventArgs e)
         {
-            // TODO:ドロップ許可
+            // ドラッグしてきたデータがファイルの場合､ドロップを許可する｡
+            e.Effects = DragDropEffects.Copy;
+            e.Handled = e.Data.GetDataPresent(DataFormats.FileDrop);
         }
 
         /// <summary>
         /// ファイルドロップコマンド実行処理
         /// </summary>
         /// <param name="e">イベントデータ</param>
-        private void ExecuteCommandPreviewDragOver(DragEventArgs e)
+        private void ExecuteCommandDrop(DragEventArgs e)
         {
-            // TODO:ドロップしたファイルの情報をDBに書き込み
+            if (e.Data.GetData(DataFormats.FileDrop) is string[] dropitems)
+            {
+                foreach (string dropitem in dropitems)
+                {
+                    if (System.IO.Directory.Exists(dropitem) == true)
+                    {
+                        if (System.IO.Directory.GetFiles(@dropitem, "*", System.IO.SearchOption.AllDirectories) is string[] files)
+                        {
+                            foreach (string file in files)
+                            {
+                                if (System.IO.Path.GetFileName(file).StartsWith("~$"))
+                                {
+                                    // 一時ファイルは追加しない
+                                    continue;
+                                }
+                                FileChangeMonitor.AddFile(Workspace, file, AddMemo);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (System.IO.Path.GetFileName(dropitem).StartsWith("~$"))
+                        {
+                            // 一時ファイルは追加しない
+                            continue;
+                        }
+                        FileChangeMonitor.AddFile(Workspace, dropitem, AddMemo);
+                    }
+                }
+            }
+
+            // ファイル変更監視結果生成
+            CreateMonitorResult();
         }
 
         /// <summary>
@@ -242,7 +315,54 @@ namespace MagonoteToolkit.ViewModels
         /// </summary>
         private void ExecuteCommandRecheck()
         {
-            // TODO:再チェック実施
+            // ファイル変更監視結果生成
+            CreateMonitorResult();
+        }
+
+        /// <summary>
+        /// ワークスペース(リスト)作成処理
+        /// </summary>
+        private void CreateWorkspaceList()
+        {
+            // ワークスペースディレクトリ内を確認してデータベースファイルをリスト化
+            WorkspaceList.Clear();
+
+            string workspaceDirectory = ApplicationSettings.ReadSettingsFileChangeMonitorWorkspaceDirectory();
+
+            if (System.IO.Directory.Exists(workspaceDirectory))
+            {
+                if (System.IO.Directory.GetFiles(workspaceDirectory, "*.db", System.IO.SearchOption.AllDirectories) is string[] files)
+                {
+                    foreach (string file in files)
+                    {
+                        WorkspaceList.Add(System.IO.Path.GetFileName(file));
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// ファイル変更監視結果生成処理
+        /// </summary>
+        private void CreateMonitorResult()
+        {
+            MonitorResultViewInfo view;
+            MonitorResult.Clear();
+
+            List<FileChangeMonitor.MonitorResult> results = FileChangeMonitor.CheckFile(Workspace);
+            foreach(FileChangeMonitor.MonitorResult result in results)
+            {
+                view = new()
+                {
+                    IsSelected = false,
+                    File = result.File,
+                    CheckResult = result.CheckResult,
+                    CheckedTimestamp = result.CheckedTimestamp,
+                    CurrentTimestamp = result.CurrentTimestamp,
+                    Memo = result.Memo
+                };
+                MonitorResult.Add(view);
+            }
         }
     }
 }

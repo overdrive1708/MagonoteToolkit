@@ -32,7 +32,7 @@ namespace MagonoteToolkit.Models
         /// <summary>
         /// ファイル変更監視:ワークスペースディレクトリ
         /// </summary>
-        public string FileChangeMonitorWorkspaceDirectory { get; set; } = AppDomain.CurrentDomain.BaseDirectory;
+        public string FileChangeMonitorWorkspaceDirectory { get; set; } = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FileChangeMonitorWorkspace");
 
         //--------------------------------------------------
         // 定数(コンフィギュレーション)
