@@ -322,4 +322,7 @@
   <data name="Recheck" xml:space="preserve">
     <value>再チェック</value>
   </data>
+  <data name="WorkspaceDirectory" xml:space="preserve">
+    <value>ワークスペースディレクトリ</value>
+  </data>
 </root>

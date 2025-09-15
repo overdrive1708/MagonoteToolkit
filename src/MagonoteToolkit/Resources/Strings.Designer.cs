@@ -728,5 +728,14 @@ namespace MagonoteToolkit.Resources {
                 return ResourceManager.GetString("Workspace", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   ワークスペースディレクトリ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string WorkspaceDirectory {
+            get {
+                return ResourceManager.GetString("WorkspaceDirectory", resourceCulture);
+            }
+        }
     }
 }
