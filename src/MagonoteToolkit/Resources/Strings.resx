@@ -280,4 +280,28 @@
   <data name="MessageStatusCompleteExamination" xml:space="preserve">
     <value>調査が完了しました｡</value>
   </data>
+  <data name="Workspace" xml:space="preserve">
+    <value>ワークスペース</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>追加</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="CheckResult" xml:space="preserve">
+    <value>チェック結果</value>
+  </data>
+  <data name="CheckedTimestamp" xml:space="preserve">
+    <value>確認済みのタイムスタンプ</value>
+  </data>
+  <data name="CurrentTimestamp" xml:space="preserve">
+    <value>現在のタイムスタンプ</value>
+  </data>
+  <data name="AddFileChangeMonitorTarget" xml:space="preserve">
+    <value>ファイル変更監視対象追加</value>
+  </data>
+  <data name="FileChangeMonitorResult" xml:space="preserve">
+    <value>ファイル変更監視結果</value>
+  </data>
 </root>
