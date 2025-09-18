@@ -352,4 +352,10 @@
   <data name="MessageStatusCompleteCheck" xml:space="preserve">
     <value>チェックが完了しました｡</value>
   </data>
+  <data name="MessageStatusNowProcessing" xml:space="preserve">
+    <value>処理中です｡</value>
+  </data>
+  <data name="MessageStatusCompleteProcessing" xml:space="preserve">
+    <value>処理が完了しました｡</value>
+  </data>
 </root>
