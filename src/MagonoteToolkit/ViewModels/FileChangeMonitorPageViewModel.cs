@@ -283,7 +283,11 @@ namespace MagonoteToolkit.ViewModels
         /// </summary>
         private void ExecuteCommandDeleteAll()
         {
-            // TODO:DBから全て削除
+            // ファイル監視対象削除
+            FileChangeMonitor.DeleteMonitorTargetAll(Workspace);
+
+            // ファイル変更監視結果生成
+            CreateMonitorResult();
         }
 
         /// <summary>
@@ -291,7 +295,17 @@ namespace MagonoteToolkit.ViewModels
         /// </summary>
         private void ExecuteCommandDeleteSelectedItem()
         {
-            // TODO:DBから選択済みのものを削除
+            // ファイル監視対象削除(選択済み項目)
+            foreach (MonitorResultViewInfo viewInfo in MonitorResult)
+            {
+                if (viewInfo.IsSelected == true)
+                {
+                    FileChangeMonitor.DeleteMonitorTarget(Workspace, viewInfo.File);
+                }
+            }
+
+            // ファイル変更監視結果生成
+            CreateMonitorResult();
         }
 
         /// <summary>
@@ -299,7 +313,11 @@ namespace MagonoteToolkit.ViewModels
         /// </summary>
         private void ExecuteCommandUpdateTimestampAll()
         {
-            // TODO:すべてタイムスタンプ更新
+            // チェック済みタイムスタンプ更新
+            FileChangeMonitor.UpdateCheckedTimeAll(Workspace);
+
+            // ファイル変更監視結果生成
+            CreateMonitorResult();
         }
 
         /// <summary>
@@ -307,7 +325,17 @@ namespace MagonoteToolkit.ViewModels
         /// </summary>
         private void ExecuteCommandUpdateTimestampSelectedItem()
         {
-            // TODO:選択済みのタイムスタンプ更新
+            // チェック済みタイムスタンプ更新(選択済み項目)
+            foreach (MonitorResultViewInfo viewInfo in MonitorResult)
+            {
+                if (viewInfo.IsSelected == true)
+                {
+                    FileChangeMonitor.UpdateCheckedTime(Workspace, viewInfo.File);
+                }
+            }
+
+            // ファイル変更監視結果生成
+            CreateMonitorResult();
         }
 
         /// <summary>
@@ -363,6 +391,8 @@ namespace MagonoteToolkit.ViewModels
                 };
                 MonitorResult.Add(view);
             }
+
+            ProgressMessage = Resources.Strings.MessageStatusCompleteCheck;
         }
     }
 }

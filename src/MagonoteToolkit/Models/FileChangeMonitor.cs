@@ -63,6 +63,21 @@ namespace MagonoteToolkit.Models
         /// </summary>
         private static readonly string _selectCommand = "SELECT * FROM FileChangeMonitorInfo";
 
+        /// <summary>
+        /// SQLコマンド(レコード削除(すべて))
+        /// </summary>
+        private static readonly string _deleteAllCommand = "DELETE from FileChangeMonitorInfo";
+
+        /// <summary>
+        /// SQLコマンド(レコード削除)
+        /// </summary>
+        private static readonly string _deleteCommand = "DELETE from FileChangeMonitorInfo WHERE File = @p_File";
+
+        /// <summary>
+        /// SQLコマンド(レコード更新：チェック済みのタイムスタンプ)
+        /// </summary>
+        private static readonly string _updateCheckedTimestampCommand = "UPDATE FileChangeMonitorInfo SET CheckedTimestamp = @p_CheckedTimestamp WHERE File = @p_File";
+
         //--------------------------------------------------
         // メソッド
         //--------------------------------------------------
@@ -196,6 +211,142 @@ namespace MagonoteToolkit.Models
             }
 
             return results;
+        }
+
+        /// <summary>
+        /// ファイル監視対象削除処理
+        /// </summary>
+        /// <param name="workspaceName">ワークスペース名(拡張子有り)</param>
+        public static void DeleteMonitorTargetAll(string workspaceName)
+        {
+            // パス作成
+            if (workspaceName == null)
+            {
+                return;
+            }
+            string workspaceDirectory = ApplicationSettings.ReadSettingsFileChangeMonitorWorkspaceDirectory();
+            string workspacePath = Path.Combine(workspaceDirectory, workspaceName);
+
+            // DBファイルが有るならレコード削除
+            if (File.Exists(workspacePath))
+            {
+                using SQLiteConnection connection = new($"Data Source = {workspacePath}");
+                connection.Open();
+                using (SQLiteCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = _deleteAllCommand;
+                    _ = command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+        }
+
+        /// <summary>
+        /// ファイル監視対象削除処理(対象指定)
+        /// </summary>
+        /// <param name="workspaceName">ワークスペース名(拡張子有り)</param>
+        /// <param name="monitorFilePath">削除する対象のファイル名</param>
+        public static void DeleteMonitorTarget(string workspaceName, string monitorFilePath)
+        {
+            // パス作成
+            if (workspaceName == null)
+            {
+                return;
+            }
+            string workspaceDirectory = ApplicationSettings.ReadSettingsFileChangeMonitorWorkspaceDirectory();
+            string workspacePath = Path.Combine(workspaceDirectory, workspaceName);
+
+            // DBファイルが有るならレコード削除
+            if (File.Exists(workspacePath))
+            {
+                using SQLiteConnection connection = new($"Data Source = {workspacePath}");
+                connection.Open();
+                using (SQLiteCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = _deleteCommand;
+                    _ = command.Parameters.Add(new SQLiteParameter("@p_File", monitorFilePath));
+                    command.Prepare();
+                    _ = command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+        }
+
+        /// <summary>
+        /// チェック済みタイムスタンプ更新処理
+        /// </summary>
+        /// <param name="workspaceName">ワークスペース名(拡張子有り)</param>
+        public static void UpdateCheckedTimeAll(string workspaceName)
+        {
+            List<string> files = [];
+
+            // パス作成
+            if (workspaceName == null)
+            {
+                return;
+            }
+            string workspaceDirectory = ApplicationSettings.ReadSettingsFileChangeMonitorWorkspaceDirectory();
+            string workspacePath = Path.Combine(workspaceDirectory, workspaceName);
+
+            // DBファイルが有るならレコード更新試行
+            if (File.Exists(workspacePath))
+            {
+                // 更新対象のファイルを列挙
+                using SQLiteConnection connection = new($"Data Source = {workspacePath}");
+                connection.Open();
+                using (SQLiteCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = _selectCommand;
+                    using var executeReader = command.ExecuteReader();
+                    while (executeReader.Read())
+                    {
+                        string monitorFilePath = executeReader["File"].ToString();
+                        files.Add(monitorFilePath);
+                    }
+                }
+                connection.Close();
+
+                // 更新対象ファイルが有るならレコード更新
+                foreach (string file in files)
+                {
+                    if (File.Exists(file))
+                    {
+                        UpdateCheckedTime(workspaceName, file);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// チェック済みタイムスタンプ更新処理(対象名指定)
+        /// </summary>
+        /// <param name="workspaceName">ワークスペース名(拡張子有り)</param>
+        /// <param name="monitorFilePath">更新する対象のファイル名</param>
+        public static void UpdateCheckedTime(string workspaceName, string monitorFilePath)
+        {
+            // パス作成
+            if (workspaceName == null)
+            {
+                return;
+            }
+            string workspaceDirectory = ApplicationSettings.ReadSettingsFileChangeMonitorWorkspaceDirectory();
+            string workspacePath = Path.Combine(workspaceDirectory, workspaceName);
+
+            // DBファイル･更新対象ファイルが有るならレコード更新
+            if (File.Exists(workspacePath) && File.Exists(monitorFilePath))
+            {
+                using SQLiteConnection connection = new($"Data Source = {workspacePath}");
+                connection.Open();
+                using (SQLiteCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = _updateCheckedTimestampCommand;
+                    _ = command.Parameters.Add(new SQLiteParameter("@p_File", monitorFilePath));
+                    _ = command.Parameters.Add(new SQLiteParameter("@p_CheckedTimestamp", File.GetLastWriteTime(monitorFilePath).ToString()));
+                    command.Prepare();
+                    _ = command.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
         }
 
         /// <summary>

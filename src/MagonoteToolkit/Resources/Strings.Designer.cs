@@ -559,6 +559,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   チェックが完了しました｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusCompleteCheck {
+            get {
+                return ResourceManager.GetString("MessageStatusCompleteCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   削除が完了しました｡ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MessageStatusCompleteDelete {

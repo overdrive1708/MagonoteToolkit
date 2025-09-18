@@ -349,4 +349,7 @@
   <data name="MessageStatusCompleteDelete" xml:space="preserve">
     <value>削除が完了しました｡</value>
   </data>
+  <data name="MessageStatusCompleteCheck" xml:space="preserve">
+    <value>チェックが完了しました｡</value>
+  </data>
 </root>
