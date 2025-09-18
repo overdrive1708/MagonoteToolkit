@@ -10,6 +10,7 @@ namespace MagonoteToolkit
         Home,                   // ホーム
         ExcelFileInspection,    // Excelファイル検査
         ExcelFileNumberToName,  // ExcelファイルID->名称変換
+        FileChangeMonitor,      // ファイル変更監視
         Help                    // ヘルプ
     }
 
@@ -58,8 +59,12 @@ namespace MagonoteToolkit
                         sourcePageType = typeof(Views.ExcelFileInspectionPage);
                         break;
                     case NavigationItem.ExcelFileNumberToName:
-                        sourcePageType = typeof(Views.ExcelFileNumberToNamePage);
                         header = selectedItem.Content;
+                        sourcePageType = typeof(Views.ExcelFileNumberToNamePage);
+                        break;
+                    case NavigationItem.FileChangeMonitor:
+                        header = selectedItem.Content;
+                        sourcePageType = typeof(Views.FileChangeMonitorPage);
                         break;
                     case NavigationItem.Help:
                         header = selectedItem.Content;

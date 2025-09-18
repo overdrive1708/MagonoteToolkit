@@ -29,6 +29,11 @@ namespace MagonoteToolkit.Models
         /// </summary>
         public string ExcelFileNumberToNameConvertRulesFilePath { get; set; } = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ExcelFileNumberToNameConvertRules.csv");
 
+        /// <summary>
+        /// ファイル変更監視:ワークスペースディレクトリ
+        /// </summary>
+        public string FileChangeMonitorWorkspaceDirectory { get; set; } = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FileChangeMonitorWorkspace");
+
         //--------------------------------------------------
         // 定数(コンフィギュレーション)
         //--------------------------------------------------
@@ -99,6 +104,15 @@ namespace MagonoteToolkit.Models
         public static string ReadSettingsExcelFileNumberToNameConvertRulesFilePath()
         {
             return ReadSettings().ExcelFileNumberToNameConvertRulesFilePath;
+        }
+
+        /// <summary>
+        /// 設定読み込み処理:ファイル変更監視:ワークスペースディレクトリ
+        /// </summary>
+        /// <returns></returns>
+        public static string ReadSettingsFileChangeMonitorWorkspaceDirectory()
+        {
+            return ReadSettings().FileChangeMonitorWorkspaceDirectory;
         }
 
         /// <summary>

@@ -42,6 +42,11 @@
                 Icon="Find"
                 IsSelected="True"
                 Tag="{x:Static local:NavigationItem.ExcelFileNumberToName}" />
+            <ui:NavigationViewItem
+                Content="{x:Static resources:Strings.FileChangeMonitor}"
+                Icon="Find"
+                IsSelected="True"
+                Tag="{x:Static local:NavigationItem.FileChangeMonitor}" />
         </ui:NavigationView.MenuItems>
         <ui:NavigationView.FooterMenuItems>
             <ui:NavigationViewItem

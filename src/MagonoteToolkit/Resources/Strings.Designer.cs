@@ -61,11 +61,47 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   追加 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Add {
+            get {
+                return ResourceManager.GetString("Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ファイル変更監視対象追加 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string AddFileChangeMonitorTarget {
+            get {
+                return ResourceManager.GetString("AddFileChangeMonitorTarget", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   セル に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Cell {
             get {
                 return ResourceManager.GetString("Cell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   チェック済みのタイムスタンプ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string CheckedTimestamp {
+            get {
+                return ResourceManager.GetString("CheckedTimestamp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   チェック結果 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string CheckResult {
+            get {
+                return ResourceManager.GetString("CheckResult", resourceCulture);
             }
         }
         
@@ -93,6 +129,42 @@ namespace MagonoteToolkit.Resources {
         public static string ConvertRulesFilePath {
             get {
                 return ResourceManager.GetString("ConvertRulesFilePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   現在のタイムスタンプ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string CurrentTimestamp {
+            get {
+                return ResourceManager.GetString("CurrentTimestamp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   削除 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   すべて削除 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string DeleteAll {
+            get {
+                return ResourceManager.GetString("DeleteAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   選択したものを削除 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string DeleteSelectedItem {
+            get {
+                return ResourceManager.GetString("DeleteSelectedItem", resourceCulture);
             }
         }
         
@@ -187,6 +259,24 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   ファイル変更監視 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string FileChangeMonitor {
+            get {
+                return ResourceManager.GetString("FileChangeMonitor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ファイル変更監視結果 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string FileChangeMonitorResult {
+            get {
+                return ResourceManager.GetString("FileChangeMonitorResult", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   ヘルプ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Help {
@@ -219,6 +309,15 @@ namespace MagonoteToolkit.Resources {
         public static string ImportantNotice {
             get {
                 return ResourceManager.GetString("ImportantNotice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ワークスペース名入力 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string InputWorkspaceName {
+            get {
+                return ResourceManager.GetString("InputWorkspaceName", resourceCulture);
             }
         }
         
@@ -286,6 +385,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   本当に削除しますか? に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageConfirmDelete {
+            get {
+                return ResourceManager.GetString("MessageConfirmDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   致命的なエラーが発生しました｡
         ///このアプリケーションを終了します｡
         ///エラーの詳細な情報を表示しますか? に類似しているローカライズされた文字列を検索します。
@@ -339,6 +447,42 @@ namespace MagonoteToolkit.Resources {
         public static string MessageHomeBody3 {
             get {
                 return ResourceManager.GetString("MessageHomeBody3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   追加するワークスペースの名前を入力してください｡(拡張子無し) に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageInputWorkspaceName {
+            get {
+                return ResourceManager.GetString("MessageInputWorkspaceName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   NG：ファイルが見つかりません｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageResultFileChangeMonitorNGNotFound {
+            get {
+                return ResourceManager.GetString("MessageResultFileChangeMonitorNGNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   NG：ファイルのタイムスタンプが一致しません｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageResultFileChangeMonitorNGTimestampUnmatch {
+            get {
+                return ResourceManager.GetString("MessageResultFileChangeMonitorNGTimestampUnmatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   OK に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageResultFileChangeMonitorOK {
+            get {
+                return ResourceManager.GetString("MessageResultFileChangeMonitorOK", resourceCulture);
             }
         }
         
@@ -402,6 +546,33 @@ namespace MagonoteToolkit.Resources {
         public static string MessageStatusAlreadyInspection {
             get {
                 return ResourceManager.GetString("MessageStatusAlreadyInspection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   追加が完了しました｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusCompleteAdd {
+            get {
+                return ResourceManager.GetString("MessageStatusCompleteAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   チェックが完了しました｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusCompleteCheck {
+            get {
+                return ResourceManager.GetString("MessageStatusCompleteCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   削除が完了しました｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusCompleteDelete {
+            get {
+                return ResourceManager.GetString("MessageStatusCompleteDelete", resourceCulture);
             }
         }
         
@@ -532,6 +703,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   再チェック に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Recheck {
+            get {
+                return ResourceManager.GetString("Recheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   結果 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Result {
@@ -586,6 +766,24 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   すべてタイムスタンプ更新 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string UpdateTimestampAll {
+            get {
+                return ResourceManager.GetString("UpdateTimestampAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   選択したものをタイムスタンプ更新 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string UpdateTimestampSelectedItem {
+            get {
+                return ResourceManager.GetString("UpdateTimestampSelectedItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   値 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Value {
@@ -600,6 +798,24 @@ namespace MagonoteToolkit.Resources {
         public static string VersionInfo {
             get {
                 return ResourceManager.GetString("VersionInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ワークスペース に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Workspace {
+            get {
+                return ResourceManager.GetString("Workspace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ワークスペースディレクトリ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string WorkspaceDirectory {
+            get {
+                return ResourceManager.GetString("WorkspaceDirectory", resourceCulture);
             }
         }
     }
