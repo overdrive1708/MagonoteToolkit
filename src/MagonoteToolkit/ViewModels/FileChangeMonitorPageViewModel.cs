@@ -3,7 +3,9 @@ using CommunityToolkit.Mvvm.Input;
 using MagonoteToolkit.Models;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Data;
 
 namespace MagonoteToolkit.ViewModels
 {
@@ -73,22 +75,22 @@ namespace MagonoteToolkit.ViewModels
         private ObservableCollection<MonitorResultViewInfo> _monitorResult = [];
 
         /// <summary>
-        /// プログレスバー最大値
+        /// プログレスバー不確定フラグ
         /// </summary>
         [ObservableProperty]
-        private int _progressMaximum = 1;
-
-        /// <summary>
-        /// プログレスバー現在値
-        /// </summary>
-        [ObservableProperty]
-        private int _progressValue = 0;
+        private bool _progressIsIndeterminate = false;
 
         /// <summary>
         /// 進捗メッセージ
         /// </summary>
         [ObservableProperty]
         private string _progressMessage = string.Empty;
+
+        /// <summary>
+        /// 操作可能フラグ
+        /// </summary>
+        [ObservableProperty]
+        private bool _isOperationEnable = true;
 
         //--------------------------------------------------
         // バインディングコマンド
@@ -161,6 +163,8 @@ namespace MagonoteToolkit.ViewModels
         /// </summary>
         public FileChangeMonitorPageViewModel()
         {
+            BindingOperations.EnableCollectionSynchronization(_monitorResult, new object());
+
             // ワークスペースディレクトリ内を確認してデータベースファイルをリスト化
             if (!(bool)System.ComponentModel.DesignerProperties.IsInDesignModeProperty.GetMetadata(typeof(System.Windows.DependencyObject)).DefaultValue)
             {
@@ -172,10 +176,23 @@ namespace MagonoteToolkit.ViewModels
         /// <summary>
         /// ワークスペース選択変更コマンド実行処理
         /// </summary>
-        private void ExecuteCommandWorkspaceChange()
+        private async void ExecuteCommandWorkspaceChange()
         {
+            // 操作禁止&プログレスバー更新
+            IsOperationEnable = false;
+            ProgressIsIndeterminate = true;
+            ProgressMessage = Resources.Strings.MessageStatusNowProcessing;
+
             // ファイル変更監視結果生成
-            CreateMonitorResult();
+            await Task.Run(() =>
+            {
+                CreateMonitorResult();
+            });
+
+            // 操作許可&プログレスバー更新
+            IsOperationEnable = true;
+            ProgressIsIndeterminate = false;
+            ProgressMessage = Resources.Strings.MessageStatusCompleteProcessing;
         }
 
         /// <summary>
@@ -241,110 +258,191 @@ namespace MagonoteToolkit.ViewModels
         /// ファイルドロップコマンド実行処理
         /// </summary>
         /// <param name="e">イベントデータ</param>
-        private void ExecuteCommandDrop(DragEventArgs e)
+        private async void ExecuteCommandDrop(DragEventArgs e)
         {
-            if (e.Data.GetData(DataFormats.FileDrop) is string[] dropitems)
+            // 操作禁止&プログレスバー更新
+            IsOperationEnable = false;
+            ProgressIsIndeterminate = true;
+            ProgressMessage = Resources.Strings.MessageStatusNowProcessing;
+
+            await Task.Run(() =>
             {
-                foreach (string dropitem in dropitems)
+                if (e.Data.GetData(DataFormats.FileDrop) is string[] dropitems)
                 {
-                    if (System.IO.Directory.Exists(dropitem) == true)
+                    foreach (string dropitem in dropitems)
                     {
-                        if (System.IO.Directory.GetFiles(@dropitem, "*", System.IO.SearchOption.AllDirectories) is string[] files)
+                        if (System.IO.Directory.Exists(dropitem) == true)
                         {
-                            foreach (string file in files)
+                            if (System.IO.Directory.GetFiles(@dropitem, "*", System.IO.SearchOption.AllDirectories) is string[] files)
                             {
-                                if (System.IO.Path.GetFileName(file).StartsWith("~$"))
+                                foreach (string file in files)
                                 {
-                                    // 一時ファイルは追加しない
-                                    continue;
+                                    if (System.IO.Path.GetFileName(file).StartsWith("~$"))
+                                    {
+                                        // 一時ファイルは追加しない
+                                        continue;
+                                    }
+                                    FileChangeMonitor.AddFile(Workspace, file, AddMemo);
                                 }
-                                FileChangeMonitor.AddFile(Workspace, file, AddMemo);
                             }
                         }
-                    }
-                    else
-                    {
-                        if (System.IO.Path.GetFileName(dropitem).StartsWith("~$"))
+                        else
                         {
-                            // 一時ファイルは追加しない
-                            continue;
+                            if (System.IO.Path.GetFileName(dropitem).StartsWith("~$"))
+                            {
+                                // 一時ファイルは追加しない
+                                continue;
+                            }
+                            FileChangeMonitor.AddFile(Workspace, dropitem, AddMemo);
                         }
-                        FileChangeMonitor.AddFile(Workspace, dropitem, AddMemo);
                     }
                 }
-            }
+            });
 
             // ファイル変更監視結果生成
             CreateMonitorResult();
+
+            // 操作許可&プログレスバー更新
+            IsOperationEnable = true;
+            ProgressIsIndeterminate = false;
+            ProgressMessage = Resources.Strings.MessageStatusCompleteProcessing;
         }
 
         /// <summary>
         /// 削除(すべて)コマンド実行処理
         /// </summary>
-        private void ExecuteCommandDeleteAll()
+        private async void ExecuteCommandDeleteAll()
         {
-            // ファイル監視対象削除
-            FileChangeMonitor.DeleteMonitorTargetAll(Workspace);
+            // 操作禁止&プログレスバー更新
+            IsOperationEnable = false;
+            ProgressIsIndeterminate = true;
+            ProgressMessage = Resources.Strings.MessageStatusNowProcessing;
 
-            // ファイル変更監視結果生成
-            CreateMonitorResult();
+            await Task.Run(() =>
+            {
+                // ファイル監視対象削除
+                FileChangeMonitor.DeleteMonitorTargetAll(Workspace);
+
+                // ファイル変更監視結果生成
+                CreateMonitorResult();
+            });
+            
+            // 操作許可&プログレスバー更新
+            IsOperationEnable = true;
+            ProgressIsIndeterminate = false;
+            ProgressMessage = Resources.Strings.MessageStatusCompleteProcessing;
         }
 
         /// <summary>
         /// 削除(選択済み)コマンド実行処理
         /// </summary>
-        private void ExecuteCommandDeleteSelectedItem()
+        private async void ExecuteCommandDeleteSelectedItem()
         {
-            // ファイル監視対象削除(選択済み項目)
-            foreach (MonitorResultViewInfo viewInfo in MonitorResult)
-            {
-                if (viewInfo.IsSelected == true)
-                {
-                    FileChangeMonitor.DeleteMonitorTarget(Workspace, viewInfo.File);
-                }
-            }
+            // 操作禁止&プログレスバー更新
+            IsOperationEnable = false;
+            ProgressIsIndeterminate = true;
+            ProgressMessage = Resources.Strings.MessageStatusNowProcessing;
 
-            // ファイル変更監視結果生成
-            CreateMonitorResult();
+            await Task.Run(() =>
+            {
+                // ファイル監視対象削除(選択済み項目)
+                foreach (MonitorResultViewInfo viewInfo in MonitorResult)
+                {
+                    if (viewInfo.IsSelected == true)
+                    {
+                        FileChangeMonitor.DeleteMonitorTarget(Workspace, viewInfo.File);
+                    }
+                }
+
+                // ファイル変更監視結果生成
+                CreateMonitorResult();
+            });
+
+            // 操作許可&プログレスバー更新
+            IsOperationEnable = true;
+            ProgressIsIndeterminate = false;
+            ProgressMessage = Resources.Strings.MessageStatusCompleteProcessing;
         }
 
         /// <summary>
         /// タイムスタンプ更新(すべて)コマンド実行処理
         /// </summary>
-        private void ExecuteCommandUpdateTimestampAll()
+        private async void ExecuteCommandUpdateTimestampAll()
         {
-            // チェック済みタイムスタンプ更新
-            FileChangeMonitor.UpdateCheckedTimeAll(Workspace);
+            // 操作禁止&プログレスバー更新
+            IsOperationEnable = false;
+            ProgressIsIndeterminate = true;
+            ProgressMessage = Resources.Strings.MessageStatusNowProcessing;
 
             // ファイル変更監視結果生成
-            CreateMonitorResult();
+            await Task.Run(() =>
+            {
+                // チェック済みタイムスタンプ更新
+                FileChangeMonitor.UpdateCheckedTimeAll(Workspace);
+
+                // ファイル変更監視結果生成
+                CreateMonitorResult();
+            });
+
+            // 操作許可&プログレスバー更新
+            IsOperationEnable = true;
+            ProgressIsIndeterminate = false;
+            ProgressMessage = Resources.Strings.MessageStatusCompleteProcessing;
         }
 
         /// <summary>
         /// タイムスタンプ更新(選択済み)コマンド実行処理
         /// </summary>
-        private void ExecuteCommandUpdateTimestampSelectedItem()
+        private async void ExecuteCommandUpdateTimestampSelectedItem()
         {
-            // チェック済みタイムスタンプ更新(選択済み項目)
-            foreach (MonitorResultViewInfo viewInfo in MonitorResult)
-            {
-                if (viewInfo.IsSelected == true)
-                {
-                    FileChangeMonitor.UpdateCheckedTime(Workspace, viewInfo.File);
-                }
-            }
+            // 操作禁止&プログレスバー更新
+            IsOperationEnable = false;
+            ProgressIsIndeterminate = true;
+            ProgressMessage = Resources.Strings.MessageStatusNowProcessing;
 
             // ファイル変更監視結果生成
-            CreateMonitorResult();
+            await Task.Run(() =>
+            {
+                // チェック済みタイムスタンプ更新(選択済み項目)
+                foreach (MonitorResultViewInfo viewInfo in MonitorResult)
+                {
+                    if (viewInfo.IsSelected == true)
+                    {
+                        FileChangeMonitor.UpdateCheckedTime(Workspace, viewInfo.File);
+                    }
+                }
+
+                // ファイル変更監視結果生成
+                CreateMonitorResult();
+            });
+
+            // 操作許可&プログレスバー更新
+            IsOperationEnable = true;
+            ProgressIsIndeterminate = false;
+            ProgressMessage = Resources.Strings.MessageStatusCompleteProcessing;
         }
 
         /// <summary>
         /// 再チェックコマンド実行処理
         /// </summary>
-        private void ExecuteCommandRecheck()
+        private async void ExecuteCommandRecheck()
         {
+            // 操作禁止&プログレスバー更新
+            IsOperationEnable = false;
+            ProgressIsIndeterminate = true;
+            ProgressMessage = Resources.Strings.MessageStatusNowProcessing;
+
             // ファイル変更監視結果生成
-            CreateMonitorResult();
+            await Task.Run(() =>
+            {
+                // ファイル変更監視結果生成
+                CreateMonitorResult();
+            });
+
+            // 操作許可&プログレスバー更新
+            IsOperationEnable = true;
+            ProgressIsIndeterminate = false;
+            ProgressMessage = Resources.Strings.MessageStatusCompleteProcessing;
         }
 
         /// <summary>

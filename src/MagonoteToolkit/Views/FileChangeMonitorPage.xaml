@@ -33,12 +33,14 @@
                         Margin="10,5,10,5"
                         HorizontalAlignment="Stretch"
                         Command="{Binding AddWorkspaceCommand}"
-                        Content="{x:Static resources:Strings.Add}" />
+                        Content="{x:Static resources:Strings.Add}"
+                        IsEnabled="{Binding IsOperationEnable}" />
                     <Button
                         Margin="10,5,10,5"
                         HorizontalAlignment="Stretch"
                         Command="{Binding DelWorkspaceCommand}"
-                        Content="{x:Static resources:Strings.Delete}" />
+                        Content="{x:Static resources:Strings.Delete}"
+                        IsEnabled="{Binding IsOperationEnable}" />
                 </StackPanel>
 
                 <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Text="{x:Static resources:Strings.AddFileChangeMonitorTarget}" />
@@ -130,34 +132,35 @@
                     Margin="10,5,10,5"
                     HorizontalAlignment="Stretch"
                     Command="{Binding DeleteAllCommand}"
-                    Content="{x:Static resources:Strings.DeleteAll}" />
+                    Content="{x:Static resources:Strings.DeleteAll}"
+                    IsEnabled="{Binding IsOperationEnable}" />
                 <Button
                     Margin="10,5,10,5"
                     HorizontalAlignment="Stretch"
                     Command="{Binding DeleteSelectedItemCommand}"
-                    Content="{x:Static resources:Strings.DeleteSelectedItem}" />
+                    Content="{x:Static resources:Strings.DeleteSelectedItem}"
+                    IsEnabled="{Binding IsOperationEnable}" />
                 <Button
                     Margin="10,5,10,5"
                     HorizontalAlignment="Stretch"
                     Command="{Binding UpdateTimestampAllCommand}"
-                    Content="{x:Static resources:Strings.UpdateTimestampAll}" />
+                    Content="{x:Static resources:Strings.UpdateTimestampAll}"
+                    IsEnabled="{Binding IsOperationEnable}" />
                 <Button
                     Margin="10,5,10,5"
                     HorizontalAlignment="Stretch"
                     Command="{Binding UpdateTimestampSelectedItemCommand}"
-                    Content="{x:Static resources:Strings.UpdateTimestampSelectedItem}" />
+                    Content="{x:Static resources:Strings.UpdateTimestampSelectedItem}"
+                    IsEnabled="{Binding IsOperationEnable}" />
                 <Button
                     Margin="10,5,10,5"
                     HorizontalAlignment="Stretch"
                     Command="{Binding RecheckCommand}"
-                    Content="{x:Static resources:Strings.Recheck}" />
+                    Content="{x:Static resources:Strings.Recheck}"
+                    IsEnabled="{Binding IsOperationEnable}" />
 
                 <Grid Margin="10,5,10,5">
-                    <ProgressBar
-                        VerticalAlignment="Stretch"
-                        Maximum="{Binding ProgressMaximum}"
-                        Minimum="0"
-                        Value="{Binding ProgressValue}" />
+                    <ProgressBar VerticalAlignment="Stretch" IsIndeterminate="{Binding ProgressIsIndeterminate}" />
                     <TextBlock
                         Margin="0,5,0,5"
                         HorizontalAlignment="Center"

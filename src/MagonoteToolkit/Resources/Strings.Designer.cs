@@ -595,6 +595,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   処理が完了しました｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusCompleteProcessing {
+            get {
+                return ResourceManager.GetString("MessageStatusCompleteProcessing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   設定を保存しました｡ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MessageStatusCompleteSaveSettings {
@@ -654,6 +663,15 @@ namespace MagonoteToolkit.Resources {
         public static string MessageStatusNowInspection {
             get {
                 return ResourceManager.GetString("MessageStatusNowInspection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   処理中です｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusNowProcessing {
+            get {
+                return ResourceManager.GetString("MessageStatusNowProcessing", resourceCulture);
             }
         }
         
