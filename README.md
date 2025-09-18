@@ -29,6 +29,7 @@
 ## 機能一覧
 - Excelファイル検査
 - ExcelファイルID->名称変換
+- ファイル変更監視
 
 ## ダウンロード方法
 - [GitHubのReleases](https://github.com/overdrive1708/MagonoteToolkit/releases)にあるLatestのAssetsより
@@ -47,6 +48,7 @@ MagonoteToolkit_vx.x.x.zipをダウンロードしてください｡
 | ExcelFileInspectionSettingsFilePath | Excelファイル検査で使用する設定ファイルのパスを設定します｡ |
 | ExcelFileNumberToNameSettingsFilePath | ExcelファイルID->名称変換で使用する設定ファイルのパスを設定します｡ |
 | ExcelFileNumberToNameConvertRulesFilePath | ExcelファイルID->名称変換で使用する変換ルールファイルのパスを設定します｡ |
+| FileChangeMonitorWorkspaceDirectory | ファイル変更監視で使用するワークスペースディレクトリのパスを設定します｡ |
 
 ### Excelファイル検査
 [設定サンプル](asetts/SampleSettings/ExcelFileInspectionSettings.json)を｢MagonoteToolkit.exe｣と同じ場所に格納してください｡  
