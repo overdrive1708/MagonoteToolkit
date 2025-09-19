@@ -102,6 +102,12 @@ MagonoteToolkit_vx.x.x.zipをダウンロードしてください｡
 ｢ClipboardNumberToNameConvertRules.csv｣はCSV形式で｢数値,名称｣の形式で変換ルールを規定してください｡
 ｢ExcelFileNumberToNameConvertRules.csv｣と同じフォーマットなので共通化することができます｡
 
+## 使い方
+- [Excelファイル検査](docs/HowToUseExcelFileInspection.md)を参照してください｡
+- [ExcelファイルID->名称変換](docs/HowToUseExcelFileNumberToName.md)を参照してください｡
+- [ファイル変更監視](docs/HowToUseFileChangeMonitor.md)を参照してください｡
+- [クリップボードID->名称変換](docs/HowToUseClipboardNumberToName.md)を参照してください｡
+
 ## 開発環境
 - Microsoft Visual Studio Community 2022
 
