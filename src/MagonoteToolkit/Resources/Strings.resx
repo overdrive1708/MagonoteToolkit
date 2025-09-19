@@ -373,4 +373,7 @@
   <data name="ClipboardNumberToName" xml:space="preserve">
     <value>クリップボードID-&gt;名称変換</value>
   </data>
+  <data name="MessageResultFileOpenError" xml:space="preserve">
+    <value>ファイルオープンエラー</value>
+  </data>
 </root>

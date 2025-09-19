@@ -514,6 +514,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   ファイルオープンエラー に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageResultFileOpenError {
+            get {
+                return ResourceManager.GetString("MessageResultFileOpenError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   空欄になっています｡ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MessageResultInspectionNGEmpty {
