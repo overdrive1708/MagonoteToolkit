@@ -79,6 +79,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   常に手前に表示 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string AlwaysOnTop {
+            get {
+                return ResourceManager.GetString("AlwaysOnTop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   セル に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Cell {
@@ -111,6 +120,15 @@ namespace MagonoteToolkit.Resources {
         public static string Clear {
             get {
                 return ResourceManager.GetString("Clear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   クリップボード文字列 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ClipboardStrings {
+            get {
+                return ResourceManager.GetString("ClipboardStrings", resourceCulture);
             }
         }
         
@@ -699,6 +717,24 @@ namespace MagonoteToolkit.Resources {
         public static string Number {
             get {
                 return ResourceManager.GetString("Number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   オフ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Off {
+            get {
+                return ResourceManager.GetString("Off", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   オン に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string On {
+            get {
+                return ResourceManager.GetString("On", resourceCulture);
             }
         }
         
