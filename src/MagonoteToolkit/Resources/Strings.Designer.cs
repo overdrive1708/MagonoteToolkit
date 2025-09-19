@@ -124,6 +124,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   クリップボードID-&gt;名称変換 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ClipboardNumberToName {
+            get {
+                return ResourceManager.GetString("ClipboardNumberToName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   クリップボード文字列 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string ClipboardStrings {

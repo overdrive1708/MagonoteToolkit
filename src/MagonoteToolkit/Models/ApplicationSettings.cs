@@ -34,6 +34,11 @@ namespace MagonoteToolkit.Models
         /// </summary>
         public string FileChangeMonitorWorkspaceDirectory { get; set; } = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FileChangeMonitorWorkspace");
 
+        /// <summary>
+        /// クリップボードID->名称変換:変換ルールファイルパス
+        /// </summary>
+        public string ClipboardNumberToNameConvertRulesFilePath { get; set; } = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ClipboardNumberToNameConvertRules.csv");
+
         //--------------------------------------------------
         // 定数(コンフィギュレーション)
         //--------------------------------------------------
@@ -113,6 +118,15 @@ namespace MagonoteToolkit.Models
         public static string ReadSettingsFileChangeMonitorWorkspaceDirectory()
         {
             return ReadSettings().FileChangeMonitorWorkspaceDirectory;
+        }
+
+        /// <summary>
+        /// 設定読み込み処理:クリップボードID->名称変換:変換ルールファイルパス
+        /// </summary>
+        /// <returns>クリップボードID->名称変換:変換ルールファイルパス</returns>
+        public static string ReadSettingsClipboardNumberToNameConvertRulesFilePath()
+        {
+            return ReadSettings().ClipboardNumberToNameConvertRulesFilePath;
         }
 
         /// <summary>

@@ -34,6 +34,12 @@ namespace MagonoteToolkit.ViewModels
         [ObservableProperty]
         private string _fileChangeMonitorWorkspaceDirectory;
 
+        /// <summary>
+        /// クリップボードID->名称変換:変換ルールファイルパス
+        /// </summary>
+        [ObservableProperty]
+        private string _clipboardNumberToNameConvertRulesFilePath;
+
         //--------------------------------------------------
         // バインディングコマンド
         //--------------------------------------------------
@@ -65,8 +71,19 @@ namespace MagonoteToolkit.ViewModels
         [RelayCommand]
         private void ExcelFileNumberToNameConvertRulesFilePathDrop(DragEventArgs e) => ExecuteCommandExcelFileNumberToNameConvertRulesFilePathDrop(e);
 
+        /// <summary>
+        /// ファイル変更監視:ワークスペースディレクトリドロップ
+        /// </summary>
+        /// <param name="e">イベントデータ</param>
         [RelayCommand]
         private void FileChangeMonitorWorkspaceDirectoryDrop(DragEventArgs e) => ExecuteCommandFileChangeMonitorWorkspaceDirectoryDrop(e);
+
+        /// <summary>
+        /// クリップボードID->名称変換:変換ルールファイルパスドロップ
+        /// </summary>
+        /// <param name="e">イベントデータ</param>
+        [RelayCommand]
+        private void ClipboardNumberToNameConvertRulesFilePathDrop(DragEventArgs e) => ExecuteCommandClipboardNumberToNameConvertRulesFilePathDrop(e);
 
         /// <summary>
         /// 設定ファイル保存
@@ -91,6 +108,7 @@ namespace MagonoteToolkit.ViewModels
                 ExcelFileNumberToNameSettingsFilePath = readSettings.ExcelFileNumberToNameSettingsFilePath;
                 ExcelFileNumberToNameConvertRulesFilePath = readSettings.ExcelFileNumberToNameConvertRulesFilePath;
                 FileChangeMonitorWorkspaceDirectory = readSettings.FileChangeMonitorWorkspaceDirectory;
+                ClipboardNumberToNameConvertRulesFilePath = readSettings.ClipboardNumberToNameConvertRulesFilePath;
             }
         }
 
@@ -162,6 +180,19 @@ namespace MagonoteToolkit.ViewModels
         }
 
         /// <summary>
+        /// クリップボードID->名称変換:変換ルールファイルパスドロップコマンド実行処理
+        /// </summary>
+        /// <param name="e">イベントデータ</param>
+        private void ExecuteCommandClipboardNumberToNameConvertRulesFilePathDrop(DragEventArgs e)
+        {
+            // ドロップされたデータの1つ目をファイル名として採用する｡
+            if (e.Data.GetData(DataFormats.FileDrop) is string[] dropitems)
+            {
+                ClipboardNumberToNameConvertRulesFilePath = dropitems[0];
+            }
+        }
+
+        /// <summary>
         /// 設定ファイル保存コマンド実行処理
         /// </summary>
         private void ExecuteCommandSaveSettings()
@@ -173,6 +204,7 @@ namespace MagonoteToolkit.ViewModels
                 ExcelFileNumberToNameSettingsFilePath = ExcelFileNumberToNameSettingsFilePath,
                 ExcelFileNumberToNameConvertRulesFilePath = ExcelFileNumberToNameConvertRulesFilePath,
                 FileChangeMonitorWorkspaceDirectory = FileChangeMonitorWorkspaceDirectory,
+                ClipboardNumberToNameConvertRulesFilePath = ClipboardNumberToNameConvertRulesFilePath,
             };
 
             // 設定書き込み

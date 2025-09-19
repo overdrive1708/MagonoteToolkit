@@ -47,6 +47,11 @@
                 Icon="Find"
                 IsSelected="True"
                 Tag="{x:Static local:NavigationItem.FileChangeMonitor}" />
+            <ui:NavigationViewItem
+                Content="{x:Static resources:Strings.ClipboardNumberToName}"
+                Icon="Find"
+                IsSelected="True"
+                Tag="{x:Static local:NavigationItem.ClipboardNumberToName}" />
         </ui:NavigationView.MenuItems>
         <ui:NavigationView.FooterMenuItems>
             <ui:NavigationViewItem

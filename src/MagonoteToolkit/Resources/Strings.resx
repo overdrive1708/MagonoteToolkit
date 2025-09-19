@@ -370,4 +370,7 @@
   <data name="Off" xml:space="preserve">
     <value>オフ</value>
   </data>
+  <data name="ClipboardNumberToName" xml:space="preserve">
+    <value>クリップボードID-&gt;名称変換</value>
+  </data>
 </root>
