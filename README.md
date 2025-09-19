@@ -30,6 +30,7 @@
 - Excelファイル検査
 - ExcelファイルID->名称変換
 - ファイル変更監視
+- クリップボードID->名称変換
 
 ## ダウンロード方法
 - [GitHubのReleases](https://github.com/overdrive1708/MagonoteToolkit/releases)にあるLatestのAssetsより
@@ -49,6 +50,7 @@ MagonoteToolkit_vx.x.x.zipをダウンロードしてください｡
 | ExcelFileNumberToNameSettingsFilePath | ExcelファイルID->名称変換で使用する設定ファイルのパスを設定します｡ |
 | ExcelFileNumberToNameConvertRulesFilePath | ExcelファイルID->名称変換で使用する変換ルールファイルのパスを設定します｡ |
 | FileChangeMonitorWorkspaceDirectory | ファイル変更監視で使用するワークスペースディレクトリのパスを設定します｡ |
+| ClipboardNumberToNameConvertRulesFilePath | クリップボードID->名称変換で使用する変換ルールファイルのパスを設定します｡ |
 
 ### Excelファイル検査
 [設定サンプル](asetts/SampleSettings/ExcelFileInspectionSettings.json)を｢MagonoteToolkit.exe｣と同じ場所に格納してください｡  
@@ -75,21 +77,30 @@ MagonoteToolkit_vx.x.x.zipをダウンロードしてください｡
 (全体設定を変更することで格納場所を変更することが可能です｡)  
 その後､下記を参考に設定してください｡  
 
-ExcelFileNumberToNameSettings.json｣で設定する設定項目は以下のとおりです｡
+｢ExcelFileNumberToNameSettings.json｣で設定する設定項目は以下のとおりです｡
 | 設定項目 | 設定内容 |
 | --- | --- |
 | PresetName | プリセットを識別するための名前を設定します｡ |
 | ExaminationFileKeyword | 調査ファイルの一覧に登録する際のキーワードを設定します｡<br>調査ファイルに調査対象フォルダもしくは調査対象ファイルをドラッグ&ドロップした際に､設定したキーワードを含むファイルのみを調査対象とします｡ |
 | ExaminationTargets | 調査対象のセルを特定するための情報を設定します｡後述する説明を参照してください｡ |
 
-ExcelFileNumberToNameSettings.jsonのExaminationTargets｣で設定する設定項目は以下のとおりです｡
+｢ExcelFileNumberToNameSettings.jsonのExaminationTargets｣で設定する設定項目は以下のとおりです｡
 | 設定項目 | 設定内容 |
 | --- | --- |
 | Sheet | 変換したい数字のセルを特定するためのシート名を設定してください｡ |
 | Cell | 変換したい数字のセルを特定するためのセル名を設定してください｡<br>"A1"や"A1:A5"などで指定してください｡ |
 | Memo | メモ欄です｡セルの意味などのメモにご利用ください｡ |
 
-ExcelFileNumberToNameConvertRules.csv｣はCSV形式で｢数値,名称｣の形式で変換ルールを規定してください｡
+｢ExcelFileNumberToNameConvertRules.csv｣はCSV形式で｢数値,名称｣の形式で変換ルールを規定してください｡
+｢ClipboardNumberToNameConvertRules.csv｣と同じフォーマットなので共通化することができます｡
+
+### クリップボードID->名称変換
+[変換ルールサンプル](asetts/SampleSettings/ClipboardNumberToNameConvertRules.csv)を｢MagonoteToolkit.exe｣と同じ場所に格納してください｡  
+(全体設定を変更することで格納場所を変更することが可能です｡)  
+その後､下記を参考に設定してください｡  
+
+｢ClipboardNumberToNameConvertRules.csv｣はCSV形式で｢数値,名称｣の形式で変換ルールを規定してください｡
+｢ExcelFileNumberToNameConvertRules.csv｣と同じフォーマットなので共通化することができます｡
 
 ## 開発環境
 - Microsoft Visual Studio Community 2022
