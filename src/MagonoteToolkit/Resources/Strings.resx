@@ -379,4 +379,7 @@
   <data name="MessageResultInspectionNGContains" xml:space="preserve">
     <value>値に"{0}"が含まれています｡</value>
   </data>
+  <data name="MessageResultInspectionNGRegex" xml:space="preserve">
+    <value>値が正規表現｢"{0}"｣にマッチします｡</value>
+  </data>
 </root>

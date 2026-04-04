@@ -72,6 +72,7 @@ MagonoteToolkit_vx.x.x.zipをダウンロードしてください｡
 | Empty | SheetNameで設定したシート名の､Cellで設定したセルが､空である場合にNGとします｡ |
 | NotEmpty | SheetNameで設定したシート名の､Cellで設定したセルが､空ではない場合にNGとします｡ |
 | Contains | SheetNameで設定したシート名の､Cellで設定したセルが､Valueで設定した値を含む場合にNGとします｡ |
+| Regex | SheetNameで設定したシート名の､Cellで設定したセルが､Valueで設定した正規表現にマッチする場合にNGとします｡ |
 
 ### ExcelファイルID->名称変換
 [設定サンプル](asetts/SampleSettings/ExcelFileNumberToNameSettings.json)と[変換ルールサンプル](asetts/SampleSettings/ExcelFileNumberToNameConvertRules.csv)を｢MagonoteToolkit.exe｣と同じ場所に格納してください｡  

@@ -568,6 +568,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   値が正規表現｢&quot;{0}&quot;｣にマッチします｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageResultInspectionNGRegex {
+            get {
+                return ResourceManager.GetString("MessageResultInspectionNGRegex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   問題は見つかりませんでした｡ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MessageResultInspectionOK {
