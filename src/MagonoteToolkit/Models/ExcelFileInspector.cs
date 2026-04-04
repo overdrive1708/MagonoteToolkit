@@ -144,6 +144,19 @@ namespace MagonoteToolkit.Models
                                             results.Add(result);
                                         }
                                         break;
+                                    case "Regex":
+                                        // 指定されたセルが指定された正規表現にマッチしている場合はNG
+                                        if (worksheet.Name.Equals(method.Sheet) && System.Text.RegularExpressions.Regex.IsMatch(worksheet.Cell(address).Value.ToString(), method.Value))
+                                        {
+                                            result = new()
+                                            {
+                                                FileName = filename,
+                                                Cell = address.ToString(),
+                                                ResultMessage = string.Format(Resources.Strings.MessageResultInspectionNGRegex, method.Value)
+                                            };
+                                            results.Add(result);
+                                        }
+                                        break;
                                     default:
                                         break;
                                 }
