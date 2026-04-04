@@ -5,9 +5,9 @@
     <TargetFramework>net8.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <Product>MagonoteToolkit</Product>
-    <VersionPrefix>1.1.0</VersionPrefix>
+    <VersionPrefix>1.2.0</VersionPrefix>
     <Authors>overdrive1708</Authors>
-    <Copyright>Copyright © 2025 overdrive1708</Copyright>
+    <Copyright>Copyright © 2025-2026 overdrive1708</Copyright>
     <PackageProjectUrl>https://github.com/overdrive1708/MagonoteToolkit</PackageProjectUrl>
     <NeutralLanguage>ja-JP</NeutralLanguage>
     <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
