@@ -131,6 +131,19 @@ namespace MagonoteToolkit.Models
                                             results.Add(result);
                                         }
                                         break;
+                                    case "Contains":
+                                        // 指定されたセルが指定された値を含んでいる場合はNG
+                                        if(worksheet.Name.Equals(method.Sheet) && (worksheet.Cell(address).Value.ToString().Contains(method.Value)))
+                                        {
+                                            result = new()
+                                            {
+                                                FileName = filename,
+                                                Cell = address.ToString(),
+                                                ResultMessage = string.Format(Resources.Strings.MessageResultInspectionNGContains, method.Value)
+                                            };
+                                            results.Add(result);
+                                        }
+                                        break;
                                     default:
                                         break;
                                 }

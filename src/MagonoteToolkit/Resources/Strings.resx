@@ -376,4 +376,7 @@
   <data name="MessageResultFileOpenError" xml:space="preserve">
     <value>ファイルオープンエラー</value>
   </data>
+  <data name="MessageResultInspectionNGContains" xml:space="preserve">
+    <value>値に"{0}"が含まれています｡</value>
+  </data>
 </root>
