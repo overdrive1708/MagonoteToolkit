@@ -233,7 +233,7 @@ License: Public Domain
 
 ## OpenAI
 
-Source: https://github.com/openai/openai-dotnet/tree/OpenAI_2.12.0
+Source: https://github.com/openai/openai-dotnet
 
 ### License
 
