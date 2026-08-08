@@ -100,6 +100,11 @@ namespace MagonoteToolkit.Models
                 byte[] decryptedBytes = ProtectedData.Unprotect(encryptedBytes, null, DataProtectionScope.CurrentUser);
                 readSettings.AIOpenAIAPIKey = Encoding.UTF8.GetString(decryptedBytes);
             }
+            else
+            {
+                // ｢AI関連機能:OpenAI APIのAPIキー｣が空の場合は、ダミー値を設定する｡(OpenAI SDKのエラー回避)
+                readSettings.AIOpenAIAPIKey = "dummy_api_key";
+            }
 
             return readSettings;
         }
