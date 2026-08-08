@@ -52,6 +52,11 @@
                 Icon="Find"
                 IsSelected="True"
                 Tag="{x:Static local:NavigationItem.ClipboardNumberToName}" />
+            <ui:NavigationViewItem
+                Content="{x:Static resources:Strings.AITranslation}"
+                Icon="World"
+                IsSelected="True"
+                Tag="{x:Static local:NavigationItem.AITranslation}" />
         </ui:NavigationView.MenuItems>
         <ui:NavigationView.FooterMenuItems>
             <ui:NavigationViewItem

@@ -79,6 +79,43 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   AI関連 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string AIRelated {
+            get {
+                return ResourceManager.GetString("AIRelated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   AI翻訳 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string AITranslation {
+            get {
+                return ResourceManager.GetString("AITranslation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   あなたはプロの翻訳家です。
+        ///以下の【条件】で【翻訳対象】を{0}から{1}に翻訳してください｡
+        ///
+        ///【条件】
+        ///- 直訳を避け、文脈に合った自然な表現にしてください。
+        ///- 専門用語や固有名詞は適切に訳してください。
+        ///- 翻訳文のみを出力し、余計な解説や前置きは書かないでください。
+        ///- IT技術の専門用語を正確に反映し、エンジニアにとって自然な表現にしてください。
+        ///
+        ///【翻訳対象】
+        ///{2} に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string AITranslationPrompt {
+            get {
+                return ResourceManager.GetString("AITranslationPrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   常に手前に表示 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string AlwaysOnTop {
@@ -196,6 +233,24 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   英語 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string English {
+            get {
+                return ResourceManager.GetString("English", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   エラー に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   調査ファイル に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string ExaminationFile {
@@ -273,6 +328,15 @@ namespace MagonoteToolkit.Resources {
         public static string ExecuteInspection {
             get {
                 return ResourceManager.GetString("ExecuteInspection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   翻訳実施 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExecuteTranslation {
+            get {
+                return ResourceManager.GetString("ExecuteTranslation", resourceCulture);
             }
         }
         
@@ -381,6 +445,15 @@ namespace MagonoteToolkit.Resources {
         public static string InspectionSettings {
             get {
                 return ResourceManager.GetString("InspectionSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   日本語 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string Japanese {
+            get {
+                return ResourceManager.GetString("Japanese", resourceCulture);
             }
         }
         
@@ -730,6 +803,25 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   翻訳を行っています｡
+        ///しばらくお待ちください｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusNowTranslation {
+            get {
+                return ResourceManager.GetString("MessageStatusNowTranslation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   使用するモデル に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ModelToBeUsed {
+            get {
+                return ResourceManager.GetString("ModelToBeUsed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   名前 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Name {
@@ -771,6 +863,24 @@ namespace MagonoteToolkit.Resources {
         public static string On {
             get {
                 return ResourceManager.GetString("On", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   OpenAI APIのベースURL に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string OpenAIAPIBaseUrl {
+            get {
+                return ResourceManager.GetString("OpenAIAPIBaseUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   OpenAI APIのAPIキー に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string OpenAIAPIKey {
+            get {
+                return ResourceManager.GetString("OpenAIAPIKey", resourceCulture);
             }
         }
         
@@ -852,6 +962,24 @@ namespace MagonoteToolkit.Resources {
         public static string TargetFileKeyword {
             get {
                 return ResourceManager.GetString("TargetFileKeyword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   翻訳入力テキスト に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string TranslationInputText {
+            get {
+                return ResourceManager.GetString("TranslationInputText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   翻訳出力テキスト に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string TranslationOutputText {
+            get {
+                return ResourceManager.GetString("TranslationOutputText", resourceCulture);
             }
         }
         

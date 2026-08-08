@@ -40,6 +40,18 @@ namespace MagonoteToolkit.ViewModels
         [ObservableProperty]
         private string _clipboardNumberToNameConvertRulesFilePath;
 
+        /// <summary>
+        /// AI関連機能:OpenAI APIのベースURL
+        /// </summary>
+        [ObservableProperty]
+        private string _aIOpenAIAPIBaseUrl;
+
+        /// <summary>
+        /// AI関連機能:OpenAI APIのAPIキー
+        /// </summary>
+        [ObservableProperty]
+        private string _aIOpenAIAPIKey;
+
         //--------------------------------------------------
         // バインディングコマンド
         //--------------------------------------------------
@@ -109,6 +121,8 @@ namespace MagonoteToolkit.ViewModels
                 ExcelFileNumberToNameConvertRulesFilePath = readSettings.ExcelFileNumberToNameConvertRulesFilePath;
                 FileChangeMonitorWorkspaceDirectory = readSettings.FileChangeMonitorWorkspaceDirectory;
                 ClipboardNumberToNameConvertRulesFilePath = readSettings.ClipboardNumberToNameConvertRulesFilePath;
+                AIOpenAIAPIBaseUrl = readSettings.AIOpenAIAPIBaseUrl;
+                AIOpenAIAPIKey = readSettings.AIOpenAIAPIKey;
             }
         }
 
@@ -205,6 +219,8 @@ namespace MagonoteToolkit.ViewModels
                 ExcelFileNumberToNameConvertRulesFilePath = ExcelFileNumberToNameConvertRulesFilePath,
                 FileChangeMonitorWorkspaceDirectory = FileChangeMonitorWorkspaceDirectory,
                 ClipboardNumberToNameConvertRulesFilePath = ClipboardNumberToNameConvertRulesFilePath,
+                AIOpenAIAPIBaseUrl = AIOpenAIAPIBaseUrl,
+                AIOpenAIAPIKey = AIOpenAIAPIKey,
             };
 
             // 設定書き込み
