@@ -31,6 +31,7 @@
 - ExcelファイルID->名称変換
 - ファイル変更監視
 - クリップボードID->名称変換
+- AI翻訳
 
 ## ダウンロード方法
 - [GitHubのReleases](https://github.com/overdrive1708/MagonoteToolkit/releases)にあるLatestのAssetsより
@@ -51,6 +52,8 @@ MagonoteToolkit_vx.x.x.zipをダウンロードしてください｡
 | ExcelFileNumberToNameConvertRulesFilePath | ExcelファイルID->名称変換で使用する変換ルールファイルのパスを設定します｡ |
 | FileChangeMonitorWorkspaceDirectory | ファイル変更監視で使用するワークスペースディレクトリのパスを設定します｡ |
 | ClipboardNumberToNameConvertRulesFilePath | クリップボードID->名称変換で使用する変換ルールファイルのパスを設定します｡ |
+| AIOpenAIAPIBaseUrl | AI関連機能で使用するOpenAI APIのベースURLを設定します｡(例：http://127.0.0.1:1234/v1) |
+| AIOpenAIAPIKey | AI関連機能で使用するOpenAI APIのAPIキーを設定します｡ 暗号化して管理するため設定画面で設定してください｡ |
 
 ### Excelファイル検査
 [設定サンプル](asetts/SampleSettings/ExcelFileInspectionSettings.json)を｢MagonoteToolkit.exe｣と同じ場所に格納してください｡  
