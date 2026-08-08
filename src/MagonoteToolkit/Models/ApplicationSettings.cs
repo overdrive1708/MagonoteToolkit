@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Security.Cryptography;
+using System.Text;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Unicode;
@@ -38,6 +40,16 @@ namespace MagonoteToolkit.Models
         /// クリップボードID->名称変換:変換ルールファイルパス
         /// </summary>
         public string ClipboardNumberToNameConvertRulesFilePath { get; set; } = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ClipboardNumberToNameConvertRules.csv");
+
+        /// <summary>
+        /// AI関連機能:OpenAI APIのベースURL
+        /// </summary>
+        public string AIOpenAIAPIBaseUrl { get; set; } = "http://127.0.0.1:1234/v1";
+
+        /// <summary>
+        /// AI関連機能:OpenAI APIのAPIキー
+        /// </summary>
+        public string AIOpenAIAPIKey { get; set; } = string.Empty;
 
         //--------------------------------------------------
         // 定数(コンフィギュレーション)
@@ -80,6 +92,14 @@ namespace MagonoteToolkit.Models
 
             // デシリアライズ
             ApplicationSettings readSettings = JsonSerializer.Deserialize<ApplicationSettings>(jsonString, _deserializeOptions);
+
+            // ｢AI関連機能:OpenAI APIのAPIキー｣は復号化して取得する
+            if (!string.IsNullOrEmpty(readSettings.AIOpenAIAPIKey))
+            {
+                byte[] encryptedBytes = Convert.FromBase64String(readSettings.AIOpenAIAPIKey);
+                byte[] decryptedBytes = ProtectedData.Unprotect(encryptedBytes, null, DataProtectionScope.CurrentUser);
+                readSettings.AIOpenAIAPIKey = Encoding.UTF8.GetString(decryptedBytes);
+            }
 
             return readSettings;
         }
@@ -136,6 +156,14 @@ namespace MagonoteToolkit.Models
         public static void WriteSettings(ApplicationSettings settings)
         {
             string settingFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, _fileName);
+
+            // ｢AI関連機能:OpenAI APIのAPIキー｣は暗号化して格納する
+            if (!string.IsNullOrEmpty(settings.AIOpenAIAPIKey))
+            {
+                byte[] targetDataBytes = Encoding.UTF8.GetBytes(settings.AIOpenAIAPIKey);
+                byte[] encryptedBytes = ProtectedData.Protect(targetDataBytes, null, DataProtectionScope.CurrentUser);
+                settings.AIOpenAIAPIKey = Convert.ToBase64String(encryptedBytes);
+            }
 
             // シリアライズ
             byte[] jsonUtf8Bytes = JsonSerializer.SerializeToUtf8Bytes(settings, _serializeOptions);

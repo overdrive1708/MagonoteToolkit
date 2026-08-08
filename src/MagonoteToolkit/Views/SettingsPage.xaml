@@ -119,6 +119,28 @@
                     </TextBox>
                 </StackPanel>
 
+                <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Text="{x:Static resources:Strings.AIRelated}" />
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                    <TextBlock
+                        Margin="10,5,5,5"
+                        VerticalAlignment="Center"
+                        Text="{x:Static resources:Strings.OpenAIAPIBaseUrl}" />
+                    <TextBox
+                        Width="500"
+                        Margin="5,5,10,5"
+                        Text="{Binding AIOpenAIAPIBaseUrl}" />
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                    <TextBlock
+                        Margin="10,5,5,5"
+                        VerticalAlignment="Center"
+                        Text="{x:Static resources:Strings.OpenAIAPIKey}" />
+                    <TextBox
+                        Width="500"
+                        Margin="5,5,10,5"
+                        Text="{Binding AIOpenAIAPIKey}" />
+                </StackPanel>
+
                 <Button
                     Margin="10,5,10,5"
                     HorizontalAlignment="Stretch"

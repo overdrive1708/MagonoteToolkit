@@ -382,4 +382,13 @@
   <data name="MessageResultInspectionNGRegex" xml:space="preserve">
     <value>値が正規表現｢"{0}"｣にマッチします｡</value>
   </data>
+  <data name="AIRelated" xml:space="preserve">
+    <value>AI関連</value>
+  </data>
+  <data name="OpenAIAPIBaseUrl" xml:space="preserve">
+    <value>OpenAI APIのベースURL</value>
+  </data>
+  <data name="OpenAIAPIKey" xml:space="preserve">
+    <value>OpenAI APIのAPIキー</value>
+  </data>
 </root>

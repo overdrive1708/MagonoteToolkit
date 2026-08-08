@@ -79,6 +79,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   AI関連 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string AIRelated {
+            get {
+                return ResourceManager.GetString("AIRelated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   常に手前に表示 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string AlwaysOnTop {
@@ -771,6 +780,24 @@ namespace MagonoteToolkit.Resources {
         public static string On {
             get {
                 return ResourceManager.GetString("On", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   OpenAI APIのベースURL に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string OpenAIAPIBaseUrl {
+            get {
+                return ResourceManager.GetString("OpenAIAPIBaseUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   OpenAI APIのAPIキー に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string OpenAIAPIKey {
+            get {
+                return ResourceManager.GetString("OpenAIAPIKey", resourceCulture);
             }
         }
         
