@@ -34,6 +34,7 @@
 - AI翻訳
     - 英語
     - 日本語
+- AI校正
 
 ## ダウンロード方法
 - [GitHubのReleases](https://github.com/overdrive1708/MagonoteToolkit/releases)にあるLatestのAssetsより
@@ -115,6 +116,7 @@ MagonoteToolkit_vx.x.x.zipをダウンロードしてください｡
 - [ファイル変更監視](docs/HowToUseFileChangeMonitor.md)を参照してください｡
 - [クリップボードID->名称変換](docs/HowToUseClipboardNumberToName.md)を参照してください｡
 - [AI翻訳](docs/HowToUseAITranslation.md)を参照してください｡
+- [AI校正](docs/HowToUseAIProofreading.md)を参照してください｡
 
 ## 開発環境
 - Microsoft Visual Studio Community 2022
