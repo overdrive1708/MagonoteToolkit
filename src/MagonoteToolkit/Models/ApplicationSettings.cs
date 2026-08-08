@@ -150,6 +150,24 @@ namespace MagonoteToolkit.Models
         }
 
         /// <summary>
+        /// 設定読み込み処理:AI関連機能:OpenAI APIのベースURL
+        /// </summary>
+        /// <returns></returns>
+        public static string ReadSettingsAIOpenAIAPIBaseUrl()
+        {
+            return ReadSettings().AIOpenAIAPIBaseUrl;
+        }
+
+        /// <summary>
+        /// 設定読み込み処理:AI関連機能:OpenAI APIのAPIキー
+        /// </summary>
+        /// <returns></returns>
+        public static string ReadSettingsAIOpenAIAPIKey()
+        {
+            return ReadSettings().AIOpenAIAPIKey;
+        }
+
+        /// <summary>
         /// 設定書き込み処理
         /// </summary>
         /// <param name="settings">書き込みする設定</param>
