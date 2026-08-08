@@ -391,4 +391,45 @@
   <data name="OpenAIAPIKey" xml:space="preserve">
     <value>OpenAI APIのAPIキー</value>
   </data>
+  <data name="English" xml:space="preserve">
+    <value>英語</value>
+  </data>
+  <data name="Japanese" xml:space="preserve">
+    <value>日本語</value>
+  </data>
+  <data name="TranslationInputText" xml:space="preserve">
+    <value>翻訳入力テキスト</value>
+  </data>
+  <data name="TranslationOutputText" xml:space="preserve">
+    <value>翻訳出力テキスト</value>
+  </data>
+  <data name="AITranslation" xml:space="preserve">
+    <value>AI翻訳</value>
+  </data>
+  <data name="ExecuteTranslation" xml:space="preserve">
+    <value>翻訳実施</value>
+  </data>
+  <data name="MessageStatusNowTranslation" xml:space="preserve">
+    <value>翻訳を行っています｡
+しばらくお待ちください｡</value>
+  </data>
+  <data name="AITranslationPrompt" xml:space="preserve">
+    <value>あなたはプロの翻訳家です。
+以下の【条件】で【翻訳対象】を{0}から{1}に翻訳してください｡
+
+【条件】
+- 直訳を避け、文脈に合った自然な表現にしてください。
+- 専門用語や固有名詞は適切に訳してください。
+- 翻訳文のみを出力し、余計な解説や前置きは書かないでください。
+- IT技術の専門用語を正確に反映し、エンジニアにとって自然な表現にしてください。
+
+【翻訳対象】
+{2}</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+  <data name="ModelToBeUsed" xml:space="preserve">
+    <value>使用するモデル</value>
+  </data>
 </root>

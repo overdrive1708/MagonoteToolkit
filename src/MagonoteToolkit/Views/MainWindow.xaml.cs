@@ -12,6 +12,7 @@ namespace MagonoteToolkit
         ExcelFileNumberToName,  // ExcelファイルID->名称変換
         FileChangeMonitor,      // ファイル変更監視
         ClipboardNumberToName,  // クリップボードID->名称変換
+        AITranslation,          // AI翻訳
         Help                    // ヘルプ
     }
 
@@ -70,6 +71,10 @@ namespace MagonoteToolkit
                     case NavigationItem.ClipboardNumberToName:
                         header = selectedItem.Content;
                         sourcePageType = typeof(Views.ClipboardNumberToNamePage);
+                        break;
+                    case NavigationItem.AITranslation:
+                        header = selectedItem.Content;
+                        sourcePageType = typeof(Views.AITranslationPage);
                         break;
                     case NavigationItem.Help:
                         header = selectedItem.Content;
