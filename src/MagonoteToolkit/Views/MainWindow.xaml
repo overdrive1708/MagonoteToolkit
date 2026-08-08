@@ -57,6 +57,11 @@
                 Icon="World"
                 IsSelected="True"
                 Tag="{x:Static local:NavigationItem.AITranslation}" />
+            <ui:NavigationViewItem
+                Content="{x:Static resources:Strings.AIProofreading}"
+                Icon="Edit"
+                IsSelected="True"
+                Tag="{x:Static local:NavigationItem.AIProofreading}" />
         </ui:NavigationView.MenuItems>
         <ui:NavigationView.FooterMenuItems>
             <ui:NavigationViewItem

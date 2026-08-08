@@ -79,6 +79,51 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   AI校正 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string AIProofreading {
+            get {
+                return ResourceManager.GetString("AIProofreading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   あなたはプロの校正者です。
+        ///以下の【観点】で【校正対象】をチェックして､【出力形式】に沿って指摘の一覧と修正案を提示してください｡
+        ///語彙や言い回しは変えないでください｡
+        ///
+        ///【観点】
+        ///- 文法的な誤りがないこと｡
+        ///- 取引先に対して不適切な表現がないこと｡
+        ///- 表記の揺れがないこと｡
+        ///- 誤字･脱字がないこと｡
+        ///- 読みやすく､一度読んですぐ意味が伝わること｡
+        ///- 一文が長すぎないこと｡
+        ///- 無駄な表現を省き、短くまとめてあること｡
+        ///- 一文一義になっていること｡
+        ///- 敬語表現が適切であること｡
+        ///- 主語や目的語は明確か､述語と近いところにあるか｡
+        ///- 箇条書きや見出し､囲みなどを適切に使えているか｡
+        ///- 二重否定を使っていないこと｡
+        ///- 用語や表記、書式が全体で統一されていること｡
+        ///- 読み手の操作は能動態で、結果は受動態で書いてあること｡
+        ///
+        ///【出力形式】
+        ///=====指摘一覧=====
+        ///指摘をMarkdownの表形式で出力(観点を番号のみで表現するのは不可)
+        ///=====修正案=====
+        ///修正案を出力(修正案の解説があると尚可)
+        ///
+        ///【校正対象】
+        ///{0} に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string AIProofreadingPrompt {
+            get {
+                return ResourceManager.GetString("AIProofreadingPrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   AI関連 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string AIRelated {
@@ -328,6 +373,15 @@ namespace MagonoteToolkit.Resources {
         public static string ExecuteInspection {
             get {
                 return ResourceManager.GetString("ExecuteInspection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   校正実施 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExecuteProofreading {
+            get {
+                return ResourceManager.GetString("ExecuteProofreading", resourceCulture);
             }
         }
         
@@ -803,6 +857,16 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   校正を行っています｡
+        ///しばらくお待ちください｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusNowProofreading {
+            get {
+                return ResourceManager.GetString("MessageStatusNowProofreading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   翻訳を行っています｡
         ///しばらくお待ちください｡ に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -899,6 +963,24 @@ namespace MagonoteToolkit.Resources {
         public static string ProductName {
             get {
                 return ResourceManager.GetString("ProductName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   校正結果 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ProofreadingResult {
+            get {
+                return ResourceManager.GetString("ProofreadingResult", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   校正対象テキスト に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ProofreadingTargetText {
+            get {
+                return ResourceManager.GetString("ProofreadingTargetText", resourceCulture);
             }
         }
         
