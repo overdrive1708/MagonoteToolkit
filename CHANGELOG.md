@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Upgrade .NET8 to .NET10.
 - Changed feature by issue.([Issue #62](https://github.com/overdrive1708/MagonoteToolkit/issues/62))
 
+### Fixed
+
+- Fixed issue.([Issue #66](https://github.com/overdrive1708/MagonoteToolkit/issues/66))
+
 ## [1.2.0] - 2026-04-04
 
 ### Changed
