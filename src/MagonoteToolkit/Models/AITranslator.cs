@@ -25,6 +25,12 @@ namespace MagonoteToolkit.Models
         /// <returns>翻訳結果</returns>
         public static string Translate(string inputLanguage, string outputLanguage, string inputText, string model)
         {
+            // ｢使用するモデル｣が空の場合は、ダミー値を設定する｡(OpenAI SDKのエラー回避)
+            if (model == string.Empty)
+            {
+                model = "dummy_model";
+            }
+
             // OpenAI APIの設定
             OpenAIClientOptions options = new() { Endpoint = new Uri(ApplicationSettings.ReadSettingsAIOpenAIAPIBaseUrl()) };
             OpenAIClient client = new(new ApiKeyCredential(ApplicationSettings.ReadSettingsAIOpenAIAPIKey()), options);
