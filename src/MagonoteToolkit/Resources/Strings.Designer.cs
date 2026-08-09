@@ -179,6 +179,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   文字コード に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string CharCode {
+            get {
+                return ResourceManager.GetString("CharCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   チェック済みのタイムスタンプ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string CheckedTimestamp {
@@ -229,6 +238,15 @@ namespace MagonoteToolkit.Resources {
         public static string Condition {
             get {
                 return ResourceManager.GetString("Condition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   変換オプション に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ConvertOption {
+            get {
+                return ResourceManager.GetString("ConvertOption", resourceCulture);
             }
         }
         
@@ -355,6 +373,24 @@ namespace MagonoteToolkit.Resources {
         public static string ExcelFileNumberToName {
             get {
                 return ResourceManager.GetString("ExcelFileNumberToName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ↑↑文字コード-&gt;文字列↑↑ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExecuteConvertCharcodeToString {
+            get {
+                return ResourceManager.GetString("ExecuteConvertCharcodeToString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ↓↓文字列-&gt;文字コード↓↓ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExecuteConvertStringToCharcode {
+            get {
+                return ResourceManager.GetString("ExecuteConvertStringToCharcode", resourceCulture);
             }
         }
         
@@ -1021,6 +1057,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   区切り文字 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string SeparatorChar {
+            get {
+                return ResourceManager.GetString("SeparatorChar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   設定 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Settings {
@@ -1044,6 +1089,24 @@ namespace MagonoteToolkit.Resources {
         public static string Sheet {
             get {
                 return ResourceManager.GetString("Sheet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   文字列 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string String {
+            get {
+                return ResourceManager.GetString("String", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   文字列&lt;--&gt;文字コード変換 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string StringCharcodeConvert {
+            get {
+                return ResourceManager.GetString("StringCharcodeConvert", resourceCulture);
             }
         }
         

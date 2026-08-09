@@ -1,5 +1,6 @@
 ﻿using MagonoteToolkit.Models;
 using System;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -21,6 +22,9 @@ namespace MagonoteToolkit
             DispatcherUnhandledException += ExceptionHandler.OnDispatcherUnhandledException;
             TaskScheduler.UnobservedTaskException += ExceptionHandler.OnUnobservedTaskException;
             AppDomain.CurrentDomain.UnhandledException += ExceptionHandler.OnUnhandledException;
+
+            // 文字コードのエンコーディングプロバイダーを登録する｡(Shift_JISを使用するために必要)
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
             // MainWindowを表示する｡
             MainWindow mainWindow = new();

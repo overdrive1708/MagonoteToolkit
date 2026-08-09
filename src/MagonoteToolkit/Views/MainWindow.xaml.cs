@@ -14,6 +14,7 @@ namespace MagonoteToolkit
         ClipboardNumberToName,  // クリップボードID->名称変換
         AITranslation,          // AI翻訳
         AIProofreading,         // AI校正
+        StringCharcodeConvert,  // 文字列<-->文字コード変換
         Help                    // ヘルプ
     }
 
@@ -84,6 +85,10 @@ namespace MagonoteToolkit
                     case NavigationItem.Help:
                         header = selectedItem.Content;
                         sourcePageType = typeof(Views.HelpPage);
+                        break;
+                    case NavigationItem.StringCharcodeConvert:
+                        header = selectedItem.Content;
+                        sourcePageType = typeof(Views.StringCharcodeConvertPage);
                         break;
                     default:
                         header = string.Empty;
