@@ -35,6 +35,7 @@
     - 英語
     - 日本語
 - AI校正
+- 文字列<-->文字コード変換
 
 ## ダウンロード方法
 - [GitHubのReleases](https://github.com/overdrive1708/MagonoteToolkit/releases)にあるLatestのAssetsより
