@@ -7,6 +7,9 @@ using System.Collections.ObjectModel;
 
 namespace MagonoteToolkit.Models
 {
+    /// <summary>
+    /// AI翻訳クラス
+    /// </summary>
     internal class AITranslator
     {
         //--------------------------------------------------

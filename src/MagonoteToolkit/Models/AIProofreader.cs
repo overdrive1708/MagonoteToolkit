@@ -7,6 +7,9 @@ using System.Collections.ObjectModel;
 
 namespace MagonoteToolkit.Models
 {
+    /// <summary>
+    /// AI校正クラス
+    /// </summary>
     internal class AIProofreader
     {
         //--------------------------------------------------
