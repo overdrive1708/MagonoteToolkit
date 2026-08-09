@@ -26,7 +26,18 @@ namespace MagonoteToolkit.Models
             ChatClient chatClient = client.GetChatClient(model);
 
             // プロンプトの作成
-            string prompt = string.Format(Resources.Strings.AIProofreadingPrompt, inputText);
+            string prompt;
+            try
+            {
+                // ファイルの読み込みに成功した場合は、プロンプトファイルの内容を使用
+                string promptTemplate = System.IO.File.ReadAllText(ApplicationSettings.ReadSettingsAIProofreadingPromptFilePath());
+                prompt = string.Format(promptTemplate, inputText);
+            }
+            catch (Exception)
+            {
+                // ファイルの読み込みに失敗した場合は、デフォルトのプロンプトを使用
+                prompt = string.Format(Resources.Strings.AIProofreadingDefaultPrompt, inputText);
+            }
 
             // リクエストしてレスポンスを校正結果として採用
             string proofreadingResult;

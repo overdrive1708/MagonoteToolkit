@@ -51,6 +51,16 @@ namespace MagonoteToolkit.Models
         /// </summary>
         public string AIOpenAIAPIKey { get; set; } = string.Empty;
 
+        /// <summary>
+        /// AI関連機能:翻訳プロンプトファイルパス
+        /// </summary>
+        public string AITranslationPromptFilePath { get; set; } = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "AITranslationPrompt.txt");
+
+        /// <summary>
+        /// AI関連機能:校正プロンプトファイルパス
+        /// </summary>
+        public string AIProofreadingPromptFilePath { get; set; } = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "AIProofreadingPrompt.txt");
+
         //--------------------------------------------------
         // 定数(コンフィギュレーション)
         //--------------------------------------------------
@@ -139,7 +149,7 @@ namespace MagonoteToolkit.Models
         /// <summary>
         /// 設定読み込み処理:ファイル変更監視:ワークスペースディレクトリ
         /// </summary>
-        /// <returns></returns>
+        /// <returns>ワークスペースディレクトリ</returns>
         public static string ReadSettingsFileChangeMonitorWorkspaceDirectory()
         {
             return ReadSettings().FileChangeMonitorWorkspaceDirectory;
@@ -157,7 +167,7 @@ namespace MagonoteToolkit.Models
         /// <summary>
         /// 設定読み込み処理:AI関連機能:OpenAI APIのベースURL
         /// </summary>
-        /// <returns></returns>
+        /// <returns>OpenAI APIのベースURL</returns>
         public static string ReadSettingsAIOpenAIAPIBaseUrl()
         {
             return ReadSettings().AIOpenAIAPIBaseUrl;
@@ -166,10 +176,28 @@ namespace MagonoteToolkit.Models
         /// <summary>
         /// 設定読み込み処理:AI関連機能:OpenAI APIのAPIキー
         /// </summary>
-        /// <returns></returns>
+        /// <returns>OpenAI APIのAPIキー</returns>
         public static string ReadSettingsAIOpenAIAPIKey()
         {
             return ReadSettings().AIOpenAIAPIKey;
+        }
+
+        /// <summary>
+        /// 設定読み込み処理:AI関連機能:翻訳プロンプトファイルパス
+        /// </summary>
+        /// <returns>翻訳プロンプトファイルパス</returns>
+        public static string ReadSettingsAITranslationPromptFilePath()
+        {
+            return ReadSettings().AITranslationPromptFilePath;
+        }
+
+        /// <summary>
+        /// 設定読み込み処理:AI関連機能:校正プロンプトファイルパス
+        /// </summary>
+        /// <returns>校正プロンプトファイルパス</returns>
+        public static string ReadSettingsAIProofreadingPromptFilePath()
+        {
+            return ReadSettings().AIProofreadingPromptFilePath;
         }
 
         /// <summary>
