@@ -484,4 +484,25 @@
   <data name="ProofreadingPromptFilePath" xml:space="preserve">
     <value>校正プロンプトファイルパス</value>
   </data>
+  <data name="StringCharcodeConvert" xml:space="preserve">
+    <value>文字列&lt;--&gt;文字コード変換</value>
+  </data>
+  <data name="ConvertOption" xml:space="preserve">
+    <value>変換オプション</value>
+  </data>
+  <data name="CharCode" xml:space="preserve">
+    <value>文字コード</value>
+  </data>
+  <data name="SeparatorChar" xml:space="preserve">
+    <value>区切り文字</value>
+  </data>
+  <data name="String" xml:space="preserve">
+    <value>文字列</value>
+  </data>
+  <data name="ExecuteConvertStringToCharcode" xml:space="preserve">
+    <value>↓↓文字列-&gt;文字コード↓↓</value>
+  </data>
+  <data name="ExecuteConvertCharcodeToString" xml:space="preserve">
+    <value>↑↑文字コード-&gt;文字列↑↑</value>
+  </data>
 </root>
