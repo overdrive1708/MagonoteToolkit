@@ -117,9 +117,9 @@ namespace MagonoteToolkit.Resources {
         ///【校正対象】
         ///{0} に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string AIProofreadingPrompt {
+        public static string AIProofreadingDefaultPrompt {
             get {
-                return ResourceManager.GetString("AIProofreadingPrompt", resourceCulture);
+                return ResourceManager.GetString("AIProofreadingDefaultPrompt", resourceCulture);
             }
         }
         
@@ -154,9 +154,9 @@ namespace MagonoteToolkit.Resources {
         ///【翻訳対象】
         ///{2} に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string AITranslationPrompt {
+        public static string AITranslationDefaultPrompt {
             get {
-                return ResourceManager.GetString("AITranslationPrompt", resourceCulture);
+                return ResourceManager.GetString("AITranslationDefaultPrompt", resourceCulture);
             }
         }
         
@@ -967,6 +967,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   校正プロンプトファイルパス に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ProofreadingPromptFilePath {
+            get {
+                return ResourceManager.GetString("ProofreadingPromptFilePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   校正結果 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string ProofreadingResult {
@@ -1062,6 +1071,15 @@ namespace MagonoteToolkit.Resources {
         public static string TranslationOutputText {
             get {
                 return ResourceManager.GetString("TranslationOutputText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   翻訳プロンプトファイルパス に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string TranslationPromptFilePath {
+            get {
+                return ResourceManager.GetString("TranslationPromptFilePath", resourceCulture);
             }
         }
         

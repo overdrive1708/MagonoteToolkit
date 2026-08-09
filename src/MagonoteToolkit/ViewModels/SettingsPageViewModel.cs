@@ -52,6 +52,18 @@ namespace MagonoteToolkit.ViewModels
         [ObservableProperty]
         private string _aIOpenAIAPIKey;
 
+        /// <summary>
+        /// AI関連機能:翻訳プロンプトファイルパス
+        /// </summary>
+        [ObservableProperty]
+        private string _aITranslationPromptFilePath;
+
+        /// <summary>
+        /// AI関連機能:校正プロンプトファイルパス
+        /// </summary>
+        [ObservableProperty]
+        private string _aIProofreadingPromptFilePath;
+
         //--------------------------------------------------
         // バインディングコマンド
         //--------------------------------------------------
@@ -98,6 +110,20 @@ namespace MagonoteToolkit.ViewModels
         private void ClipboardNumberToNameConvertRulesFilePathDrop(DragEventArgs e) => ExecuteCommandClipboardNumberToNameConvertRulesFilePathDrop(e);
 
         /// <summary>
+        /// AI関連機能:翻訳プロンプトファイルパスドロップ
+        /// </summary>
+        /// <param name="e">イベントデータ</param>
+        [RelayCommand]
+        private void AITranslationPromptFilePathDrop(DragEventArgs e) => ExecuteCommandAITranslationPromptFilePathDrop(e);
+
+        /// <summary>
+        /// AI関連機能:校正プロンプトファイルパスドロップ
+        /// </summary>
+        /// <param name="e">イベントデータ</param>
+        [RelayCommand]
+        private void AIProofreadingPromptFilePathDrop(DragEventArgs e) => ExecuteCommandAIProofreadingPromptFilePathDrop(e);
+
+        /// <summary>
         /// 設定ファイル保存
         /// </summary>
         [RelayCommand]
@@ -123,6 +149,8 @@ namespace MagonoteToolkit.ViewModels
                 ClipboardNumberToNameConvertRulesFilePath = readSettings.ClipboardNumberToNameConvertRulesFilePath;
                 AIOpenAIAPIBaseUrl = readSettings.AIOpenAIAPIBaseUrl;
                 AIOpenAIAPIKey = readSettings.AIOpenAIAPIKey;
+                AITranslationPromptFilePath = readSettings.AITranslationPromptFilePath;
+                AIProofreadingPromptFilePath = readSettings.AIProofreadingPromptFilePath;
             }
         }
 
@@ -207,6 +235,32 @@ namespace MagonoteToolkit.ViewModels
         }
 
         /// <summary>
+        /// AI関連機能:翻訳プロンプトファイルパスドロップコマンド実行処理
+        /// </summary>
+        /// <param name="e">イベントデータ</param>
+        private void ExecuteCommandAITranslationPromptFilePathDrop(DragEventArgs e)
+        {
+            // ドロップされたデータの1つ目をファイル名として採用する｡
+            if (e.Data.GetData(DataFormats.FileDrop) is string[] dropitems)
+            {
+                AITranslationPromptFilePath = dropitems[0];
+            }
+        }
+
+        /// <summary>
+        /// AI関連機能:校正プロンプトファイルパスドロップコマンド実行処理
+        /// </summary>
+        /// <param name="e">イベントデータ</param>
+        private void ExecuteCommandAIProofreadingPromptFilePathDrop(DragEventArgs e)
+        {
+            // ドロップされたデータの1つ目をファイル名として採用する｡
+            if (e.Data.GetData(DataFormats.FileDrop) is string[] dropitems)
+            {
+                AIProofreadingPromptFilePath = dropitems[0];
+            }
+        }
+
+        /// <summary>
         /// 設定ファイル保存コマンド実行処理
         /// </summary>
         private void ExecuteCommandSaveSettings()
@@ -221,6 +275,8 @@ namespace MagonoteToolkit.ViewModels
                 ClipboardNumberToNameConvertRulesFilePath = ClipboardNumberToNameConvertRulesFilePath,
                 AIOpenAIAPIBaseUrl = AIOpenAIAPIBaseUrl,
                 AIOpenAIAPIKey = AIOpenAIAPIKey,
+                AITranslationPromptFilePath = AITranslationPromptFilePath,
+                AIProofreadingPromptFilePath = AIProofreadingPromptFilePath
             };
 
             // 設定書き込み

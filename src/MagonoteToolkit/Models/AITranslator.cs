@@ -7,6 +7,9 @@ using System.Collections.ObjectModel;
 
 namespace MagonoteToolkit.Models
 {
+    /// <summary>
+    /// AI翻訳クラス
+    /// </summary>
     internal class AITranslator
     {
         //--------------------------------------------------
@@ -28,7 +31,18 @@ namespace MagonoteToolkit.Models
             ChatClient chatClient = client.GetChatClient(model);
 
             // プロンプトの作成
-            string prompt = string.Format(Resources.Strings.AITranslationPrompt, inputLanguage, outputLanguage, inputText);
+            string prompt;
+            try
+            {
+                // ファイルの読み込みに成功した場合は、プロンプトファイルの内容を使用
+                string promptTemplate = System.IO.File.ReadAllText(ApplicationSettings.ReadSettingsAITranslationPromptFilePath());
+                prompt = string.Format(promptTemplate, inputLanguage, outputLanguage, inputText);
+            }
+            catch (Exception)
+            {
+                // ファイルの読み込みに失敗した場合は、デフォルトのプロンプトを使用
+                prompt = string.Format(Resources.Strings.AITranslationDefaultPrompt, inputLanguage, outputLanguage, inputText);
+            }
 
             // リクエストしてレスポンスを翻訳結果として採用
             string translationResult;
