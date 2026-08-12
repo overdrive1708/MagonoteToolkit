@@ -60,6 +60,7 @@ MagonoteToolkit_vx.x.x.zipをダウンロードしてください｡
 | ClipboardNumberToNameConvertRulesFilePath | クリップボードID->名称変換で使用する変換ルールファイルのパスを設定します｡ |
 | AIOpenAIAPIBaseUrl | AI関連機能で使用するOpenAI APIのベースURLを設定します｡(例：http://127.0.0.1:1234/v1) |
 | AIOpenAIAPIKey | AI関連機能で使用するOpenAI APIのAPIキーを設定します｡ 暗号化して管理するため設定画面で設定してください｡ |
+| AIOpenAIAPITimeoutTime | AI関連機能で使用するOpenAI APIのタイムアウト時間を設定します｡(例：00:01:40) |
 | AITranslationPromptFilePath | AI翻訳で使用するプロンプトファイルのパスを設定します｡ |
 | AIProofreadingPromptFilePath | AI校正で使用するプロンプトファイルのパスを設定します｡ |
 | AISourceCodeReviewPromptFilePath | AIソースコードレビューで使用するプロンプトファイルのパスを設定します｡ |

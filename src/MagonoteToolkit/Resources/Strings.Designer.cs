@@ -1028,6 +1028,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   無効な時刻形式です。 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageValidationErrorInvalidTimeFormat {
+            get {
+                return ResourceManager.GetString("MessageValidationErrorInvalidTimeFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   使用するモデル に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string ModelToBeUsed {
@@ -1285,6 +1294,15 @@ namespace MagonoteToolkit.Resources {
         public static string TestCaseGenerationTargetSourceCode {
             get {
                 return ResourceManager.GetString("TestCaseGenerationTargetSourceCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   タイムアウト時間 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string TimeoutTime {
+            get {
+                return ResourceManager.GetString("TimeoutTime", resourceCulture);
             }
         }
         
