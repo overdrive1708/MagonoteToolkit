@@ -68,6 +68,11 @@
                 IsSelected="True"
                 Tag="{x:Static local:NavigationItem.AISourceCodeReview}" />
             <ui:NavigationViewItem
+                Content="{x:Static resources:Strings.AITestCaseGeneration}"
+                Icon="Bullets"
+                IsSelected="True"
+                Tag="{x:Static local:NavigationItem.AITestCaseGeneration}" />
+            <ui:NavigationViewItem
                 Content="{x:Static resources:Strings.StringCharcodeConvert}"
                 Icon="Character"
                 IsSelected="True"

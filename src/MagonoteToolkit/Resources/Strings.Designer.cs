@@ -174,6 +174,42 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   AIテストケース生成 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string AITestCaseGeneration {
+            get {
+                return ResourceManager.GetString("AITestCaseGeneration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   あなたはシニアQAエンジニア兼プロフェッショナルプログラマーです。
+        ///提供されたソースコードを詳細に解析し、品質を担保するための網羅的なテストパターン（テストケース）を洗い出してください。
+        ///
+        ///以下の【テストケース生成対象ソースコード】から、想定されるテストパターンを「正常系」「異常系」「境界値・エッジケース」に分類して一覧化してください。
+        ///テストコードの実装は不要です。
+        ///テスト観点と入力値・期待値のリストアップのみを行ってください。
+        ///
+        ///【出力形式】
+        ///以下の構成でマークダウン形式で出力してください。
+        ///1. **コードの概要**: 読み取った処理の目的と主要な仕様
+        ///2. **テスト観点概要**: 考慮すべきリスクや特徴的な条件
+        ///3. **テストケース一覧**
+        ///   - 分類（正常系/異常系/境界値） / テスト内容（シナリオ） / 入力値・前提条件 / 期待される結果
+        ///
+        ///【制約事項】
+        ///- 暗黙的な制約（型の仕様、桁数制限、null/未定義の考慮など）もコードから読み取って含めてください。
+        ///- 実装漏れやバグが起きやすいエッジケースを重点的に抽出してください。
+        ///
+        ///【テストケース生成 [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string AITestCaseGenerationDefaultPrompt {
+            get {
+                return ResourceManager.GetString("AITestCaseGenerationDefaultPrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   AI翻訳 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string AITranslation {
@@ -468,6 +504,15 @@ namespace MagonoteToolkit.Resources {
         public static string ExecuteSourceCodeReview {
             get {
                 return ResourceManager.GetString("ExecuteSourceCodeReview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   テストケース生成実施 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExecuteTestCaseGeneration {
+            get {
+                return ResourceManager.GetString("ExecuteTestCaseGeneration", resourceCulture);
             }
         }
         
@@ -963,6 +1008,16 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   テストケース生成を行っています｡
+        ///しばらくお待ちください｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusNowTestCaseGenerating {
+            get {
+                return ResourceManager.GetString("MessageStatusNowTestCaseGenerating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   翻訳を行っています｡
         ///しばらくお待ちください｡ に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -1203,6 +1258,33 @@ namespace MagonoteToolkit.Resources {
         public static string TargetFileKeyword {
             get {
                 return ResourceManager.GetString("TargetFileKeyword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   テストケース生成プロンプトファイルパス に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string TestCaseGenerationPromptFilePath {
+            get {
+                return ResourceManager.GetString("TestCaseGenerationPromptFilePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   テストケース生成結果 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string TestCaseGenerationResult {
+            get {
+                return ResourceManager.GetString("TestCaseGenerationResult", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   テストケース生成対象ソースコード に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string TestCaseGenerationTargetSourceCode {
+            get {
+                return ResourceManager.GetString("TestCaseGenerationTargetSourceCode", resourceCulture);
             }
         }
         

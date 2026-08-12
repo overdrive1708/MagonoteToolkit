@@ -66,6 +66,11 @@ namespace MagonoteToolkit.Models
         /// </summary>
         public string AISourceCodeReviewPromptFilePath { get; set; } = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "AISourceCodeReviewPrompt.txt");
 
+        /// <summary>
+        /// AI関連機能:テストケース生成プロンプトファイルパス
+        /// </summary>
+        public string AITestCaseGenerationPromptFilePath { get; set; } = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "AITestCaseGenerationPrompt.txt");
+
         //--------------------------------------------------
         // 定数(コンフィギュレーション)
         //--------------------------------------------------
@@ -212,6 +217,15 @@ namespace MagonoteToolkit.Models
         public static string ReadSettingsAISourceCodeReviewPromptFilePath()
         {
             return ReadSettings().AISourceCodeReviewPromptFilePath;
+        }
+
+        /// <summary>
+        /// 設定読み込み処理:AI関連機能:テストケース生成プロンプトファイルパス
+        /// </summary>
+        /// <returns>テストケース生成プロンプトファイルパス</returns>
+        public static string ReadSettingsAITestCaseGenerationPromptFilePath()
+        {
+            return ReadSettings().AITestCaseGenerationPromptFilePath;
         }
 
         /// <summary>

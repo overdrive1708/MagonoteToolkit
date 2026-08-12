@@ -70,6 +70,12 @@ namespace MagonoteToolkit.ViewModels
         [ObservableProperty]
         private string _aISourceCodeReviewPromptFilePath;
 
+        /// <summary>
+        /// AI関連機能:テストケース生成プロンプトファイルパス
+        /// </summary>
+        [ObservableProperty]
+        private string _aITestCaseGenerationPromptFilePath;
+
         //--------------------------------------------------
         // バインディングコマンド
         //--------------------------------------------------
@@ -137,6 +143,13 @@ namespace MagonoteToolkit.ViewModels
         private void AISourceCodeReviewPromptFilePathDrop(DragEventArgs e) => ExecuteCommandAISourceCodeReviewPromptFilePathDrop(e);
 
         /// <summary>
+        /// AI関連機能:テストケース生成プロンプトファイルパスドロップ
+        /// </summary>
+        /// <param name="e">イベントデータ</param>
+        [RelayCommand]
+        private void AITestCaseGenerationPromptFilePathDrop(DragEventArgs e) => ExecuteCommandAITestCaseGenerationPromptFilePathDrop(e);
+
+        /// <summary>
         /// 設定ファイル保存
         /// </summary>
         [RelayCommand]
@@ -165,6 +178,7 @@ namespace MagonoteToolkit.ViewModels
                 AITranslationPromptFilePath = readSettings.AITranslationPromptFilePath;
                 AIProofreadingPromptFilePath = readSettings.AIProofreadingPromptFilePath;
                 AISourceCodeReviewPromptFilePath = readSettings.AISourceCodeReviewPromptFilePath;
+                AITestCaseGenerationPromptFilePath = readSettings.AITestCaseGenerationPromptFilePath;
             }
         }
 
@@ -288,6 +302,19 @@ namespace MagonoteToolkit.ViewModels
         }
 
         /// <summary>
+        /// AI関連機能:テストケース生成プロンプトファイルパスドロップコマンド実行処理
+        /// </summary>
+        /// <param name="e">イベントデータ</param>
+        private void ExecuteCommandAITestCaseGenerationPromptFilePathDrop(DragEventArgs e)
+        {
+            // ドロップされたデータの1つ目をファイル名として採用する｡
+            if (e.Data.GetData(DataFormats.FileDrop) is string[] dropitems)
+            {
+                AITestCaseGenerationPromptFilePath = dropitems[0];
+            }
+        }
+
+        /// <summary>
         /// 設定ファイル保存コマンド実行処理
         /// </summary>
         private void ExecuteCommandSaveSettings()
@@ -304,7 +331,8 @@ namespace MagonoteToolkit.ViewModels
                 AIOpenAIAPIKey = AIOpenAIAPIKey,
                 AITranslationPromptFilePath = AITranslationPromptFilePath,
                 AIProofreadingPromptFilePath = AIProofreadingPromptFilePath,
-                AISourceCodeReviewPromptFilePath = AISourceCodeReviewPromptFilePath
+                AISourceCodeReviewPromptFilePath = AISourceCodeReviewPromptFilePath,
+                AITestCaseGenerationPromptFilePath = AITestCaseGenerationPromptFilePath
             };
 
             // 設定書き込み

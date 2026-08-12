@@ -15,6 +15,7 @@ namespace MagonoteToolkit
         AITranslation,          // AI翻訳
         AIProofreading,         // AI校正
         AISourceCodeReview,     // AIソースコードレビュー
+        AITestCaseGeneration,   // AIテストケース生成
         StringCharcodeConvert,  // 文字列<-->文字コード変換
         Help                    // ヘルプ
     }
@@ -86,6 +87,10 @@ namespace MagonoteToolkit
                     case NavigationItem.AISourceCodeReview:
                         header = selectedItem.Content;
                         sourcePageType = typeof(Views.AISourceCodeReviewPage);
+                        break;
+                    case NavigationItem.AITestCaseGeneration:
+                        header = selectedItem.Content;
+                        sourcePageType = typeof(Views.AITestCaseGenerationPage);
                         break;
                     case NavigationItem.Help:
                         header = selectedItem.Content;
