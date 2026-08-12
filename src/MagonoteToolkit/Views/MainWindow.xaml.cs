@@ -14,6 +14,7 @@ namespace MagonoteToolkit
         ClipboardNumberToName,  // クリップボードID->名称変換
         AITranslation,          // AI翻訳
         AIProofreading,         // AI校正
+        AISourceCodeReview,     // AIソースコードレビュー
         StringCharcodeConvert,  // 文字列<-->文字コード変換
         Help                    // ヘルプ
     }
@@ -81,6 +82,10 @@ namespace MagonoteToolkit
                     case NavigationItem.AIProofreading:
                         header = selectedItem.Content;
                         sourcePageType = typeof(Views.AIProofreadingPage);
+                        break;
+                    case NavigationItem.AISourceCodeReview:
+                        header = selectedItem.Content;
+                        sourcePageType = typeof(Views.AISourceCodeReviewPage);
                         break;
                     case NavigationItem.Help:
                         header = selectedItem.Content;

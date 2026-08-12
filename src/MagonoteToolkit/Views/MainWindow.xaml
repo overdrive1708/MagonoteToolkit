@@ -63,6 +63,11 @@
                 IsSelected="True"
                 Tag="{x:Static local:NavigationItem.AIProofreading}" />
             <ui:NavigationViewItem
+                Content="{x:Static resources:Strings.AISourceCodeReview}"
+                Icon="Find"
+                IsSelected="True"
+                Tag="{x:Static local:NavigationItem.AISourceCodeReview}" />
+            <ui:NavigationViewItem
                 Content="{x:Static resources:Strings.StringCharcodeConvert}"
                 Icon="Character"
                 IsSelected="True"
