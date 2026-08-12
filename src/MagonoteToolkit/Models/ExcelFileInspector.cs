@@ -20,6 +20,11 @@ namespace MagonoteToolkit.Models
             public string FileName { get; set; } = string.Empty;
 
             /// <summary>
+            /// シート
+            /// </summary>
+            public string Sheet { get; set; } = string.Empty;
+
+            /// <summary>
             /// セル
             /// </summary>
             public string Cell { get; set; } = string.Empty;
@@ -86,6 +91,7 @@ namespace MagonoteToolkit.Models
                                             result = new()
                                             {
                                                 FileName = filename,
+                                                Sheet = worksheet.Name,
                                                 Cell = address.ToString(),
                                                 ResultMessage = string.Format(Resources.Strings.MessageResultInspectionNGEqual, method.Value)
                                             };
@@ -99,6 +105,7 @@ namespace MagonoteToolkit.Models
                                             result = new()
                                             {
                                                 FileName = filename,
+                                                Sheet = worksheet.Name,
                                                 Cell = address.ToString(),
                                                 ResultMessage = string.Format(Resources.Strings.MessageResultInspectionNGNotEqual, method.Value)
                                             };
@@ -112,6 +119,7 @@ namespace MagonoteToolkit.Models
                                             result = new()
                                             {
                                                 FileName = filename,
+                                                Sheet = worksheet.Name,
                                                 Cell = address.ToString(),
                                                 ResultMessage = Resources.Strings.MessageResultInspectionNGEmpty
                                             };
@@ -125,6 +133,7 @@ namespace MagonoteToolkit.Models
                                             result = new()
                                             {
                                                 FileName = filename,
+                                                Sheet = worksheet.Name,
                                                 Cell = address.ToString(),
                                                 ResultMessage = Resources.Strings.MessageResultInspectionNGNotEmpty
                                             };
@@ -138,6 +147,7 @@ namespace MagonoteToolkit.Models
                                             result = new()
                                             {
                                                 FileName = filename,
+                                                Sheet = worksheet.Name,
                                                 Cell = address.ToString(),
                                                 ResultMessage = string.Format(Resources.Strings.MessageResultInspectionNGContains, method.Value)
                                             };
@@ -151,6 +161,7 @@ namespace MagonoteToolkit.Models
                                             result = new()
                                             {
                                                 FileName = filename,
+                                                Sheet = worksheet.Name,
                                                 Cell = address.ToString(),
                                                 ResultMessage = string.Format(Resources.Strings.MessageResultInspectionNGRegex, method.Value)
                                             };
@@ -170,6 +181,7 @@ namespace MagonoteToolkit.Models
                 result = new()
                 {
                     FileName = filename,
+                    Sheet = "―",
                     Cell = "―",
                     ResultMessage = Resources.Strings.MessageResultFileOpenError
                 };
@@ -182,6 +194,7 @@ namespace MagonoteToolkit.Models
                 result = new()
                 {
                     FileName = filename,
+                    Sheet = "―",
                     Cell = "―",
                     ResultMessage = Resources.Strings.MessageResultInspectionOK
                 };

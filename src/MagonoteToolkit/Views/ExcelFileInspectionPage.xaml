@@ -155,6 +155,7 @@
                 ItemsSource="{Binding InspectionResultList}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding FileName}" Header="{x:Static resources:Strings.File}" />
+                    <DataGridTextColumn Binding="{Binding Sheet}" Header="{x:Static resources:Strings.Sheet}" />
                     <DataGridTextColumn Binding="{Binding Cell}" Header="{x:Static resources:Strings.Cell}" />
                     <DataGridTextColumn Binding="{Binding ResultMessage}" Header="{x:Static resources:Strings.Result}" />
                 </DataGrid.Columns>
