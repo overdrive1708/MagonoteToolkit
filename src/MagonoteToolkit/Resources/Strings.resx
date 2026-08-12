@@ -591,4 +591,10 @@
 【テストケース生成対象ソースコード】
 {0}</value>
   </data>
+  <data name="TimeoutTime" xml:space="preserve">
+    <value>タイムアウト時間</value>
+  </data>
+  <data name="MessageValidationErrorInvalidTimeFormat" xml:space="preserve">
+    <value>無効な時刻形式です。</value>
+  </data>
 </root>

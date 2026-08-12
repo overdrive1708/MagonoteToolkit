@@ -53,6 +53,12 @@ namespace MagonoteToolkit.ViewModels
         private string _aIOpenAIAPIKey;
 
         /// <summary>
+        /// AI関連機能:OpenAI APIのタイムアウト時間
+        /// </summary>
+        [ObservableProperty]
+        private string _aIOpenAIAPITimeoutTime;
+
+        /// <summary>
         /// AI関連機能:翻訳プロンプトファイルパス
         /// </summary>
         [ObservableProperty]
@@ -175,6 +181,7 @@ namespace MagonoteToolkit.ViewModels
                 ClipboardNumberToNameConvertRulesFilePath = readSettings.ClipboardNumberToNameConvertRulesFilePath;
                 AIOpenAIAPIBaseUrl = readSettings.AIOpenAIAPIBaseUrl;
                 AIOpenAIAPIKey = readSettings.AIOpenAIAPIKey;
+                AIOpenAIAPITimeoutTime = readSettings.AIOpenAIAPITimeoutTime;
                 AITranslationPromptFilePath = readSettings.AITranslationPromptFilePath;
                 AIProofreadingPromptFilePath = readSettings.AIProofreadingPromptFilePath;
                 AISourceCodeReviewPromptFilePath = readSettings.AISourceCodeReviewPromptFilePath;
@@ -329,6 +336,7 @@ namespace MagonoteToolkit.ViewModels
                 ClipboardNumberToNameConvertRulesFilePath = ClipboardNumberToNameConvertRulesFilePath,
                 AIOpenAIAPIBaseUrl = AIOpenAIAPIBaseUrl,
                 AIOpenAIAPIKey = AIOpenAIAPIKey,
+                AIOpenAIAPITimeoutTime = AIOpenAIAPITimeoutTime,
                 AITranslationPromptFilePath = AITranslationPromptFilePath,
                 AIProofreadingPromptFilePath = AIProofreadingPromptFilePath,
                 AISourceCodeReviewPromptFilePath = AISourceCodeReviewPromptFilePath,

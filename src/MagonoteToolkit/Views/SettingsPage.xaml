@@ -5,6 +5,7 @@
     xmlns:bh="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:MagonoteToolkit.Models"
     xmlns:resources="clr-namespace:MagonoteToolkit.Resources"
     xmlns:viewmodels="clr-namespace:MagonoteToolkit.ViewModels"
     mc:Ignorable="d">
@@ -139,6 +140,21 @@
                         Width="500"
                         Margin="5,5,10,5"
                         Text="{Binding AIOpenAIAPIKey}" />
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                    <TextBlock
+                        Margin="10,5,5,5"
+                        VerticalAlignment="Center"
+                        Text="{x:Static resources:Strings.TimeoutTime}" />
+                    <TextBox Width="500" Margin="5,5,10,5">
+                        <TextBox.Text>
+                            <Binding Path="AIOpenAIAPITimeoutTime" UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+                                    <models:TimeSpanValidationRule />
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                     <TextBlock

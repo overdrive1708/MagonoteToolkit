@@ -52,6 +52,11 @@ namespace MagonoteToolkit.Models
         public string AIOpenAIAPIKey { get; set; } = string.Empty;
 
         /// <summary>
+        /// AI関連機能:OpenAI APIのタイムアウト時間
+        /// </summary>
+        public string AIOpenAIAPITimeoutTime { get; set; } = "00:01:40";
+
+        /// <summary>
         /// AI関連機能:翻訳プロンプトファイルパス
         /// </summary>
         public string AITranslationPromptFilePath { get; set; } = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "AITranslationPrompt.txt");
@@ -190,6 +195,15 @@ namespace MagonoteToolkit.Models
         public static string ReadSettingsAIOpenAIAPIKey()
         {
             return ReadSettings().AIOpenAIAPIKey;
+        }
+
+        /// <summary>
+        /// 設定読み込み処理:AI関連機能:OpenAI APIのタイムアウト時間
+        /// </summary>
+        /// <returns>OpenAI APIのタイムアウト時間</returns>
+        public static string ReadSettingsAIOpenAIAPITimeoutTime()
+        {
+            return ReadSettings().AIOpenAIAPITimeoutTime;
         }
 
         /// <summary>
