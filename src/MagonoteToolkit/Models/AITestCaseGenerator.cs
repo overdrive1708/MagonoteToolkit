@@ -1,7 +1,4 @@
-﻿using OpenAI;
-using OpenAI.Chat;
-using System;
-using System.ClientModel;
+﻿using System;
 
 namespace MagonoteToolkit.Models
 {
@@ -21,17 +18,6 @@ namespace MagonoteToolkit.Models
         /// <returns>生成結果</returns>
         public static string Generate(string inputSourceCode, string model)
         {
-            // ｢使用するモデル｣が空の場合は、ダミー値を設定する｡(OpenAI SDKのエラー回避)
-            if (model == string.Empty)
-            {
-                model = "dummy_model";
-            }
-
-            // OpenAI APIの設定
-            OpenAIClientOptions options = new() { Endpoint = new Uri(ApplicationSettings.ReadSettingsAIOpenAIAPIBaseUrl()) };
-            OpenAIClient client = new(new ApiKeyCredential(ApplicationSettings.ReadSettingsAIOpenAIAPIKey()), options);
-            ChatClient chatClient = client.GetChatClient(model);
-
             // プロンプトの作成
             string prompt;
             try
@@ -47,18 +33,7 @@ namespace MagonoteToolkit.Models
             }
 
             // リクエストしてレスポンスをテストケース生成結果として採用
-            string testCaseGenerationResult;
-            try
-            {
-                ChatCompletion completion = chatClient.CompleteChat(prompt);
-                testCaseGenerationResult = completion.Content[0].Text;
-            }
-            catch (Exception ex)
-            {
-                testCaseGenerationResult = $"{Resources.Strings.Error}:{ex.Message}";
-            }
-
-            return testCaseGenerationResult;
+            return Chat(prompt, model);
         }
     }
 }

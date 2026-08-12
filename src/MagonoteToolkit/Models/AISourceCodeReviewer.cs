@@ -1,7 +1,4 @@
-﻿using OpenAI;
-using OpenAI.Chat;
-using System;
-using System.ClientModel;
+﻿using System;
 
 namespace MagonoteToolkit.Models
 {
@@ -21,17 +18,6 @@ namespace MagonoteToolkit.Models
         /// <returns>レビュー結果</returns>
         public static string SourceCodeReview(string inputSourceCode, string model)
         {
-            // ｢使用するモデル｣が空の場合は、ダミー値を設定する｡(OpenAI SDKのエラー回避)
-            if (model == string.Empty)
-            {
-                model = "dummy_model";
-            }
-
-            // OpenAI APIの設定
-            OpenAIClientOptions options = new() { Endpoint = new Uri(ApplicationSettings.ReadSettingsAIOpenAIAPIBaseUrl()) };
-            OpenAIClient client = new(new ApiKeyCredential(ApplicationSettings.ReadSettingsAIOpenAIAPIKey()), options);
-            ChatClient chatClient = client.GetChatClient(model);
-
             // プロンプトの作成
             string prompt;
             try
@@ -47,18 +33,7 @@ namespace MagonoteToolkit.Models
             }
 
             // リクエストしてレスポンスをソースコードレビュー結果として採用
-            string reviewResult;
-            try
-            {
-                ChatCompletion completion = chatClient.CompleteChat(prompt);
-                reviewResult = completion.Content[0].Text;
-            }
-            catch (Exception ex)
-            {
-                reviewResult = $"{Resources.Strings.Error}:{ex.Message}";
-            }
-
-            return reviewResult;
+            return Chat(prompt, model);
         }
     }
 }

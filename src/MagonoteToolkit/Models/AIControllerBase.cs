@@ -1,4 +1,5 @@
 ﻿using OpenAI;
+using OpenAI.Chat;
 using OpenAI.Models;
 using System;
 using System.ClientModel;
@@ -38,6 +39,46 @@ namespace MagonoteToolkit.Models
             }
 
             return modelList;
+        }
+
+        /// <summary>
+        /// チャット処理
+        /// </summary>
+        /// <param name="prompt">プロンプト</param>
+        /// <param name="model">使用するモデル</param>
+        /// <returns>チャット結果</returns>
+        public static string Chat(string prompt, string model)
+        {
+            // ｢使用するモデル｣が空の場合は、ダミー値を設定する｡(OpenAI SDKのエラー回避)
+            if (model == string.Empty)
+            {
+                model = "dummy_model";
+            }
+
+            // ｢タイムアウト時間｣の設定読み込み(不正な場合は、デフォルト値を設定する｡)
+            if (!TimeSpan.TryParse(ApplicationSettings.ReadSettingsAIOpenAIAPITimeoutTime(), out TimeSpan timeout))
+            {
+                timeout = TimeSpan.FromSeconds(100);
+            }
+
+            // OpenAI APIの設定
+            OpenAIClientOptions options = new() { Endpoint = new Uri(ApplicationSettings.ReadSettingsAIOpenAIAPIBaseUrl()), NetworkTimeout = timeout };
+            OpenAIClient client = new(new ApiKeyCredential(ApplicationSettings.ReadSettingsAIOpenAIAPIKey()), options);
+            ChatClient chatClient = client.GetChatClient(model);
+
+            // リクエストしてレスポンスを校正結果として採用
+            string result;
+            try
+            {
+                ChatCompletion completion = chatClient.CompleteChat(prompt);
+                result = completion.Content[0].Text;
+            }
+            catch (Exception ex)
+            {
+                result = $"{Resources.Strings.Error}:{ex.Message}";
+            }
+
+            return result;
         }
     }
 }

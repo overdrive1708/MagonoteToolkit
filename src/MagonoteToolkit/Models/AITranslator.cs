@@ -1,7 +1,4 @@
-﻿using OpenAI;
-using OpenAI.Chat;
-using System;
-using System.ClientModel;
+﻿using System;
 
 namespace MagonoteToolkit.Models
 {
@@ -23,17 +20,6 @@ namespace MagonoteToolkit.Models
         /// <returns>翻訳結果</returns>
         public static string Translate(string inputLanguage, string outputLanguage, string inputText, string model)
         {
-            // ｢使用するモデル｣が空の場合は、ダミー値を設定する｡(OpenAI SDKのエラー回避)
-            if (model == string.Empty)
-            {
-                model = "dummy_model";
-            }
-
-            // OpenAI APIの設定
-            OpenAIClientOptions options = new() { Endpoint = new Uri(ApplicationSettings.ReadSettingsAIOpenAIAPIBaseUrl()) };
-            OpenAIClient client = new(new ApiKeyCredential(ApplicationSettings.ReadSettingsAIOpenAIAPIKey()), options);
-            ChatClient chatClient = client.GetChatClient(model);
-
             // プロンプトの作成
             string prompt;
             try
@@ -49,18 +35,7 @@ namespace MagonoteToolkit.Models
             }
 
             // リクエストしてレスポンスを翻訳結果として採用
-            string translationResult;
-            try
-            {
-                ChatCompletion completion = chatClient.CompleteChat(prompt);
-                translationResult = completion.Content[0].Text;
-            }
-            catch (Exception ex)
-            {
-                translationResult = $"{Resources.Strings.Error}:{ex.Message}";
-            }
-
-            return translationResult;
+            return Chat(prompt, model);
         }
     }
 }
