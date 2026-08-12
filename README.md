@@ -35,6 +35,7 @@
     - 英語
     - 日本語
 - AI校正
+- AIソースコードレビュー
 - 文字列<-->文字コード変換
 
 ## ダウンロード方法
@@ -60,6 +61,7 @@ MagonoteToolkit_vx.x.x.zipをダウンロードしてください｡
 | AIOpenAIAPIKey | AI関連機能で使用するOpenAI APIのAPIキーを設定します｡ 暗号化して管理するため設定画面で設定してください｡ |
 | AITranslationPromptFilePath | AI翻訳で使用するプロンプトファイルのパスを設定します｡ |
 | AIProofreadingPromptFilePath | AI校正で使用するプロンプトファイルのパスを設定します｡ |
+| AISourceCodeReviewPromptFilePath | AIソースコードレビューで使用するプロンプトファイルのパスを設定します｡ |
 
 ### Excelファイル検査
 [設定サンプル](asetts/SampleSettings/ExcelFileInspectionSettings.json)を｢MagonoteToolkit.exe｣と同じ場所に格納してください｡  
@@ -137,6 +139,18 @@ UTF-8でプロンプトを記載してください｡
 UTF-8でプロンプトを記載してください｡  
 画面で入力したものが{0}に埋め込まれます｡  
 {0}：校正対象  
+プロンプトが読み込めなかったり､{0}の記述がなかった場合は､デフォルトのプロンプトで動作します｡  
+
+### AIソースコードレビュー
+プロンプトの書き換えが不要な場合は設定不要です｡  
+プロンプトを書き換えたい場合に以下の設定を行ってください｡  
+[変換ルールサンプル](asetts/SampleSettings/AISourceCodeReviewPrompt.txt)を｢MagonoteToolkit.exe｣と同じ場所に格納してください｡  
+(全体設定を変更することで格納場所を変更することが可能です｡)  
+その後､下記を参考に設定してください｡  
+
+UTF-8でプロンプトを記載してください｡  
+画面で入力したものが{0}に埋め込まれます｡  
+{0}：レビュー対象ソースコード  
 プロンプトが読み込めなかったり､{0}の記述がなかった場合は､デフォルトのプロンプトで動作します｡  
 
 ## 使い方
