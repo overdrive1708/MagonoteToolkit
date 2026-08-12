@@ -178,6 +178,25 @@
                         </bh:Interaction.Triggers>
                     </TextBox>
                 </StackPanel>
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                    <TextBlock
+                        Margin="10,5,5,5"
+                        VerticalAlignment="Center"
+                        Text="{x:Static resources:Strings.SourceCodeReviewPromptFilePath}" />
+                    <TextBox
+                        Width="500"
+                        Margin="5,5,10,5"
+                        Text="{Binding AISourceCodeReviewPromptFilePath}">
+                        <bh:Interaction.Triggers>
+                            <bh:EventTrigger EventName="PreviewDragOver">
+                                <bh:InvokeCommandAction Command="{Binding FilePathPreviewDragOverCommand}" PassEventArgsToCommand="True" />
+                            </bh:EventTrigger>
+                            <bh:EventTrigger EventName="Drop">
+                                <bh:InvokeCommandAction Command="{Binding AISourceCodeReviewPromptFilePathDropCommand}" PassEventArgsToCommand="True" />
+                            </bh:EventTrigger>
+                        </bh:Interaction.Triggers>
+                    </TextBox>
+                </StackPanel>
 
                 <Button
                     Margin="10,5,10,5"

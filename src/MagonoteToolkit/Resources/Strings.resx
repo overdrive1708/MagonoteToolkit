@@ -505,4 +505,49 @@
   <data name="ExecuteConvertCharcodeToString" xml:space="preserve">
     <value>↑↑文字コード-&gt;文字列↑↑</value>
   </data>
+  <data name="SourceCodeReviewPromptFilePath" xml:space="preserve">
+    <value>ソースコードレビュープロンプトファイルパス</value>
+  </data>
+  <data name="AISourceCodeReview" xml:space="preserve">
+    <value>AIソースコードレビュー</value>
+  </data>
+  <data name="AISourceCodeReviewDefaultPrompt" xml:space="preserve">
+    <value>あなたは、ソースコードレビューを行うシニアソフトウェアエンジニアです。
+以下の【観点】で【レビュー対象ソースコード】をチェックして､【出力形式】に沿って出力してください｡
+
+【観点】
+- バグや論理エラーの有無
+- セキュリティ上の懸念
+- パフォーマンスの問題
+- 可読性・命名規則
+- エラーハンドリングの適切さ
+- テストのしやすさ
+
+【出力形式】
+**重大な問題** - 修正必須
+**提案** - 検討すべき改善点
+**良い点** - 適切に実装されている箇所
+
+各項目について：
+- 具体的な該当行の参照
+- 問題点の明確な説明
+- コード例を含む解決策の提案
+- 変更の根拠
+
+【レビュー対象ソースコード】
+{0}</value>
+  </data>
+  <data name="SourceCodeReviewTarget" xml:space="preserve">
+    <value>ソースコードレビュー対象</value>
+  </data>
+  <data name="SourceCodeReviewResult" xml:space="preserve">
+    <value>ソースコードレビュー結果</value>
+  </data>
+  <data name="ExecuteSourceCodeReview" xml:space="preserve">
+    <value>ソースコードレビュー実施</value>
+  </data>
+  <data name="MessageStatusNowSourceCodeReviewing" xml:space="preserve">
+    <value>ソースコードレビューを行っています｡
+しばらくお待ちください｡</value>
+  </data>
 </root>

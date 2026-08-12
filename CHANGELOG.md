@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed feature by issue.([Issue #62](https://github.com/overdrive1708/MagonoteToolkit/issues/62))
 - Changed feature by issue.([Issue #68](https://github.com/overdrive1708/MagonoteToolkit/issues/68))
 - Changed feature by issue.([Issue #70](https://github.com/overdrive1708/MagonoteToolkit/issues/70))
+- Changed feature by issue.([Issue #76](https://github.com/overdrive1708/MagonoteToolkit/issues/76))
 
 ### Fixed
 

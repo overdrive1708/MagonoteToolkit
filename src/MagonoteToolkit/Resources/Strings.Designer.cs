@@ -133,6 +133,47 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   AIソースコードレビュー に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string AISourceCodeReview {
+            get {
+                return ResourceManager.GetString("AISourceCodeReview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   あなたは、ソースコードレビューを行うシニアソフトウェアエンジニアです。
+        ///以下の【観点】で【レビュー対象ソースコード】をチェックして､【出力形式】に沿って出力してください｡
+        ///
+        ///【観点】
+        ///- バグや論理エラーの有無
+        ///- セキュリティ上の懸念
+        ///- パフォーマンスの問題
+        ///- 可読性・命名規則
+        ///- エラーハンドリングの適切さ
+        ///- テストのしやすさ
+        ///
+        ///【出力形式】
+        ///**重大な問題** - 修正必須
+        ///**提案** - 検討すべき改善点
+        ///**良い点** - 適切に実装されている箇所
+        ///
+        ///各項目について：
+        ///- 具体的な該当行の参照
+        ///- 問題点の明確な説明
+        ///- コード例を含む解決策の提案
+        ///- 変更の根拠
+        ///
+        ///【レビュー対象ソースコード】
+        ///{0} に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string AISourceCodeReviewDefaultPrompt {
+            get {
+                return ResourceManager.GetString("AISourceCodeReviewDefaultPrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   AI翻訳 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string AITranslation {
@@ -418,6 +459,15 @@ namespace MagonoteToolkit.Resources {
         public static string ExecuteProofreading {
             get {
                 return ResourceManager.GetString("ExecuteProofreading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ソースコードレビュー実施 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExecuteSourceCodeReview {
+            get {
+                return ResourceManager.GetString("ExecuteSourceCodeReview", resourceCulture);
             }
         }
         
@@ -903,6 +953,16 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   ソースコードレビューを行っています｡
+        ///しばらくお待ちください｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusNowSourceCodeReviewing {
+            get {
+                return ResourceManager.GetString("MessageStatusNowSourceCodeReviewing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   翻訳を行っています｡
         ///しばらくお待ちください｡ に類似しているローカライズされた文字列を検索します。
         /// </summary>
@@ -1089,6 +1149,33 @@ namespace MagonoteToolkit.Resources {
         public static string Sheet {
             get {
                 return ResourceManager.GetString("Sheet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ソースコードレビュープロンプトファイルパス に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string SourceCodeReviewPromptFilePath {
+            get {
+                return ResourceManager.GetString("SourceCodeReviewPromptFilePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ソースコードレビュー結果 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string SourceCodeReviewResult {
+            get {
+                return ResourceManager.GetString("SourceCodeReviewResult", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ソースコードレビュー対象 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string SourceCodeReviewTarget {
+            get {
+                return ResourceManager.GetString("SourceCodeReviewTarget", resourceCulture);
             }
         }
         

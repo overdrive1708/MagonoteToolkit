@@ -60,6 +60,11 @@ namespace MagonoteToolkit.Models
         /// AI関連機能:校正プロンプトファイルパス
         /// </summary>
         public string AIProofreadingPromptFilePath { get; set; } = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "AIProofreadingPrompt.txt");
+        
+        /// <summary>
+        /// AI関連機能:ソースコードレビュープロンプトファイルパス
+        /// </summary>
+        public string AISourceCodeReviewPromptFilePath { get; set; } = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "AISourceCodeReviewPrompt.txt");
 
         //--------------------------------------------------
         // 定数(コンフィギュレーション)
@@ -198,6 +203,15 @@ namespace MagonoteToolkit.Models
         public static string ReadSettingsAIProofreadingPromptFilePath()
         {
             return ReadSettings().AIProofreadingPromptFilePath;
+        }
+
+        /// <summary>
+        /// 設定読み込み処理:AI関連機能:ソースコードレビュープロンプトファイルパス
+        /// </summary>
+        /// <returns>ソースコードレビュープロンプトファイルパス</returns>
+        public static string ReadSettingsAISourceCodeReviewPromptFilePath()
+        {
+            return ReadSettings().AISourceCodeReviewPromptFilePath;
         }
 
         /// <summary>
