@@ -505,4 +505,7 @@
   <data name="ExecuteConvertCharcodeToString" xml:space="preserve">
     <value>↑↑文字コード-&gt;文字列↑↑</value>
   </data>
+  <data name="SourceCodeReviewPromptFilePath" xml:space="preserve">
+    <value>ソースコードレビュープロンプトファイルパス</value>
+  </data>
 </root>

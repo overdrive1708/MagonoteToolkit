@@ -1093,6 +1093,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   ソースコードレビュープロンプトファイルパス に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string SourceCodeReviewPromptFilePath {
+            get {
+                return ResourceManager.GetString("SourceCodeReviewPromptFilePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   文字列 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string String {
