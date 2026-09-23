@@ -1334,6 +1334,42 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   CRに置換する に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ReplaceCR {
+            get {
+                return ResourceManager.GetString("ReplaceCR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   CRLFに置換する に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ReplaceCRLF {
+            get {
+                return ResourceManager.GetString("ReplaceCRLF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   LFに置換する に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ReplaceLF {
+            get {
+                return ResourceManager.GetString("ReplaceLF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   改行文字を置換する に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ReplaceNewlineCharacter {
+            get {
+                return ResourceManager.GetString("ReplaceNewlineCharacter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   結果 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Result {

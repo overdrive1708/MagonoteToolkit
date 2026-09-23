@@ -24,6 +24,16 @@
                             Margin="10,5,5,5"
                             Content="{x:Static resources:Strings.RemoveTheTrailingNewlineCharacter}"
                             IsChecked="{Binding IsRemoveTrailingNewline}" />
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox
+                                Margin="10,5,5,5"
+                                Content="{x:Static resources:Strings.ReplaceNewlineCharacter}"
+                                IsChecked="{Binding IsReplaceNewline}" />
+                            <ComboBox
+                                Margin="5,5,10,5"
+                                ItemsSource="{Binding ReplaceNewlineCharacterList}"
+                                SelectedItem="{Binding ReplaceNewlineCharacter}" />
+                        </StackPanel>
                     </StackPanel>
                 </GroupBox>
 
