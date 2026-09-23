@@ -1,8 +1,8 @@
 # ファイルコピーの使い方
 
-
 1. 以下の通りコピーするための情報を指定してください｡
-<img alt="ExecuteExamination" src="images/FileCopy/MainWindow.png" width="75%">
+   <img alt="ExecuteExamination" src="images/FileCopy/MainWindow.png" width="75%">
+
    | 設定項目 | 設定内容 |
    | --- | --- |
    | コピー元 | コピー元を指定してください｡ |
