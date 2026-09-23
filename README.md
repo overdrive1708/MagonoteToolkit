@@ -184,7 +184,7 @@ UTF-8でプロンプトを記載してください｡
 - [AI校正](docs/HowToUseAIProofreading.md)を参照してください｡
 
 ## 開発環境
-- Microsoft Visual Studio Community 2022
+- Microsoft Visual Studio Community 2026
 
 ## 使用しているライブラリ
 詳細は[NOTICE.md](NOTICE.md)を参照してください｡
