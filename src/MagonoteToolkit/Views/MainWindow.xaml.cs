@@ -13,6 +13,7 @@ namespace MagonoteToolkit
         FileChangeMonitor,      // ファイル変更監視
         FileCopy,               // ファイルコピー
         ClipboardNumberToName,  // クリップボードID->名称変換
+        ClipboardOverwriteTextData, // クリップボードテキストデータ書き換え
         AITranslation,          // AI翻訳
         AIProofreading,         // AI校正
         AISourceCodeReview,     // AIソースコードレビュー
@@ -80,6 +81,10 @@ namespace MagonoteToolkit
                     case NavigationItem.ClipboardNumberToName:
                         header = selectedItem.Content;
                         sourcePageType = typeof(Views.ClipboardNumberToNamePage);
+                        break;
+                    case NavigationItem.ClipboardOverwriteTextData:
+                        header = selectedItem.Content;
+                        sourcePageType = typeof(Views.ClipboardOverwriteTextDataPage);
                         break;
                     case NavigationItem.AITranslation:
                         header = selectedItem.Content;

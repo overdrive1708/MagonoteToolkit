@@ -1,0 +1,63 @@
+﻿<Page
+    x:Class="MagonoteToolkit.Views.ClipboardOverwriteTextDataPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:resources="clr-namespace:MagonoteToolkit.Resources"
+    xmlns:viewmodels="clr-namespace:MagonoteToolkit.ViewModels"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <viewmodels:ClipboardOverwriteTextDataPageViewModel />
+    </Page.DataContext>
+
+    <Grid
+        Width="600"
+        Margin="10,10,10,10"
+        HorizontalAlignment="Center">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <GroupBox Margin="10,5,10,5" Header="{x:Static resources:Strings.OverwriteOptions}">
+                    <StackPanel>
+                        <CheckBox
+                            Margin="10,5,5,5"
+                            Content="{x:Static resources:Strings.RemoveTheTrailingNewlineCharacter}"
+                            IsChecked="{Binding IsRemoveTrailingNewline}" />
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Margin="10,5,10,5" Header="{x:Static resources:Strings.BeforeModificationClipboardStrings}">
+                    <TextBox
+                        Height="150"
+                        HorizontalScrollBarVisibility="Auto"
+                        IsReadOnly="True"
+                        Text="{Binding BeforeModificationClipboardStrings}"
+                        VerticalScrollBarVisibility="Auto" />
+                </GroupBox>
+
+                <GroupBox Margin="10,5,10,5" Header="{x:Static resources:Strings.AfterModificationClipboardStrings}">
+                    <TextBox
+                        Height="150"
+                        HorizontalScrollBarVisibility="Auto"
+                        IsReadOnly="True"
+                        Text="{Binding AfterModificationClipboardStrings}"
+                        VerticalScrollBarVisibility="Auto" />
+                </GroupBox>
+
+                <Button
+                    Margin="10,5,10,5"
+                    HorizontalAlignment="Stretch"
+                    Command="{Binding OverwriteCommand}"
+                    Content="{x:Static resources:Strings.ExecuteOverwrite}"
+                    IsEnabled="{Binding IsOperationEnable}" />
+
+                <StatusBar Margin="10,5,10,5">
+                    <StatusBarItem>
+                        <TextBlock Text="{Binding StatusMessage}" />
+                    </StatusBarItem>
+                </StatusBar>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

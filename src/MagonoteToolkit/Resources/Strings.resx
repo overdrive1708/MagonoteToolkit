@@ -636,4 +636,25 @@
   <data name="MarkdownPreview" xml:space="preserve">
     <value>マークダウンプレビュー</value>
   </data>
+  <data name="ClipboardOverwriteTextData" xml:space="preserve">
+    <value>クリップボードテキストデータ書き換え</value>
+  </data>
+  <data name="RemoveTheTrailingNewlineCharacter" xml:space="preserve">
+    <value>末尾の改行文字を削除する</value>
+  </data>
+  <data name="OverwriteOptions" xml:space="preserve">
+    <value>書き換え設定</value>
+  </data>
+  <data name="BeforeModificationClipboardStrings" xml:space="preserve">
+    <value>書き換え前のクリップボード文字列</value>
+  </data>
+  <data name="AfterModificationClipboardStrings" xml:space="preserve">
+    <value>書き換え後のクリップボード文字列</value>
+  </data>
+  <data name="ExecuteOverwrite" xml:space="preserve">
+    <value>書き換え実施</value>
+  </data>
+  <data name="MessageStatusCompleteOverwriteClipboard" xml:space="preserve">
+    <value>クリップボードの書き換えが完了しました｡ペーストしてください｡</value>
+  </data>
 </root>

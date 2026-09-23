@@ -79,6 +79,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   書き換え後のクリップボード文字列 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string AfterModificationClipboardStrings {
+            get {
+                return ResourceManager.GetString("AfterModificationClipboardStrings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   AI校正 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string AIProofreading {
@@ -247,6 +256,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   書き換え前のクリップボード文字列 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string BeforeModificationClipboardStrings {
+            get {
+                return ResourceManager.GetString("BeforeModificationClipboardStrings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   セル に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Cell {
@@ -297,6 +315,15 @@ namespace MagonoteToolkit.Resources {
         public static string ClipboardNumberToName {
             get {
                 return ResourceManager.GetString("ClipboardNumberToName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   クリップボードテキストデータ書き換え に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ClipboardOverwriteTextData {
+            get {
+                return ResourceManager.GetString("ClipboardOverwriteTextData", resourceCulture);
             }
         }
         
@@ -549,6 +576,15 @@ namespace MagonoteToolkit.Resources {
         public static string ExecuteInspection {
             get {
                 return ResourceManager.GetString("ExecuteInspection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   書き換え実施 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExecuteOverwrite {
+            get {
+                return ResourceManager.GetString("ExecuteOverwrite", resourceCulture);
             }
         }
         
@@ -988,6 +1024,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   クリップボードの書き換えが完了しました｡ペーストしてください｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusCompleteOverwriteClipboard {
+            get {
+                return ResourceManager.GetString("MessageStatusCompleteOverwriteClipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   処理が完了しました｡ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MessageStatusCompleteProcessing {
@@ -1217,6 +1262,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   書き換え設定 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string OverwriteOptions {
+            get {
+                return ResourceManager.GetString("OverwriteOptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   プリセット に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Preset {
@@ -1267,6 +1321,15 @@ namespace MagonoteToolkit.Resources {
         public static string Recheck {
             get {
                 return ResourceManager.GetString("Recheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   末尾の改行文字を削除する に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string RemoveTheTrailingNewlineCharacter {
+            get {
+                return ResourceManager.GetString("RemoveTheTrailingNewlineCharacter", resourceCulture);
             }
         }
         
