@@ -319,6 +319,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   文字列を含む に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ContainsText {
+            get {
+                return ResourceManager.GetString("ContainsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   変換オプション に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string ConvertOption {
@@ -333,6 +342,51 @@ namespace MagonoteToolkit.Resources {
         public static string ConvertRulesFilePath {
             get {
                 return ResourceManager.GetString("ConvertRulesFilePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   コピー条件 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string CopyConditions {
+            get {
+                return ResourceManager.GetString("CopyConditions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   コピー先 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string CopyDestination {
+            get {
+                return ResourceManager.GetString("CopyDestination", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   コピーオプション に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string CopyOptions {
+            get {
+                return ResourceManager.GetString("CopyOptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   コピー元 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string CopySource {
+            get {
+                return ResourceManager.GetString("CopySource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ディレクトリ構造をコピーする に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string CopyTheDirectoryStructure {
+            get {
+                return ResourceManager.GetString("CopyTheDirectoryStructure", resourceCulture);
             }
         }
         
@@ -472,6 +526,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   コピー実施 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExecuteCopy {
+            get {
+                return ResourceManager.GetString("ExecuteCopy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   調査実施 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string ExecuteExamination {
@@ -549,6 +612,15 @@ namespace MagonoteToolkit.Resources {
         public static string FileChangeMonitorResult {
             get {
                 return ResourceManager.GetString("FileChangeMonitorResult", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   ファイルコピー に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string FileCopy {
+            get {
+                return ResourceManager.GetString("FileCopy", resourceCulture);
             }
         }
         
@@ -925,6 +997,24 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   コピー先が存在しません｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusCopyDestinationNotExist {
+            get {
+                return ResourceManager.GetString("MessageStatusCopyDestinationNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   コピー元が存在しません｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusCopySourceNotExist {
+            get {
+                return ResourceManager.GetString("MessageStatusCopySourceNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   調査ファイルが指定されていません｡ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MessageStatusExaminationFileEmpty {
@@ -957,6 +1047,15 @@ namespace MagonoteToolkit.Resources {
         public static string MessageStatusInspectionMethodEmpty {
             get {
                 return ResourceManager.GetString("MessageStatusInspectionMethodEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   コピーを行っています｡({0}/{1}) に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusNowCopying {
+            get {
+                return ResourceManager.GetString("MessageStatusNowCopying", resourceCulture);
             }
         }
         
@@ -1366,6 +1465,15 @@ namespace MagonoteToolkit.Resources {
         public static string VersionInfo {
             get {
                 return ResourceManager.GetString("VersionInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   期間内 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string WithinPeriod {
+            get {
+                return ResourceManager.GetString("WithinPeriod", resourceCulture);
             }
         }
         

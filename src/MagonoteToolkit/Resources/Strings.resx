@@ -597,4 +597,40 @@
   <data name="MessageValidationErrorInvalidTimeFormat" xml:space="preserve">
     <value>無効な時刻形式です。</value>
   </data>
+  <data name="CopySource" xml:space="preserve">
+    <value>コピー元</value>
+  </data>
+  <data name="CopyDestination" xml:space="preserve">
+    <value>コピー先</value>
+  </data>
+  <data name="CopyConditions" xml:space="preserve">
+    <value>コピー条件</value>
+  </data>
+  <data name="ExecuteCopy" xml:space="preserve">
+    <value>コピー実施</value>
+  </data>
+  <data name="FileCopy" xml:space="preserve">
+    <value>ファイルコピー</value>
+  </data>
+  <data name="ContainsText" xml:space="preserve">
+    <value>文字列を含む</value>
+  </data>
+  <data name="WithinPeriod" xml:space="preserve">
+    <value>期間内</value>
+  </data>
+  <data name="MessageStatusNowCopying" xml:space="preserve">
+    <value>コピーを行っています｡({0}/{1})</value>
+  </data>
+  <data name="MessageStatusCopySourceNotExist" xml:space="preserve">
+    <value>コピー元が存在しません｡</value>
+  </data>
+  <data name="MessageStatusCopyDestinationNotExist" xml:space="preserve">
+    <value>コピー先が存在しません｡</value>
+  </data>
+  <data name="CopyTheDirectoryStructure" xml:space="preserve">
+    <value>ディレクトリ構造をコピーする</value>
+  </data>
+  <data name="CopyOptions" xml:space="preserve">
+    <value>コピーオプション</value>
+  </data>
 </root>

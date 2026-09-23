@@ -48,6 +48,11 @@
                 IsSelected="True"
                 Tag="{x:Static local:NavigationItem.FileChangeMonitor}" />
             <ui:NavigationViewItem
+                Content="{x:Static resources:Strings.FileCopy}"
+                Icon="Copy"
+                IsSelected="True"
+                Tag="{x:Static local:NavigationItem.FileCopy}" />
+            <ui:NavigationViewItem
                 Content="{x:Static resources:Strings.ClipboardNumberToName}"
                 Icon="Find"
                 IsSelected="True"
