@@ -121,9 +121,17 @@ namespace MagonoteToolkit.Models
             // ｢AI関連機能:OpenAI APIのAPIキー｣は復号化して取得する
             if (!string.IsNullOrEmpty(readSettings.AIOpenAIAPIKey))
             {
-                byte[] encryptedBytes = Convert.FromBase64String(readSettings.AIOpenAIAPIKey);
-                byte[] decryptedBytes = ProtectedData.Unprotect(encryptedBytes, null, DataProtectionScope.CurrentUser);
-                readSettings.AIOpenAIAPIKey = Encoding.UTF8.GetString(decryptedBytes);
+                try
+                {
+                    byte[] encryptedBytes = Convert.FromBase64String(readSettings.AIOpenAIAPIKey);
+                    byte[] decryptedBytes = ProtectedData.Unprotect(encryptedBytes, null, DataProtectionScope.CurrentUser);
+                    readSettings.AIOpenAIAPIKey = Encoding.UTF8.GetString(decryptedBytes);
+                }
+                catch (CryptographicException)
+                {
+                    // 復号化に失敗した場合は、ダミー値を設定する｡(OpenAI SDKのエラー回避)
+                    readSettings.AIOpenAIAPIKey = "dummy_api_key";
+                }
             }
             else
             {
