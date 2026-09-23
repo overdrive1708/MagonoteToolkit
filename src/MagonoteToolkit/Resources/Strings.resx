@@ -657,4 +657,16 @@
   <data name="MessageStatusCompleteOverwriteClipboard" xml:space="preserve">
     <value>クリップボードの書き換えが完了しました｡ペーストしてください｡</value>
   </data>
+  <data name="ReplaceNewlineCharacter" xml:space="preserve">
+    <value>改行文字を置換する</value>
+  </data>
+  <data name="ReplaceLF" xml:space="preserve">
+    <value>LFに置換する</value>
+  </data>
+  <data name="ReplaceCR" xml:space="preserve">
+    <value>CRに置換する</value>
+  </data>
+  <data name="ReplaceCRLF" xml:space="preserve">
+    <value>CRLFに置換する</value>
+  </data>
 </root>

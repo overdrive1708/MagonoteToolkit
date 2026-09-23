@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MagonoteToolkit.Models;
+using System.Collections.ObjectModel;
 
 namespace MagonoteToolkit.ViewModels
 {
@@ -14,6 +15,24 @@ namespace MagonoteToolkit.ViewModels
         /// </summary>
         [ObservableProperty]
         private bool _isRemoveTrailingNewline = false;
+
+        /// <summary>
+        /// 書き換え設定：改行文字を置換するかどうか
+        /// </summary>
+        [ObservableProperty]
+        private bool _isReplaceNewline = false;
+
+        /// <summary>
+        /// 書き換え設定：置換する改行文字のリスト
+        /// </summary>
+        [ObservableProperty]
+        private ObservableCollection<string> _replaceNewlineCharacterList = [Resources.Strings.ReplaceLF, Resources.Strings.ReplaceCR, Resources.Strings.ReplaceCRLF];
+
+        /// <summary>
+        /// 書き換え設定：置換する改行文字
+        /// </summary>
+        [ObservableProperty]
+        private string _replaceNewlineCharacter = Resources.Strings.ReplaceCRLF;
 
         /// <summary>
         /// 書き換え前のクリップボード文字列
@@ -64,9 +83,29 @@ namespace MagonoteToolkit.ViewModels
             // 書き換え処理
             BeforeModificationClipboardStrings = ClipboardReader.ReadText();
 
-            if(IsRemoveTrailingNewline)
+            if (IsRemoveTrailingNewline)
             {
-                ClipboardWriter.WriteTextRemoveTrailingNewline(BeforeModificationClipboardStrings);
+                ClipboardWriter.WriteTextRemoveTrailingNewline(ClipboardReader.ReadText());
+            }
+
+            if (IsReplaceNewline)
+            {
+                if (ReplaceNewlineCharacter == Resources.Strings.ReplaceLF)
+                {
+                    ClipboardWriter.WriteTextReplaceNewline(ClipboardReader.ReadText(), "\n");
+                }
+                else if (ReplaceNewlineCharacter == Resources.Strings.ReplaceCR)
+                {
+                    ClipboardWriter.WriteTextReplaceNewline(ClipboardReader.ReadText(), "\r");
+                }
+                else if (ReplaceNewlineCharacter == Resources.Strings.ReplaceCRLF)
+                {
+                    ClipboardWriter.WriteTextReplaceNewline(ClipboardReader.ReadText(), "\r\n");
+                }
+                else
+                {
+                    // 置換する改行文字が不正な場合は何もしない
+                }
             }
 
             AfterModificationClipboardStrings = ClipboardReader.ReadText();

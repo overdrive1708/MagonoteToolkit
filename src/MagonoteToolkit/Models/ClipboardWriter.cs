@@ -1,4 +1,6 @@
-﻿namespace MagonoteToolkit.Models
+﻿using System.Text.RegularExpressions;
+
+namespace MagonoteToolkit.Models
 {
     /// <summary>
     /// クリップボード書き込みクラス
@@ -22,6 +24,27 @@
 
             // クリップボードに書き込む
             System.Windows.Clipboard.SetText(text);
+        }
+
+        /// <summary>
+        /// 文字列の改行コードを指定の改行コードに置換してクリップボードに書き込む
+        /// </summary>
+        /// <param name="text">書き込み文字列</param>
+        /// <param name="replaceNewlineCharacter">置換する改行文字</param>
+        public static void WriteTextReplaceNewline(string text, string replaceNewlineCharacter)
+        {
+            // 書き込み文字列が空の場合は無処理
+            if (string.IsNullOrEmpty(text))
+            {
+                return;
+            }
+
+            // 改行コードを置換
+            string pattern = @"\r\n|\r|\n";
+            string replacedText = Regex.Replace(text, pattern, replaceNewlineCharacter);
+
+            // クリップボードに書き込む
+            System.Windows.Clipboard.SetText(replacedText);
         }
     }
 }
