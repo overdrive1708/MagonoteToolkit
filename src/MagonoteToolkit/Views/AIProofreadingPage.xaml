@@ -4,13 +4,21 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mdxam="clr-namespace:MdXaml;assembly=MdXaml"
+    xmlns:models="clr-namespace:MagonoteToolkit.Models"
     xmlns:resources="clr-namespace:MagonoteToolkit.Resources"
+    xmlns:ui="http://schemas.modernwpf.com/2019"
     xmlns:viewmodels="clr-namespace:MagonoteToolkit.ViewModels"
     mc:Ignorable="d">
 
     <Page.DataContext>
         <viewmodels:AIProofreadingPageViewModel />
     </Page.DataContext>
+
+    <Page.Resources>
+        <models:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        <models:InvertedBoolToVisibilityConverter x:Key="InvertedBoolToVisibilityConverter" />
+    </Page.Resources>
 
     <Grid Margin="10,10,10,10">
         <StackPanel>
@@ -35,13 +43,27 @@
 
             <GroupBox Margin="10,5,10,5" Header="{x:Static resources:Strings.ProofreadingResult}">
                 <StackPanel>
-                    <TextBox
-                        Height="200"
+                    <ui:ToggleSwitch
                         Margin="10,5,10,5"
-                        HorizontalScrollBarVisibility="Auto"
-                        IsReadOnly="True"
-                        Text="{Binding ProofreadingResult}"
-                        VerticalScrollBarVisibility="Auto" />
+                        Header="{x:Static resources:Strings.MarkdownPreview}"
+                        IsOn="{Binding IsMarkdownPreviewEnabled}" />
+                    <Grid>
+                        <mdxam:MarkdownScrollViewer
+                            Height="200"
+                            Margin="10,5,10,5"
+                            HorizontalScrollBarVisibility="Auto"
+                            Markdown="{Binding ProofreadingResult}"
+                            VerticalScrollBarVisibility="Auto"
+                            Visibility="{Binding IsMarkdownPreviewEnabled, Converter={StaticResource BoolToVisibilityConverter}}" />
+                        <TextBox
+                            Height="200"
+                            Margin="10,5,10,5"
+                            HorizontalScrollBarVisibility="Auto"
+                            IsReadOnly="True"
+                            Text="{Binding ProofreadingResult}"
+                            VerticalScrollBarVisibility="Auto"
+                            Visibility="{Binding IsMarkdownPreviewEnabled, Converter={StaticResource InvertedBoolToVisibilityConverter}}" />
+                    </Grid>
                 </StackPanel>
             </GroupBox>
 

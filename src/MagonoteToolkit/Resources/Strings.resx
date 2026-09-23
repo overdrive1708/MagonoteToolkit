@@ -633,4 +633,7 @@
   <data name="CopyOptions" xml:space="preserve">
     <value>コピーオプション</value>
   </data>
+  <data name="MarkdownPreview" xml:space="preserve">
+    <value>マークダウンプレビュー</value>
+  </data>
 </root>

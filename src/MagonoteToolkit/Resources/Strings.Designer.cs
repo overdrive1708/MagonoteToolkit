@@ -733,6 +733,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   マークダウンプレビュー に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MarkdownPreview {
+            get {
+                return ResourceManager.GetString("MarkdownPreview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   メモ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string Memo {
