@@ -1325,6 +1325,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   先頭と末尾のダブルクォーテーションを削除する に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string RemoveTheLeadingAndTrailingDoubleQuotation {
+            get {
+                return ResourceManager.GetString("RemoveTheLeadingAndTrailingDoubleQuotation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   末尾の改行文字を削除する に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string RemoveTheTrailingNewlineCharacter {

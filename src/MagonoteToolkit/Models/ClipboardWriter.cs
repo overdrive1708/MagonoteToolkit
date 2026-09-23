@@ -46,5 +46,20 @@ namespace MagonoteToolkit.Models
             // クリップボードに書き込む
             System.Windows.Clipboard.SetText(replacedText);
         }
+
+        public static void WriteTextRemoveLeadingTrailingDoubleQuotation(string text)
+        {
+            // 書き込み文字列が空の場合は無処理
+            if (string.IsNullOrEmpty(text))
+            {
+                return;
+            }
+
+            // 先頭と末尾のダブルクォーテーションを削除
+            text = text.Trim('"');
+
+            // クリップボードに書き込む
+            System.Windows.Clipboard.SetText(text);
+        }
     }
 }
