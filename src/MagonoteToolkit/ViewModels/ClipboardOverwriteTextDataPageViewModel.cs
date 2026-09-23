@@ -35,6 +35,12 @@ namespace MagonoteToolkit.ViewModels
         private string _replaceNewlineCharacter = Resources.Strings.ReplaceCRLF;
 
         /// <summary>
+        /// 書き換え設定：先頭と末尾のダブルクォーテーションを削除するかどうか
+        /// </summary>
+        [ObservableProperty]
+        private bool _isRemoveLeadingTrailingDoubleQuotation = false;
+
+        /// <summary>
         /// 書き換え前のクリップボード文字列
         /// </summary>
         [ObservableProperty]
@@ -83,11 +89,13 @@ namespace MagonoteToolkit.ViewModels
             // 書き換え処理
             BeforeModificationClipboardStrings = ClipboardReader.ReadText();
 
+            // 末尾の改行文字を削除する
             if (IsRemoveTrailingNewline)
             {
                 ClipboardWriter.WriteTextRemoveTrailingNewline(ClipboardReader.ReadText());
             }
 
+            // 改行文字を置換する
             if (IsReplaceNewline)
             {
                 if (ReplaceNewlineCharacter == Resources.Strings.ReplaceLF)
@@ -106,6 +114,12 @@ namespace MagonoteToolkit.ViewModels
                 {
                     // 置換する改行文字が不正な場合は何もしない
                 }
+            }
+
+            // 先頭と末尾のダブルクォーテーションを削除する
+            if (IsRemoveLeadingTrailingDoubleQuotation)
+            {
+                ClipboardWriter.WriteTextRemoveLeadingTrailingDoubleQuotation(ClipboardReader.ReadText());
             }
 
             AfterModificationClipboardStrings = ClipboardReader.ReadText();

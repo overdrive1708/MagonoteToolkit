@@ -1,4 +1,5 @@
 # AI翻訳の使い方
+
 事前に設定画面でAI関連の設定を行ってください｡
 | 設定項目 | 設定内容 |
 | --- | --- |
@@ -6,7 +7,7 @@
 | AIOpenAIAPIKey | OpenAI APIのAPIキーを設定します｡LM Studioなどで認証不要にしている場合は設定不要です｡ |
 
 1. 使用するモデル･言語を指定して､翻訳したいテキストを入力したあと､翻訳実施ボタンを押してください｡  
-<img alt="ExecuteExamination" src="images/AITranslation/InputText.png" width="75%">
+   <img alt="ExecuteExamination" src="images/AITranslation/InputText.png" width="75%">
 
 1. 翻訳結果が表示されます｡  
-<img alt="ExecuteExamination" src="images/AITranslation/Result.png" width="75%">
+   <img alt="ExecuteExamination" src="images/AITranslation/Result.png" width="75%">

@@ -669,4 +669,7 @@
   <data name="ReplaceCRLF" xml:space="preserve">
     <value>CRLFに置換する</value>
   </data>
+  <data name="RemoveTheLeadingAndTrailingDoubleQuotation" xml:space="preserve">
+    <value>先頭と末尾のダブルクォーテーションを削除する</value>
+  </data>
 </root>

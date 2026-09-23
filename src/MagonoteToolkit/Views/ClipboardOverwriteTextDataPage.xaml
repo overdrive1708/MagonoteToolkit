@@ -34,6 +34,10 @@
                                 ItemsSource="{Binding ReplaceNewlineCharacterList}"
                                 SelectedItem="{Binding ReplaceNewlineCharacter}" />
                         </StackPanel>
+                        <CheckBox
+                            Margin="10,5,5,5"
+                            Content="{x:Static resources:Strings.RemoveTheLeadingAndTrailingDoubleQuotation}"
+                            IsChecked="{Binding IsRemoveLeadingTrailingDoubleQuotation}" />
                     </StackPanel>
                 </GroupBox>
 
