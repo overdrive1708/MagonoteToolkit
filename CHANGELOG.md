@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added feature by issue.([Issue #27](https://github.com/overdrive1708/MagonoteToolkit/issues/27))
 - Added feature by issue.([Issue #28](https://github.com/overdrive1708/MagonoteToolkit/issues/28))
 - Added feature by issue.([Issue #36](https://github.com/overdrive1708/MagonoteToolkit/issues/36))
+- Added feature by issue.([Issue #45](https://github.com/overdrive1708/MagonoteToolkit/issues/45))
 - Added feature by issue.([Issue #98](https://github.com/overdrive1708/MagonoteToolkit/issues/98))
 
 ### Changed
