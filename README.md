@@ -35,6 +35,7 @@
 - クリップボードテキストデータ書き換え
     - 末尾の改行文字の削除
     - 改行文字の置換
+    - 先頭と末尾のダブルクォーテーションの削除
 - AI翻訳
     - 英語
     - 日本語
@@ -178,6 +179,7 @@ UTF-8でプロンプトを記載してください｡
 - [ファイル変更監視](docs/HowToUseFileChangeMonitor.md)を参照してください｡
 - [ファイルコピー](docs/HowToUseFileCopy.md)を参照してください｡
 - [クリップボードID->名称変換](docs/HowToUseClipboardNumberToName.md)を参照してください｡
+- [クリップボードテキストデータ書き換え](docs/HowToUseClipboardOverwriteTextData.md)を参照してください｡
 - [AI翻訳](docs/HowToUseAITranslation.md)を参照してください｡
 - [AI校正](docs/HowToUseAIProofreading.md)を参照してください｡
 
