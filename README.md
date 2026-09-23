@@ -30,6 +30,7 @@
 - Excelファイル検査
 - ExcelファイルID->名称変換
 - ファイル変更監視
+- ファイルコピー
 - クリップボードID->名称変換
 - AI翻訳
     - 英語
@@ -172,6 +173,7 @@ UTF-8でプロンプトを記載してください｡
 - [Excelファイル検査](docs/HowToUseExcelFileInspection.md)を参照してください｡
 - [ExcelファイルID->名称変換](docs/HowToUseExcelFileNumberToName.md)を参照してください｡
 - [ファイル変更監視](docs/HowToUseFileChangeMonitor.md)を参照してください｡
+- [ファイルコピー](docs/HowToUseFileCopy.md)を参照してください｡
 - [クリップボードID->名称変換](docs/HowToUseClipboardNumberToName.md)を参照してください｡
 - [AI翻訳](docs/HowToUseAITranslation.md)を参照してください｡
 - [AI校正](docs/HowToUseAIProofreading.md)を参照してください｡

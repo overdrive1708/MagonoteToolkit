@@ -11,6 +11,7 @@ namespace MagonoteToolkit
         ExcelFileInspection,    // Excelファイル検査
         ExcelFileNumberToName,  // ExcelファイルID->名称変換
         FileChangeMonitor,      // ファイル変更監視
+        FileCopy,               // ファイルコピー
         ClipboardNumberToName,  // クリップボードID->名称変換
         AITranslation,          // AI翻訳
         AIProofreading,         // AI校正
@@ -71,6 +72,10 @@ namespace MagonoteToolkit
                     case NavigationItem.FileChangeMonitor:
                         header = selectedItem.Content;
                         sourcePageType = typeof(Views.FileChangeMonitorPage);
+                        break;
+                    case NavigationItem.FileCopy:
+                        header = selectedItem.Content;
+                        sourcePageType = typeof(Views.FileCopyPage);
                         break;
                     case NavigationItem.ClipboardNumberToName:
                         header = selectedItem.Content;
