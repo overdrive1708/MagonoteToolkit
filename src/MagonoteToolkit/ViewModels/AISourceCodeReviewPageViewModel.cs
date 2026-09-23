@@ -42,6 +42,12 @@ namespace MagonoteToolkit.ViewModels
         [ObservableProperty]
         private bool _isOperationEnable = true;
 
+        /// <summary>
+        /// マークダウンプレビュー表示フラグ
+        /// </summary>
+        [ObservableProperty]
+        private bool _isMarkdownPreviewEnabled = true;
+
         //--------------------------------------------------
         // バインディングコマンド
         //--------------------------------------------------
