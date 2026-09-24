@@ -1,4 +1,6 @@
-﻿namespace MagonoteToolkit.Models
+﻿using CommunityToolkit.Mvvm.Messaging;
+
+namespace MagonoteToolkit.Models
 {
     /// <summary>
     /// メッセージクラス
@@ -29,6 +31,21 @@
             /// 進捗メッセージ
             /// </summary>
             public string ProgressMessage { get; set; }
+        }
+
+        /// <summary>
+        /// 進捗情報変更メッセージ送信処理(クリア)
+        /// </summary>
+        public static void SendProgressInfoChangeMessageClear()
+        {
+            ProgressInfoChangeMessage message = new()
+            {
+                ProgressMaximum = 1,
+                ProgressValue = 0,
+                IsProgressIndeterminate = false,
+                ProgressMessage = string.Empty
+            };
+            _ = WeakReferenceMessenger.Default.Send(message);
         }
     }
 }

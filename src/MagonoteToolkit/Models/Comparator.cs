@@ -79,6 +79,9 @@ namespace MagonoteToolkit.Models
             return result;
         }
 
+        /// <summary>
+        /// 進捗情報変更メッセージ送信処理(比較開始)
+        /// </summary>
         private static void SendProgressInfoChangeMessageNowComparisonStart()
         {
             ProgressInfoChangeMessage message = new()
@@ -91,6 +94,11 @@ namespace MagonoteToolkit.Models
             _ = WeakReferenceMessenger.Default.Send(message);
         }
 
+        /// <summary>
+        /// 進捗情報変更メッセージ送信処理(比較中：追加)
+        /// </summary>
+        /// <param name="progressMaximum">最大値</param>
+        /// <param name="progressValue">現在値</param>
         private static void SendProgressInfoChangeMessageNowComparisonAdd(int progressMaximum, int progressValue)
         {
             ProgressInfoChangeMessage message = new()
@@ -103,6 +111,11 @@ namespace MagonoteToolkit.Models
             _ = WeakReferenceMessenger.Default.Send(message);
         }
 
+        /// <summary>
+        /// 進捗情報変更メッセージ送信処理(比較中：削除)
+        /// </summary>
+        /// <param name="progressMaximum">最大値</param>
+        /// <param name="progressValue">現在値</param>
         private static void SendProgressInfoChangeMessageNowComparisonDelete(int progressMaximum, int progressValue)
         {
             ProgressInfoChangeMessage message = new()
@@ -115,6 +128,9 @@ namespace MagonoteToolkit.Models
             _ = WeakReferenceMessenger.Default.Send(message);
         }
 
+        /// <summary>
+        /// 進捗情報変更メッセージ送信処理(比較終了)
+        /// </summary>
         private static void SendProgressInfoChangeMessageNowComparisonEnd()
         {
             ProgressInfoChangeMessage message = new()

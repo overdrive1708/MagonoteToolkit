@@ -20,88 +20,110 @@
         <viewmodels:MainWindowViewModel />
     </Window.DataContext>
 
-    <ui:NavigationView
-        IsBackButtonVisible="Collapsed"
-        IsBackEnabled="False"
-        IsSettingsVisible="True"
-        PaneDisplayMode="Auto"
-        SelectionChanged="NavigationView_SelectionChanged">
-        <ui:NavigationView.MenuItems>
-            <ui:NavigationViewItem
-                Content="{x:Static resources:Strings.Home}"
-                Icon="Home"
-                IsSelected="True"
-                Tag="{x:Static local:NavigationItem.Home}" />
-            <ui:NavigationViewItem
-                Content="{x:Static resources:Strings.ExcelFileInspection}"
-                Icon="Find"
-                IsSelected="True"
-                Tag="{x:Static local:NavigationItem.ExcelFileInspection}" />
-            <ui:NavigationViewItem
-                Content="{x:Static resources:Strings.ExcelFileNumberToName}"
-                Icon="Find"
-                IsSelected="True"
-                Tag="{x:Static local:NavigationItem.ExcelFileNumberToName}" />
-            <ui:NavigationViewItem
-                Content="{x:Static resources:Strings.FileChangeMonitor}"
-                Icon="Find"
-                IsSelected="True"
-                Tag="{x:Static local:NavigationItem.FileChangeMonitor}" />
-            <ui:NavigationViewItem
-                Content="{x:Static resources:Strings.FileCopy}"
-                Icon="Copy"
-                IsSelected="True"
-                Tag="{x:Static local:NavigationItem.FileCopy}" />
-            <ui:NavigationViewItem
-                Content="{x:Static resources:Strings.ClipboardNumberToName}"
-                Icon="Find"
-                IsSelected="True"
-                Tag="{x:Static local:NavigationItem.ClipboardNumberToName}" />
-            <ui:NavigationViewItem
-                Content="{x:Static resources:Strings.ClipboardOverwriteTextData}"
-                Icon="Edit"
-                IsSelected="True"
-                Tag="{x:Static local:NavigationItem.ClipboardOverwriteTextData}" />
-            <ui:NavigationViewItem
-                Content="{x:Static resources:Strings.AITranslation}"
-                Icon="World"
-                IsSelected="True"
-                Tag="{x:Static local:NavigationItem.AITranslation}" />
-            <ui:NavigationViewItem
-                Content="{x:Static resources:Strings.AIProofreading}"
-                Icon="Edit"
-                IsSelected="True"
-                Tag="{x:Static local:NavigationItem.AIProofreading}" />
-            <ui:NavigationViewItem
-                Content="{x:Static resources:Strings.AISourceCodeReview}"
-                Icon="Find"
-                IsSelected="True"
-                Tag="{x:Static local:NavigationItem.AISourceCodeReview}" />
-            <ui:NavigationViewItem
-                Content="{x:Static resources:Strings.AITestCaseGeneration}"
-                Icon="Bullets"
-                IsSelected="True"
-                Tag="{x:Static local:NavigationItem.AITestCaseGeneration}" />
-            <ui:NavigationViewItem
-                Content="{x:Static resources:Strings.StringCharcodeConvert}"
-                Icon="Character"
-                IsSelected="True"
-                Tag="{x:Static local:NavigationItem.StringCharcodeConvert}" />
-            <ui:NavigationViewItem
-                Content="{x:Static resources:Strings.CompareListItems}"
-                Icon="Find"
-                IsSelected="True"
-                Tag="{x:Static local:NavigationItem.CompareListItems}" />
-        </ui:NavigationView.MenuItems>
-        <ui:NavigationView.FooterMenuItems>
-            <ui:NavigationViewItem
-                Content="{x:Static resources:Strings.Help}"
-                Icon="Help"
-                Tag="{x:Static local:NavigationItem.Help}" />
-        </ui:NavigationView.FooterMenuItems>
+    <DockPanel LastChildFill="True">
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                <Grid>
+                    <ProgressBar
+                        Height="20"
+                        VerticalAlignment="Stretch"
+                        IsIndeterminate="{Binding IsProgressIndeterminate}"
+                        Maximum="{Binding ProgressMaximum}"
+                        Minimum="0"
+                        Value="{Binding ProgressValue}" />
+                    <TextBlock
+                        Margin="5,5,5,5"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="{Binding ProgressMessage}" />
+                </Grid>
+            </StatusBarItem>
+        </StatusBar>
 
-        <ScrollViewer>
-            <ui:Frame x:Name="ContentFrame" />
-        </ScrollViewer>
-    </ui:NavigationView>
+        <ui:NavigationView
+            IsBackButtonVisible="Collapsed"
+            IsBackEnabled="False"
+            IsSettingsVisible="True"
+            PaneDisplayMode="Auto"
+            SelectionChanged="NavigationView_SelectionChanged">
+            <ui:NavigationView.MenuItems>
+                <ui:NavigationViewItem
+                    Content="{x:Static resources:Strings.Home}"
+                    Icon="Home"
+                    IsSelected="True"
+                    Tag="{x:Static local:NavigationItem.Home}" />
+                <ui:NavigationViewItem
+                    Content="{x:Static resources:Strings.ExcelFileInspection}"
+                    Icon="Find"
+                    IsSelected="True"
+                    Tag="{x:Static local:NavigationItem.ExcelFileInspection}" />
+                <ui:NavigationViewItem
+                    Content="{x:Static resources:Strings.ExcelFileNumberToName}"
+                    Icon="Find"
+                    IsSelected="True"
+                    Tag="{x:Static local:NavigationItem.ExcelFileNumberToName}" />
+                <ui:NavigationViewItem
+                    Content="{x:Static resources:Strings.FileChangeMonitor}"
+                    Icon="Find"
+                    IsSelected="True"
+                    Tag="{x:Static local:NavigationItem.FileChangeMonitor}" />
+                <ui:NavigationViewItem
+                    Content="{x:Static resources:Strings.FileCopy}"
+                    Icon="Copy"
+                    IsSelected="True"
+                    Tag="{x:Static local:NavigationItem.FileCopy}" />
+                <ui:NavigationViewItem
+                    Content="{x:Static resources:Strings.ClipboardNumberToName}"
+                    Icon="Find"
+                    IsSelected="True"
+                    Tag="{x:Static local:NavigationItem.ClipboardNumberToName}" />
+                <ui:NavigationViewItem
+                    Content="{x:Static resources:Strings.ClipboardOverwriteTextData}"
+                    Icon="Edit"
+                    IsSelected="True"
+                    Tag="{x:Static local:NavigationItem.ClipboardOverwriteTextData}" />
+                <ui:NavigationViewItem
+                    Content="{x:Static resources:Strings.AITranslation}"
+                    Icon="World"
+                    IsSelected="True"
+                    Tag="{x:Static local:NavigationItem.AITranslation}" />
+                <ui:NavigationViewItem
+                    Content="{x:Static resources:Strings.AIProofreading}"
+                    Icon="Edit"
+                    IsSelected="True"
+                    Tag="{x:Static local:NavigationItem.AIProofreading}" />
+                <ui:NavigationViewItem
+                    Content="{x:Static resources:Strings.AISourceCodeReview}"
+                    Icon="Find"
+                    IsSelected="True"
+                    Tag="{x:Static local:NavigationItem.AISourceCodeReview}" />
+                <ui:NavigationViewItem
+                    Content="{x:Static resources:Strings.AITestCaseGeneration}"
+                    Icon="Bullets"
+                    IsSelected="True"
+                    Tag="{x:Static local:NavigationItem.AITestCaseGeneration}" />
+                <ui:NavigationViewItem
+                    Content="{x:Static resources:Strings.StringCharcodeConvert}"
+                    Icon="Character"
+                    IsSelected="True"
+                    Tag="{x:Static local:NavigationItem.StringCharcodeConvert}" />
+                <ui:NavigationViewItem
+                    Content="{x:Static resources:Strings.CompareListItems}"
+                    Icon="Find"
+                    IsSelected="True"
+                    Tag="{x:Static local:NavigationItem.CompareListItems}" />
+            </ui:NavigationView.MenuItems>
+            <ui:NavigationView.FooterMenuItems>
+                <ui:NavigationViewItem
+                    Content="{x:Static resources:Strings.Help}"
+                    Icon="Help"
+                    Tag="{x:Static local:NavigationItem.Help}" />
+            </ui:NavigationView.FooterMenuItems>
+
+            <ScrollViewer>
+                <ui:Frame x:Name="ContentFrame" />
+            </ScrollViewer>
+        </ui:NavigationView>
+
+    </DockPanel>
 </Window>

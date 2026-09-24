@@ -122,6 +122,9 @@ namespace MagonoteToolkit
                 }
             }
 
+            // 進捗情報クリア
+            Models.Messages.SendProgressInfoChangeMessageClear();
+
             // ヘッダ切り替え
             sender.Header = header;
 

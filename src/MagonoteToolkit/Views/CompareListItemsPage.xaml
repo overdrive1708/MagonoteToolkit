@@ -70,19 +70,6 @@
                         VerticalScrollBarVisibility="Auto" />
                 </GroupBox>
             </StackPanel>
-            <Grid Margin="10,5,10,5">
-                <ProgressBar
-                    VerticalAlignment="Stretch"
-                    IsIndeterminate="{Binding IsProgressIndeterminate}"
-                    Maximum="{Binding ProgressMaximum}"
-                    Minimum="0"
-                    Value="{Binding ProgressValue}" />
-                <TextBlock
-                    Margin="0,5,0,5"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    Text="{Binding ProgressMessage}" />
-            </Grid>
         </StackPanel>
     </Grid>
 </Page>
