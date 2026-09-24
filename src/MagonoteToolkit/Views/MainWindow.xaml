@@ -87,6 +87,11 @@
                 Icon="Character"
                 IsSelected="True"
                 Tag="{x:Static local:NavigationItem.StringCharcodeConvert}" />
+            <ui:NavigationViewItem
+                Content="{x:Static resources:Strings.CompareListItems}"
+                Icon="Find"
+                IsSelected="True"
+                Tag="{x:Static local:NavigationItem.CompareListItems}" />
         </ui:NavigationView.MenuItems>
         <ui:NavigationView.FooterMenuItems>
             <ui:NavigationViewItem

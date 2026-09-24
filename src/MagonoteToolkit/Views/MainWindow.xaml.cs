@@ -19,6 +19,7 @@ namespace MagonoteToolkit
         AISourceCodeReview,     // AIソースコードレビュー
         AITestCaseGeneration,   // AIテストケース生成
         StringCharcodeConvert,  // 文字列<-->文字コード変換
+        CompareListItems,       // リスト項目比較
         Help                    // ヘルプ
     }
 
@@ -109,6 +110,10 @@ namespace MagonoteToolkit
                     case NavigationItem.StringCharcodeConvert:
                         header = selectedItem.Content;
                         sourcePageType = typeof(Views.StringCharcodeConvertPage);
+                        break;
+                    case NavigationItem.CompareListItems:
+                        header = selectedItem.Content;
+                        sourcePageType = typeof(Views.CompareListItemsPage);
                         break;
                     default:
                         header = string.Empty;
