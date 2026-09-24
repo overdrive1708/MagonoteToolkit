@@ -79,6 +79,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   変更後 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string AfterChange {
+            get {
+                return ResourceManager.GetString("AfterChange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   書き換え後のクリップボード文字列 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string AfterModificationClipboardStrings {
@@ -256,6 +265,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   変更前 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string BeforeChange {
+            get {
+                return ResourceManager.GetString("BeforeChange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   書き換え前のクリップボード文字列 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string BeforeModificationClipboardStrings {
@@ -333,6 +351,15 @@ namespace MagonoteToolkit.Resources {
         public static string ClipboardStrings {
             get {
                 return ResourceManager.GetString("ClipboardStrings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   リスト項目比較 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string CompareListItems {
+            get {
+                return ResourceManager.GetString("CompareListItems", resourceCulture);
             }
         }
         
@@ -531,6 +558,15 @@ namespace MagonoteToolkit.Resources {
         public static string ExcelFileNumberToName {
             get {
                 return ResourceManager.GetString("ExcelFileNumberToName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   比較実施 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string ExecuteComparison {
+            get {
+                return ResourceManager.GetString("ExecuteComparison", resourceCulture);
             }
         }
         
@@ -997,6 +1033,15 @@ namespace MagonoteToolkit.Resources {
         }
         
         /// <summary>
+        ///   比較が完了しました｡ に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusCompleteComparison {
+            get {
+                return ResourceManager.GetString("MessageStatusCompleteComparison", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   削除が完了しました｡ に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MessageStatusCompleteDelete {
@@ -1101,6 +1146,24 @@ namespace MagonoteToolkit.Resources {
         public static string MessageStatusInspectionMethodEmpty {
             get {
                 return ResourceManager.GetString("MessageStatusInspectionMethodEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   比較を行っています｡(追加)({0}/{1}) に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusNowComparisonAdd {
+            get {
+                return ResourceManager.GetString("MessageStatusNowComparisonAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   比較を行っています｡(削除)({0}/{1}) に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MessageStatusNowComparisonDelete {
+            get {
+                return ResourceManager.GetString("MessageStatusNowComparisonDelete", resourceCulture);
             }
         }
         

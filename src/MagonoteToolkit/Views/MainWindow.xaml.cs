@@ -19,6 +19,7 @@ namespace MagonoteToolkit
         AISourceCodeReview,     // AIソースコードレビュー
         AITestCaseGeneration,   // AIテストケース生成
         StringCharcodeConvert,  // 文字列<-->文字コード変換
+        CompareListItems,       // リスト項目比較
         Help                    // ヘルプ
     }
 
@@ -110,12 +111,19 @@ namespace MagonoteToolkit
                         header = selectedItem.Content;
                         sourcePageType = typeof(Views.StringCharcodeConvertPage);
                         break;
+                    case NavigationItem.CompareListItems:
+                        header = selectedItem.Content;
+                        sourcePageType = typeof(Views.CompareListItemsPage);
+                        break;
                     default:
                         header = string.Empty;
                         sourcePageType = typeof(Views.HomePage);
                         break;
                 }
             }
+
+            // 進捗情報クリア
+            Models.Messages.SendProgressInfoChangeMessageClear();
 
             // ヘッダ切り替え
             sender.Header = header;

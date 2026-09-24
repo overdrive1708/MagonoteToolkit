@@ -672,4 +672,25 @@
   <data name="RemoveTheLeadingAndTrailingDoubleQuotation" xml:space="preserve">
     <value>先頭と末尾のダブルクォーテーションを削除する</value>
   </data>
+  <data name="CompareListItems" xml:space="preserve">
+    <value>リスト項目比較</value>
+  </data>
+  <data name="BeforeChange" xml:space="preserve">
+    <value>変更前</value>
+  </data>
+  <data name="AfterChange" xml:space="preserve">
+    <value>変更後</value>
+  </data>
+  <data name="ExecuteComparison" xml:space="preserve">
+    <value>比較実施</value>
+  </data>
+  <data name="MessageStatusCompleteComparison" xml:space="preserve">
+    <value>比較が完了しました｡</value>
+  </data>
+  <data name="MessageStatusNowComparisonAdd" xml:space="preserve">
+    <value>比較を行っています｡(追加)({0}/{1})</value>
+  </data>
+  <data name="MessageStatusNowComparisonDelete" xml:space="preserve">
+    <value>比較を行っています｡(削除)({0}/{1})</value>
+  </data>
 </root>
